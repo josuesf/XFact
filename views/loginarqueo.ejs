@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>iFacturacion Pale</title>
+
+    <!-- BEGIN META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="your,keywords">
+    <meta name="description" content="Short explanation about this website">
+    <!-- END META -->
+
+    <!-- BEGIN STYLESHEETS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet'
+        type='text/css' />
+    <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/bootstrap0f9f.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/materialadmin6b47.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/font-awesome.min5914.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/material-design-iconic-font.min5730.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/libs/waitMe/waitMe.min.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/main.css" />
+
+</head>
+
+<body class="menubar-hoverable header-fixed" style="background: linear-gradient(to bottom right, #747979 0%, #5c6963 100%)">
+ 
+    <div class="background"></div>
+    <div class="backdrop"></div>
+    <div class="login-form-container">
+        <div class="modal modal-warning fade" id="modal-confirmacion" style="display: none;">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 class="modal-title" >Mensaje de confirmacion </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <h5>¿Esta seguro que desea aperturar caja?</h5>
+                                </div>
+                            </div>
+                        </div>
+                            
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-raised btn-danger pull-left" data-dismiss="modal">NO</button>
+                        <button type="submit" class="btn btn-raised btn-info " id="btnConfirmacionApertura" >SI</button>
+                    </div>
+                </div> 
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="login-form-content">
+            <div class="row">
+                <% if(typeof error !='undefined') { %>
+                    <div class="alert alert-callout alert-danger" id="divError" data-value="0">
+                        <p id="textError"><%=err%></p>
+                    </div>
+                <% }else{ %>
+                    <div class="alert alert-callout alert-danger" id="divError" data-value="1" style="display: none;">
+                        <p id="textError"></p>
+                    </div>
+                <% } %>
+            </div>
+
+            <div class="login-form-header">
+                <span class="text-lg text-bold text-default"> APERTURA DE CAJA </span>
+            </div>
+            <br />
+            
+            <form class="form form-validate" accept-charset="utf-8" action="loginarqueo"  id="formApertura" method="post">
+                           
+                    <div class="form-group" id="select-periodo">
+                        <select id="Caja" name="Caja" class="form-control">
+                            <% if(typeof caja != 'undefined') { %>
+                                <% caja.forEach(function(e){ %>
+                                    <option value="<%=e.Cod_Caja%>"><%=e.Des_Caja%></option> 
+                                <% }) %>
+                            <% } %>
+                        </select>
+                        <label for="Caja">Caja</label>
+                    </div>
+                    
+                    <div class="form-group" id="select-periodo">
+                        <select id="Turno" name="Turno" class="form-control">
+                            <option value="<%=turno%>"><%=turno%></option> 
+                        </select>
+                        <label for="Turno">Turno</label>
+                    </div>
+
+                    <div class="form-group floating-label"> 
+                        <input type="number" class="form-control dirty" name="Numero" id="Numero" value="<%=numero%>" required>
+                        <label for="Numero">Numero</label>
+                    </div>
+
+                    <div class="form-group floating-label"> 
+                        <input type="text" class="form-control dirty" name="Apertura" id="Apertura" value="<%=apertura%>">
+                        <label for="Apertura">Apertura</label>
+                    </div>
+
+                    <div class="form-group row table-responsive">
+                        <label>Saldo Inicial</label>
+                        <table class="table">
+                            <% if(typeof monedas != 'undefined') { %>
+                                <tbody>
+                                    <% monedas.forEach(function(e){ %>
+                                        <% if(e.Nom_Moneda!='OTROS'){ %>
+                                            <tr>
+                                                <td class="hidden"><input type="text"  value="<%=e.Cod_Moneda%>" class="form-control dirty" name="Cod_Moneda[]"></td>
+                                                <td><input type="text"  value="<%=e.Nom_Moneda%>" class="form-control dirty" disabled></td>
+                                                <td><input type="number" value="0" class="form-control dirty" name="Monto_Moneda[]"></td>
+                                            </tr>
+                                        <% } %>
+                                    <% }) %>
+                                </tbody>
+                            <% } %>         
+                            
+                            <% if(typeof dataCierre != 'undefined') { %>
+                                <tbody>
+                                    <% dataCierre.forEach(function(e){ %>
+                                        <% if(e.Monto!='OTROS'){ %>
+                                            <tr>
+                                                <td class="hidden"><input type="text"  value="<%=e.Cod_Moneda%>" class="form-control dirty" name="Cod_Moneda[]"></td>
+                                                <td><input type="text"  value="<%=e.Nom_Moneda%>" class="form-control dirty" disabled></td>
+                                                <td><input type="number" value="<%=e.Monto%>" class="form-control dirty" name="Monto_Moneda[]"></td>
+                                            </tr>
+                                        <% } %>
+                                    <% }) %>
+                                </tbody>
+                            <% } %>         
+    
+    
+                        </table>
+                    </div>
+        
+                    <div class="form-group row table-responsive">
+                        <label>Tipo de Cambio</label>
+                        <table class="table">             
+                        </table>
+                    </div>
+
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-6 text-left">
+                            <a class="btn btn-raised btn-danger" href="logout">Cerrar</a> 
+                        </div>
+                        <!--end .col -->
+                        <div class="col-xs-6 text-right">
+                            <button class="btn btn-info btn-raised" type="button" data-toggle="modal" data-target="#modal-confirmacion">Aperturar</button>
+                        </div>
+                        <!--end .col -->
+                    </div>
+                    <!--end .row -->
+                </form>
+            
+        </div>
+    </div>
+
+    <!-- BEGIN JAVASCRIPT -->
+    <script src="/assets/js/libs/jquery/jquery-1.9.1.js"></script>  
+    <script src="/assets/js/libs/bootstrap/bootstrap.min.js"></script>
+    <script src="/assets/js/core/cache/63d0445130d69b2868a8d28c93309746.js"></script> 
+    <script>
+        $("#btnConfirmacionApertura").click(function(){
+            $("#formApertura").submit()    
+        });
+    </script>
+
+    <!-- END JAVASCRIPT -->
+
+</body>
+
+</html>

@@ -1,0 +1,628 @@
+2018-08-20T23:06:48.353Z - info: Initializing jsreport@2.1.1 in development mode using configuration file: none
+2018-08-20T23:06:48.357Z - info: Searching for available extensions in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-20T23:06:48.361Z - error: Error occured during reporter init SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at Object.get (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-core\lib\extensions\locationCache.js:26:24)
+    at <anonymous>
+2018-08-20T23:07:45.078Z - info: Initializing jsreport@2.1.1 in development mode using configuration file: none
+2018-08-20T23:07:45.080Z - info: Searching for available extensions in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-20T23:07:45.087Z - error: Error occured during reporter init SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at Object.get (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-core\lib\extensions\locationCache.js:27:24)
+    at <anonymous>
+2018-08-20T23:08:30.689Z - info: Initializing jsreport@2.1.1 in development mode using configuration file: none
+2018-08-20T23:08:30.691Z - info: Searching for available extensions in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-20T23:08:30.695Z - error: Error occured during reporter init SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at Object.get (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-core\lib\extensions\locationCache.js:26:24)
+    at <anonymous>
+2018-08-20T23:09:23.556Z - info: Initializing jsreport@2.1.1 in development mode using configuration file: none
+2018-08-20T23:09:23.559Z - info: Searching for available extensions in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-20T23:09:23.567Z - error: Error occured during reporter init SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at Object.get (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-core\lib\extensions\locationCache.js:27:24)
+    at <anonymous>
+2018-08-20T23:09:49.463Z - info: Initializing jsreport@2.1.1 in development mode using configuration file: none
+2018-08-20T23:09:49.464Z - info: Searching for available extensions in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-20T23:09:49.469Z - error: Error occured during reporter init SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at Object.get (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-core\lib\extensions\locationCache.js:27:24)
+    at <anonymous>
+2018-08-20T23:16:09.867Z - info: Initializing jsreport@2.1.1 in development mode using configuration file: none
+2018-08-20T23:16:09.869Z - info: Searching for available extensions in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-20T23:16:09.873Z - info: Extensions location cache not found, crawling directories
+2018-08-20T23:16:15.185Z - info: Found 32 extensions
+2018-08-20T23:16:15.250Z - debug: Writing extension locations cache to C:\Users\DESARR~1\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-20T23:16:15.252Z - debug: Discovered 32 extensions
+2018-08-20T23:16:15.294Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-20T23:16:15.311Z - info: Using extension import-export
+2018-08-20T23:16:16.282Z - info: Using extension tags
+2018-08-20T23:16:16.294Z - info: Using extension templates
+2018-08-20T23:16:16.320Z - info: Using extension jsrender
+2018-08-20T23:16:16.322Z - info: Using extension authentication
+2018-08-20T23:16:16.682Z - debug: Extension authentication was disabled
+2018-08-20T23:16:16.682Z - info: Using extension handlebars
+2018-08-20T23:16:16.710Z - info: Using extension cli
+2018-08-20T23:16:16.713Z - info: Using extension freeze
+2018-08-20T23:16:16.728Z - info: Using extension debug
+2018-08-20T23:16:16.730Z - info: Using extension express
+2018-08-20T23:16:16.949Z - info: Using extension fop-pdf
+2018-08-20T23:16:16.953Z - info: Using extension pdf-utils
+2018-08-20T23:16:17.158Z - info: Using extension data
+2018-08-20T23:16:17.179Z - info: Using extension chrome-pdf
+2018-08-20T23:16:17.280Z - info: Using extension html-to-xlsx
+2018-08-20T23:16:17.787Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-20T23:16:17.787Z - info: Using extension child-templates
+2018-08-20T23:16:17.807Z - info: Using extension browser-client
+2018-08-20T23:16:17.811Z - info: Using extension licensing
+2018-08-20T23:16:17.874Z - info: Using extension authorization
+2018-08-20T23:16:17.889Z - debug: Extension authorization was disabled
+2018-08-20T23:16:17.890Z - info: Using extension version-control
+2018-08-20T23:16:18.090Z - info: Using extension reports
+2018-08-20T23:16:18.104Z - info: Using extension text
+2018-08-20T23:16:18.117Z - info: Using extension base
+2018-08-20T23:16:18.121Z - info: Using extension studio
+2018-08-20T23:16:18.198Z - info: Using extension fs-store
+2018-08-20T23:16:19.925Z - debug: Extension fs-store was disabled
+2018-08-20T23:16:19.926Z - info: Using extension scripts
+2018-08-20T23:16:19.946Z - info: Using extension assets
+2018-08-20T23:16:20.027Z - info: Using extension scheduling
+2018-08-20T23:16:20.180Z - info: Using extension xlsx
+2018-08-20T23:16:20.747Z - info: Using extension sample-template
+2018-08-20T23:16:20.764Z - debug: Creating samples is disabled
+2018-08-20T23:16:20.764Z - info: Using extension resources
+2018-08-20T23:16:20.767Z - info: Using extension public-templates
+2018-08-20T23:16:20.770Z - debug: Extension public-templates was disabled
+2018-08-20T23:16:20.838Z - info: Configuring routes for existing express app.
+2018-08-20T23:16:21.126Z - info: Using existing server instance.
+2018-08-20T23:16:21.128Z - info: Verifying license key free
+2018-08-20T23:16:21.129Z - info: Using free license
+2018-08-20T23:16:21.149Z - info: reporter initialized
+2018-08-20T23:27:15.643Z - info: Initializing jsreport@2.1.1 in development mode using configuration file: none
+2018-08-20T23:27:15.645Z - info: Searching for available extensions in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-20T23:27:15.653Z - info: Extensions location cache contains up to date information, skipping crawling in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-20T23:27:16.495Z - info: Found 32 extensions
+2018-08-20T23:27:16.557Z - debug: Writing extension locations cache to C:\Users\DESARR~1\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-20T23:27:16.571Z - debug: Discovered 32 extensions
+2018-08-20T23:27:16.637Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-20T23:27:16.659Z - info: Using extension import-export
+2018-08-20T23:27:17.655Z - info: Using extension tags
+2018-08-20T23:27:17.662Z - info: Using extension templates
+2018-08-20T23:27:17.671Z - info: Using extension jsrender
+2018-08-20T23:27:17.682Z - info: Using extension authentication
+2018-08-20T23:27:17.826Z - debug: Extension authentication was disabled
+2018-08-20T23:27:17.826Z - info: Using extension handlebars
+2018-08-20T23:27:17.829Z - info: Using extension cli
+2018-08-20T23:27:17.830Z - info: Using extension freeze
+2018-08-20T23:27:17.832Z - info: Using extension debug
+2018-08-20T23:27:17.835Z - info: Using extension express
+2018-08-20T23:27:18.038Z - info: Using extension fop-pdf
+2018-08-20T23:27:18.042Z - info: Using extension pdf-utils
+2018-08-20T23:27:18.211Z - info: Using extension data
+2018-08-20T23:27:18.216Z - info: Using extension chrome-pdf
+2018-08-20T23:27:18.353Z - info: Using extension html-to-xlsx
+2018-08-20T23:27:18.562Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-20T23:27:18.563Z - info: Using extension child-templates
+2018-08-20T23:27:18.566Z - info: Using extension browser-client
+2018-08-20T23:27:18.569Z - info: Using extension licensing
+2018-08-20T23:27:18.649Z - info: Using extension authorization
+2018-08-20T23:27:18.656Z - debug: Extension authorization was disabled
+2018-08-20T23:27:18.656Z - info: Using extension version-control
+2018-08-20T23:27:18.701Z - info: Using extension reports
+2018-08-20T23:27:18.706Z - info: Using extension text
+2018-08-20T23:27:18.708Z - info: Using extension base
+2018-08-20T23:27:18.713Z - info: Using extension studio
+2018-08-20T23:27:18.760Z - info: Using extension fs-store
+2018-08-20T23:27:19.073Z - debug: Extension fs-store was disabled
+2018-08-20T23:27:19.073Z - info: Using extension scripts
+2018-08-20T23:27:19.078Z - info: Using extension assets
+2018-08-20T23:27:19.096Z - info: Using extension scheduling
+2018-08-20T23:27:19.140Z - info: Using extension xlsx
+2018-08-20T23:27:19.227Z - info: Using extension sample-template
+2018-08-20T23:27:19.231Z - debug: Creating samples is disabled
+2018-08-20T23:27:19.232Z - info: Using extension resources
+2018-08-20T23:27:19.235Z - info: Using extension public-templates
+2018-08-20T23:27:19.256Z - debug: Extension public-templates was disabled
+2018-08-20T23:27:19.345Z - info: Configuring routes for existing express app.
+2018-08-20T23:27:19.378Z - info: Using existing server instance.
+2018-08-20T23:27:19.403Z - info: Verifying license key free
+2018-08-20T23:27:19.651Z - info: Using free license
+2018-08-20T23:27:19.663Z - info: reporter initialized
+2018-08-20T23:56:55.706Z - info: Initializing jsreport@2.1.1 in development mode using configuration file: none
+2018-08-20T23:56:55.708Z - info: Searching for available extensions in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-20T23:56:55.758Z - info: Extensions location cache contains up to date information, skipping crawling in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-20T23:56:59.764Z - info: Found 32 extensions
+2018-08-20T23:56:59.871Z - debug: Writing extension locations cache to C:\Users\DESARR~1\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-20T23:56:59.872Z - debug: Discovered 32 extensions
+2018-08-20T23:56:59.917Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-20T23:56:59.956Z - info: Using extension import-export
+2018-08-20T23:57:02.283Z - info: Using extension tags
+2018-08-20T23:57:02.318Z - info: Using extension templates
+2018-08-20T23:57:02.346Z - info: Using extension jsrender
+2018-08-20T23:57:02.349Z - info: Using extension authentication
+2018-08-20T23:57:03.210Z - debug: Extension authentication was disabled
+2018-08-20T23:57:03.210Z - info: Using extension handlebars
+2018-08-20T23:57:03.238Z - info: Using extension cli
+2018-08-20T23:57:03.246Z - info: Using extension freeze
+2018-08-20T23:57:03.253Z - info: Using extension debug
+2018-08-20T23:57:03.256Z - info: Using extension express
+2018-08-20T23:57:04.760Z - info: Using extension fop-pdf
+2018-08-20T23:57:04.777Z - info: Using extension pdf-utils
+2018-08-20T23:57:05.326Z - info: Using extension data
+2018-08-20T23:57:05.378Z - info: Using extension chrome-pdf
+2018-08-20T23:57:06.295Z - info: Using extension html-to-xlsx
+2018-08-20T23:57:08.328Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-20T23:57:08.328Z - info: Using extension child-templates
+2018-08-20T23:57:08.348Z - info: Using extension browser-client
+2018-08-20T23:57:08.351Z - info: Using extension licensing
+2018-08-20T23:57:08.814Z - info: Using extension authorization
+2018-08-20T23:57:08.833Z - debug: Extension authorization was disabled
+2018-08-20T23:57:08.834Z - info: Using extension version-control
+2018-08-20T23:57:09.481Z - info: Using extension reports
+2018-08-20T23:57:09.598Z - info: Using extension text
+2018-08-20T23:57:09.609Z - info: Using extension base
+2018-08-20T23:57:09.613Z - info: Using extension studio
+2018-08-20T23:57:09.888Z - info: Using extension fs-store
+2018-08-20T23:57:11.367Z - debug: Extension fs-store was disabled
+2018-08-20T23:57:11.368Z - info: Using extension scripts
+2018-08-20T23:57:11.389Z - info: Using extension assets
+2018-08-20T23:57:11.481Z - info: Using extension scheduling
+2018-08-20T23:57:11.628Z - info: Using extension xlsx
+2018-08-20T23:57:12.661Z - info: Using extension sample-template
+2018-08-20T23:57:12.674Z - debug: Creating samples is disabled
+2018-08-20T23:57:12.675Z - info: Using extension resources
+2018-08-20T23:57:12.687Z - info: Using extension public-templates
+2018-08-20T23:57:12.703Z - debug: Extension public-templates was disabled
+2018-08-20T23:57:12.767Z - info: Configuring routes for existing express app.
+2018-08-20T23:57:13.454Z - info: Using existing server instance.
+2018-08-20T23:57:13.455Z - info: Verifying license key free
+2018-08-20T23:57:13.456Z - info: Using free license
+2018-08-20T23:57:13.475Z - info: reporter initialized
+2018-08-21T16:45:50.251Z - info: Initializing jsreport@2.1.1 in development mode using configuration file: none
+2018-08-21T16:45:50.253Z - info: Searching for available extensions in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-21T16:45:50.535Z - info: Extensions location cache contains up to date information, skipping crawling in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-21T16:45:52.212Z - info: Found 32 extensions
+2018-08-21T16:45:52.288Z - debug: Writing extension locations cache to C:\Users\DESARR~1\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-21T16:45:52.290Z - debug: Discovered 32 extensions
+2018-08-21T16:46:05.509Z - info: Initializing jsreport@2.1.1 in development mode using configuration file: none
+2018-08-21T16:46:05.511Z - info: Searching for available extensions in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-21T16:46:05.518Z - info: Extensions location cache contains up to date information, skipping crawling in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-21T16:46:06.079Z - info: Found 32 extensions
+2018-08-21T16:46:06.119Z - debug: Writing extension locations cache to C:\Users\DESARR~1\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-21T16:46:06.120Z - debug: Discovered 32 extensions
+2018-08-21T16:46:06.161Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-21T16:46:06.166Z - info: Using extension import-export
+2018-08-21T16:46:06.381Z - info: Using extension tags
+2018-08-21T16:46:06.386Z - info: Using extension templates
+2018-08-21T16:46:06.393Z - info: Using extension jsrender
+2018-08-21T16:46:06.394Z - info: Using extension authentication
+2018-08-21T16:46:06.504Z - debug: Extension authentication was disabled
+2018-08-21T16:46:06.505Z - info: Using extension handlebars
+2018-08-21T16:46:06.507Z - info: Using extension cli
+2018-08-21T16:46:06.508Z - info: Using extension freeze
+2018-08-21T16:46:06.510Z - info: Using extension debug
+2018-08-21T16:46:06.513Z - info: Using extension express
+2018-08-21T16:46:06.633Z - info: Using extension fop-pdf
+2018-08-21T16:46:06.637Z - info: Using extension pdf-utils
+2018-08-21T16:46:06.782Z - info: Using extension data
+2018-08-21T16:46:06.793Z - info: Using extension chrome-pdf
+2018-08-21T16:46:07.001Z - info: Using extension html-to-xlsx
+2018-08-21T16:46:08.380Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-21T16:46:08.380Z - info: Using extension child-templates
+2018-08-21T16:46:08.443Z - info: Using extension browser-client
+2018-08-21T16:46:08.526Z - info: Using extension licensing
+2018-08-21T16:46:09.350Z - info: Using extension authorization
+2018-08-21T16:46:09.396Z - debug: Extension authorization was disabled
+2018-08-21T16:46:09.397Z - info: Using extension version-control
+2018-08-21T16:46:10.142Z - info: Using extension reports
+2018-08-21T16:46:10.162Z - info: Using extension text
+2018-08-21T16:46:10.190Z - info: Using extension base
+2018-08-21T16:46:10.218Z - info: Using extension studio
+2018-08-21T16:46:10.554Z - info: Using extension fs-store
+2018-08-21T16:46:11.822Z - debug: Extension fs-store was disabled
+2018-08-21T16:46:11.822Z - info: Using extension scripts
+2018-08-21T16:46:11.845Z - info: Using extension assets
+2018-08-21T16:46:11.978Z - info: Using extension scheduling
+2018-08-21T16:46:12.333Z - info: Using extension xlsx
+2018-08-21T16:46:13.257Z - info: Using extension sample-template
+2018-08-21T16:46:13.287Z - debug: Creating samples is disabled
+2018-08-21T16:46:13.287Z - info: Using extension resources
+2018-08-21T16:46:13.326Z - info: Using extension public-templates
+2018-08-21T16:46:13.368Z - debug: Extension public-templates was disabled
+2018-08-21T16:46:13.488Z - info: Configuring routes for existing express app.
+2018-08-21T16:46:14.063Z - info: Using existing server instance.
+2018-08-21T16:46:14.064Z - info: Verifying license key free
+2018-08-21T16:46:14.065Z - info: Using free license
+2018-08-21T16:46:14.068Z - info: reporter initialized
+2018-08-21T16:46:35.304Z - info: Initializing jsreport@2.1.1 in development mode using configuration file: none
+2018-08-21T16:46:35.305Z - info: Searching for available extensions in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-21T16:46:35.327Z - info: Extensions location cache contains up to date information, skipping crawling in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-21T16:46:35.887Z - info: Found 32 extensions
+2018-08-21T16:46:35.934Z - debug: Writing extension locations cache to C:\Users\DESARR~1\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-21T16:46:35.936Z - debug: Discovered 32 extensions
+2018-08-21T16:46:36.006Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-21T16:46:36.012Z - info: Using extension import-export
+2018-08-21T16:46:36.262Z - info: Using extension tags
+2018-08-21T16:46:36.268Z - info: Using extension templates
+2018-08-21T16:46:36.274Z - info: Using extension jsrender
+2018-08-21T16:46:36.275Z - info: Using extension authentication
+2018-08-21T16:46:36.380Z - debug: Extension authentication was disabled
+2018-08-21T16:46:36.380Z - info: Using extension handlebars
+2018-08-21T16:46:36.383Z - info: Using extension cli
+2018-08-21T16:46:36.384Z - info: Using extension freeze
+2018-08-21T16:46:36.386Z - info: Using extension debug
+2018-08-21T16:46:36.389Z - info: Using extension express
+2018-08-21T16:46:36.517Z - info: Using extension fop-pdf
+2018-08-21T16:46:36.522Z - info: Using extension pdf-utils
+2018-08-21T16:46:36.658Z - info: Using extension data
+2018-08-21T16:46:36.663Z - info: Using extension chrome-pdf
+2018-08-21T16:46:36.756Z - info: Using extension html-to-xlsx
+2018-08-21T16:46:36.929Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-21T16:46:36.929Z - info: Using extension child-templates
+2018-08-21T16:46:36.933Z - info: Using extension browser-client
+2018-08-21T16:46:36.936Z - info: Using extension licensing
+2018-08-21T16:46:36.996Z - info: Using extension authorization
+2018-08-21T16:46:37.000Z - debug: Extension authorization was disabled
+2018-08-21T16:46:37.000Z - info: Using extension version-control
+2018-08-21T16:46:37.038Z - info: Using extension reports
+2018-08-21T16:46:37.043Z - info: Using extension text
+2018-08-21T16:46:37.045Z - info: Using extension base
+2018-08-21T16:46:37.046Z - info: Using extension studio
+2018-08-21T16:46:37.083Z - info: Using extension fs-store
+2018-08-21T16:46:37.375Z - debug: Extension fs-store was disabled
+2018-08-21T16:46:37.375Z - info: Using extension scripts
+2018-08-21T16:46:37.382Z - info: Using extension assets
+2018-08-21T16:46:37.402Z - info: Using extension scheduling
+2018-08-21T16:46:37.445Z - info: Using extension xlsx
+2018-08-21T16:46:37.528Z - info: Using extension sample-template
+2018-08-21T16:46:37.529Z - debug: Creating samples is disabled
+2018-08-21T16:46:37.529Z - info: Using extension resources
+2018-08-21T16:46:37.532Z - info: Using extension public-templates
+2018-08-21T16:46:37.534Z - debug: Extension public-templates was disabled
+2018-08-21T16:46:37.603Z - info: Configuring routes for existing express app.
+2018-08-21T16:46:37.624Z - info: Using existing server instance.
+2018-08-21T16:46:37.626Z - info: Verifying license key free
+2018-08-21T16:46:37.628Z - info: Using free license
+2018-08-21T16:46:37.639Z - info: reporter initialized
+2018-08-21T17:50:09.705Z - debug: OData query on templates
+2018-08-21T17:50:09.710Z - debug: OData query on tags
+2018-08-21T17:50:09.712Z - debug: OData query on scripts
+2018-08-21T17:50:09.713Z - debug: OData query on assets
+2018-08-21T17:50:09.718Z - debug: OData query on xlsxTemplates
+2018-08-21T17:50:09.721Z - debug: OData query on data
+2018-08-21T17:50:09.725Z - debug: OData query on schedules
+2018-08-21T17:50:09.730Z - debug: OData query on settings
+2018-08-21T17:50:09.881Z - debug: OData query on templates
+2018-08-21T17:50:09.893Z - debug: OData query on settings
+2018-08-21T17:50:27.178Z - debug: OData query on templates
+2018-08-21T17:50:27.192Z - debug: OData query on settings
+2018-08-21T17:50:27.232Z - debug: OData query on templates
+2018-08-21T17:50:27.259Z - debug: OData query on settings
+2018-08-21T17:50:28.536Z - debug: reading import zip file
+2018-08-21T17:50:28.539Z - debug: OData query on templates
+2018-08-21T17:50:28.545Z - debug: OData query on settings
+2018-08-21T17:50:28.562Z - debug: import found 17 objects
+2018-08-21T17:50:28.584Z - debug: OData query on templates
+2018-08-21T17:50:30.415Z - debug: OData query on settings
+2018-08-21T17:50:30.853Z - debug: OData query on templates
+2018-08-21T17:50:30.854Z - debug: OData query on tags
+2018-08-21T17:50:30.855Z - debug: OData query on data
+2018-08-21T17:50:30.856Z - debug: OData query on scripts
+2018-08-21T17:50:30.858Z - debug: OData query on assets
+2018-08-21T17:50:30.863Z - debug: OData query on xlsxTemplates
+2018-08-21T17:50:30.868Z - debug: OData query on schedules
+2018-08-21T17:50:30.871Z - debug: OData query on settings
+2018-08-21T17:50:30.988Z - debug: OData query on templates
+2018-08-21T17:50:31.033Z - debug: OData query on settings
+2018-08-21T17:50:33.471Z - debug: OData query on templates
+2018-08-21T17:50:33.501Z - debug: OData query on templates
+2018-08-21T17:50:33.795Z - debug: OData query on settings
+2018-08-21T17:50:41.011Z - info: Verifying license key free
+2018-08-21T17:50:42.249Z - info: Using enterprise trial license
+2018-08-21T17:52:03.300Z - info: Initializing jsreport@2.1.1 in development mode using configuration file: none
+2018-08-21T17:52:03.302Z - info: Searching for available extensions in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-21T17:52:03.307Z - info: Extensions location cache contains up to date information, skipping crawling in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-21T17:52:03.867Z - info: Found 32 extensions
+2018-08-21T17:52:03.910Z - debug: Writing extension locations cache to C:\Users\DESARR~1\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-21T17:52:03.912Z - debug: Discovered 32 extensions
+2018-08-21T17:52:03.971Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-21T17:52:03.976Z - info: Using extension import-export
+2018-08-21T17:52:04.235Z - info: Using extension tags
+2018-08-21T17:52:04.240Z - info: Using extension templates
+2018-08-21T17:52:04.245Z - info: Using extension jsrender
+2018-08-21T17:52:04.246Z - info: Using extension authentication
+2018-08-21T17:52:04.354Z - debug: Extension authentication was disabled
+2018-08-21T17:52:04.354Z - info: Using extension handlebars
+2018-08-21T17:52:04.356Z - info: Using extension cli
+2018-08-21T17:52:04.358Z - info: Using extension freeze
+2018-08-21T17:52:04.360Z - info: Using extension debug
+2018-08-21T17:52:04.362Z - info: Using extension express
+2018-08-21T17:52:04.509Z - info: Using extension fop-pdf
+2018-08-21T17:52:04.522Z - info: Using extension pdf-utils
+2018-08-21T17:52:04.714Z - info: Using extension data
+2018-08-21T17:52:04.717Z - info: Using extension chrome-pdf
+2018-08-21T17:52:04.984Z - info: Using extension html-to-xlsx
+2018-08-21T17:52:05.289Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-21T17:52:05.289Z - info: Using extension child-templates
+2018-08-21T17:52:05.295Z - info: Using extension browser-client
+2018-08-21T17:52:05.298Z - info: Using extension licensing
+2018-08-21T17:52:05.407Z - info: Using extension authorization
+2018-08-21T17:52:05.437Z - debug: Extension authorization was disabled
+2018-08-21T17:52:05.454Z - info: Using extension version-control
+2018-08-21T17:52:05.558Z - info: Using extension reports
+2018-08-21T17:52:05.566Z - info: Using extension text
+2018-08-21T17:52:05.571Z - info: Using extension base
+2018-08-21T17:52:05.581Z - info: Using extension studio
+2018-08-21T17:52:05.628Z - info: Using extension fs-store
+2018-08-21T17:52:06.103Z - debug: Extension fs-store was disabled
+2018-08-21T17:52:06.103Z - info: Using extension scripts
+2018-08-21T17:52:06.112Z - info: Using extension assets
+2018-08-21T17:52:06.138Z - info: Using extension scheduling
+2018-08-21T17:52:06.195Z - info: Using extension xlsx
+2018-08-21T17:52:06.314Z - info: Using extension sample-template
+2018-08-21T17:52:06.316Z - debug: Creating samples is disabled
+2018-08-21T17:52:06.316Z - info: Using extension resources
+2018-08-21T17:52:06.319Z - info: Using extension public-templates
+2018-08-21T17:52:06.322Z - debug: Extension public-templates was disabled
+2018-08-21T17:52:06.414Z - info: Configuring routes for existing express app.
+2018-08-21T17:52:06.439Z - info: Using existing server instance.
+2018-08-21T17:52:06.440Z - info: Verifying license key free
+2018-08-21T17:52:06.441Z - info: Using free license
+2018-08-21T17:52:06.448Z - info: reporter initialized
+2018-08-21T17:56:01.257Z - info: Starting rendering request 1 (user: null)
+2018-08-21T17:56:01.263Z - warn: Error when processing render request Unable to find specified template or user doesnt have permissions to read it: TicketFactura Error: Unable to find specified template or user doesnt have permissions to read it: TicketFactura
+    at module.exports (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-core\lib\util\createError.js:9:13)
+    at Reporter.createError (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-core\lib\reporter.js:258:12)
+    at AsyncFunction.<anonymous> (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-templates\lib\templates.js:54:20)
+    at <anonymous>
+2018-08-21T17:56:01.291Z - info: Starting rendering request 2 (user: null)
+2018-08-21T17:56:01.294Z - warn: Error when processing render request Unable to find specified template or user doesnt have permissions to read it: TicketFactura Error: Unable to find specified template or user doesnt have permissions to read it: TicketFactura
+    at module.exports (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-core\lib\util\createError.js:9:13)
+    at Reporter.createError (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-core\lib\reporter.js:258:12)
+    at AsyncFunction.<anonymous> (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-templates\lib\templates.js:54:20)
+    at <anonymous>
+2018-08-21T20:31:58.266Z - info: Initializing jsreport@2.1.1 in development mode using configuration file: none
+2018-08-21T20:31:58.267Z - info: Searching for available extensions in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-21T20:31:58.273Z - info: Extensions location cache contains up to date information, skipping crawling in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-21T20:31:58.851Z - info: Found 32 extensions
+2018-08-21T20:31:58.891Z - debug: Writing extension locations cache to C:\Users\DESARR~1\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-21T20:31:58.893Z - debug: Discovered 32 extensions
+2018-08-21T20:31:58.939Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-21T20:31:58.944Z - info: Using extension import-export
+2018-08-21T20:31:59.188Z - info: Using extension tags
+2018-08-21T20:31:59.192Z - info: Using extension templates
+2018-08-21T20:31:59.197Z - info: Using extension jsrender
+2018-08-21T20:31:59.198Z - info: Using extension authentication
+2018-08-21T20:31:59.312Z - debug: Extension authentication was disabled
+2018-08-21T20:31:59.312Z - info: Using extension handlebars
+2018-08-21T20:31:59.314Z - info: Using extension cli
+2018-08-21T20:31:59.315Z - info: Using extension freeze
+2018-08-21T20:31:59.317Z - info: Using extension debug
+2018-08-21T20:31:59.319Z - info: Using extension express
+2018-08-21T20:31:59.446Z - info: Using extension fop-pdf
+2018-08-21T20:31:59.450Z - info: Using extension pdf-utils
+2018-08-21T20:31:59.578Z - info: Using extension data
+2018-08-21T20:31:59.582Z - info: Using extension chrome-pdf
+2018-08-21T20:31:59.705Z - info: Using extension html-to-xlsx
+2018-08-21T20:31:59.877Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-21T20:31:59.878Z - info: Using extension child-templates
+2018-08-21T20:31:59.881Z - info: Using extension browser-client
+2018-08-21T20:31:59.884Z - info: Using extension licensing
+2018-08-21T20:31:59.942Z - info: Using extension authorization
+2018-08-21T20:31:59.945Z - debug: Extension authorization was disabled
+2018-08-21T20:31:59.945Z - info: Using extension version-control
+2018-08-21T20:31:59.987Z - info: Using extension reports
+2018-08-21T20:31:59.990Z - info: Using extension text
+2018-08-21T20:31:59.991Z - info: Using extension base
+2018-08-21T20:31:59.993Z - info: Using extension studio
+2018-08-21T20:32:00.042Z - info: Using extension fs-store
+2018-08-21T20:32:00.352Z - debug: Extension fs-store was disabled
+2018-08-21T20:32:00.352Z - info: Using extension scripts
+2018-08-21T20:32:00.357Z - info: Using extension assets
+2018-08-21T20:32:00.400Z - info: Using extension scheduling
+2018-08-21T20:32:00.458Z - info: Using extension xlsx
+2018-08-21T20:32:00.552Z - info: Using extension sample-template
+2018-08-21T20:32:00.554Z - debug: Creating samples is disabled
+2018-08-21T20:32:00.554Z - info: Using extension resources
+2018-08-21T20:32:00.556Z - info: Using extension public-templates
+2018-08-21T20:32:00.558Z - debug: Extension public-templates was disabled
+2018-08-21T20:32:00.625Z - info: Configuring routes for existing express app.
+2018-08-21T20:32:00.642Z - info: Using existing server instance.
+2018-08-21T20:32:00.643Z - info: Verifying license key free
+2018-08-21T20:32:00.644Z - info: Using free license
+2018-08-21T20:32:00.647Z - info: reporter initialized
+2018-08-21T20:33:33.629Z - info: Starting rendering request 1 (user: null)
+2018-08-21T20:33:33.635Z - warn: Error when processing render request Unable to find specified template or user doesnt have permissions to read it: TicketFactura Error: Unable to find specified template or user doesnt have permissions to read it: TicketFactura
+    at module.exports (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-core\lib\util\createError.js:9:13)
+    at Reporter.createError (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-core\lib\reporter.js:258:12)
+    at AsyncFunction.<anonymous> (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-templates\lib\templates.js:54:20)
+    at <anonymous>
+2018-08-21T20:33:33.669Z - info: Starting rendering request 2 (user: null)
+2018-08-21T20:33:33.673Z - warn: Error when processing render request Unable to find specified template or user doesnt have permissions to read it: TicketFactura Error: Unable to find specified template or user doesnt have permissions to read it: TicketFactura
+    at module.exports (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-core\lib\util\createError.js:9:13)
+    at Reporter.createError (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-core\lib\reporter.js:258:12)
+    at AsyncFunction.<anonymous> (C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-templates\lib\templates.js:54:20)
+    at <anonymous>
+2018-08-21T20:34:49.363Z - debug: OData query on templates
+2018-08-21T20:34:49.369Z - debug: OData query on tags
+2018-08-21T20:34:49.371Z - debug: OData query on data
+2018-08-21T20:34:49.371Z - debug: OData query on scripts
+2018-08-21T20:34:49.379Z - debug: OData query on assets
+2018-08-21T20:34:49.381Z - debug: OData query on xlsxTemplates
+2018-08-21T20:34:49.383Z - debug: OData query on schedules
+2018-08-21T20:34:49.390Z - debug: OData query on settings
+2018-08-21T20:34:49.466Z - debug: OData query on templates
+2018-08-21T20:34:49.485Z - debug: OData query on settings
+2018-08-21T23:08:08.380Z - info: Initializing jsreport@2.1.1 in development mode using configuration file: none
+2018-08-21T23:08:08.383Z - info: Searching for available extensions in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-21T23:08:08.427Z - info: Extensions location cache contains up to date information, skipping crawling in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-21T23:08:09.015Z - info: Found 32 extensions
+2018-08-21T23:08:09.083Z - debug: Writing extension locations cache to C:\Users\DESARR~1\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-21T23:08:09.085Z - debug: Discovered 32 extensions
+2018-08-21T23:08:09.086Z - warn: Filtering out duplicated extension "fs-store" from C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\node_modules\jsreport-fs-store
+2018-08-21T23:08:09.124Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-21T23:08:09.129Z - info: Using extension freeze
+2018-08-21T23:08:09.147Z - info: Using extension import-export
+2018-08-21T23:08:10.655Z - info: Using extension debug
+2018-08-21T23:08:10.665Z - info: Using extension express
+2018-08-21T23:08:11.478Z - info: Using extension fop-pdf
+2018-08-21T23:08:11.485Z - info: Using extension cli
+2018-08-21T23:08:11.494Z - info: Using extension handlebars
+2018-08-21T23:08:11.516Z - info: Using extension authentication
+2018-08-21T23:08:12.320Z - debug: Extension authentication was disabled
+2018-08-21T23:08:12.320Z - info: Using extension jsrender
+2018-08-21T23:08:12.320Z - info: Using extension templates
+2018-08-21T23:08:12.347Z - info: Using extension tags
+2018-08-21T23:08:12.382Z - info: Using extension browser-client
+2018-08-21T23:08:12.386Z - info: Using extension child-templates
+2018-08-21T23:08:12.418Z - info: Using extension fs-store
+2018-08-21T23:08:12.421Z - debug: Extension fs-store was disabled
+2018-08-21T23:08:12.422Z - info: Using extension chrome-pdf
+2018-08-21T23:08:13.199Z - info: Using extension html-to-xlsx
+2018-08-21T23:08:14.264Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-21T23:08:14.265Z - info: Using extension data
+2018-08-21T23:08:14.306Z - info: Using extension licensing
+2018-08-21T23:08:14.715Z - info: Using extension pdf-utils
+2018-08-21T23:08:15.240Z - info: Using extension version-control
+2018-08-21T23:08:15.571Z - info: Using extension reports
+2018-08-21T23:08:15.583Z - info: Using extension text
+2018-08-21T23:08:15.595Z - info: Using extension authorization
+2018-08-21T23:08:15.618Z - debug: Extension authorization was disabled
+2018-08-21T23:08:15.619Z - info: Using extension base
+2018-08-21T23:08:15.622Z - info: Using extension studio
+2018-08-21T23:08:15.833Z - info: Using extension scripts
+2018-08-21T23:08:15.850Z - info: Using extension scheduling
+2018-08-21T23:08:16.038Z - info: Using extension xlsx
+2018-08-21T23:08:16.637Z - info: Using extension assets
+2018-08-21T23:08:16.748Z - info: Using extension sample-template
+2018-08-21T23:08:16.760Z - debug: Creating samples is disabled
+2018-08-21T23:08:16.761Z - info: Using extension resources
+2018-08-21T23:08:16.773Z - info: Using extension public-templates
+2018-08-21T23:08:16.788Z - debug: Extension public-templates was disabled
+2018-08-21T23:08:16.856Z - info: Configuring routes for existing express app.
+2018-08-21T23:08:17.239Z - info: Using existing server instance.
+2018-08-21T23:08:17.240Z - info: Verifying license key free
+2018-08-21T23:08:17.241Z - info: Using free license
+2018-08-21T23:08:17.261Z - info: reporter initialized
+2018-08-21T23:14:26.191Z - debug: OData query on templates
+2018-08-21T23:14:26.195Z - debug: OData query on tags
+2018-08-21T23:14:26.199Z - debug: OData query on data
+2018-08-21T23:14:26.202Z - debug: OData query on scripts
+2018-08-21T23:14:26.204Z - debug: OData query on xlsxTemplates
+2018-08-21T23:14:26.207Z - debug: OData query on assets
+2018-08-21T23:14:26.209Z - debug: OData query on schedules
+2018-08-21T23:14:26.217Z - debug: OData query on settings
+2018-08-21T23:14:26.372Z - debug: OData query on templates
+2018-08-21T23:14:26.395Z - debug: OData query on settings
+2018-08-21T23:14:31.387Z - debug: OData query on templates
+2018-08-21T23:14:31.562Z - debug: OData query on settings
+2018-08-21T23:14:33.754Z - debug: OData insert into templates
+2018-08-21T23:14:35.589Z - debug: OData query on templates
+2018-08-21T23:14:35.591Z - debug: OData query on tags
+2018-08-21T23:14:35.596Z - debug: OData query on data
+2018-08-21T23:14:35.597Z - debug: OData query on scripts
+2018-08-21T23:14:35.598Z - debug: OData query on xlsxTemplates
+2018-08-21T23:14:35.602Z - debug: OData query on assets
+2018-08-21T23:14:35.606Z - debug: OData query on schedules
+2018-08-21T23:14:35.609Z - debug: OData query on settings
+2018-08-21T23:14:35.713Z - debug: OData query on templates
+2018-08-21T23:29:52.149Z - info: Initializing jsreport@2.1.1 in development mode using configuration file: none
+2018-08-21T23:29:52.151Z - info: Searching for available extensions in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-21T23:29:52.157Z - info: Extensions location cache contains up to date information, skipping crawling in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-21T23:29:52.739Z - info: Found 32 extensions
+2018-08-21T23:29:52.781Z - debug: Writing extension locations cache to C:\Users\DESARR~1\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-21T23:29:52.784Z - debug: Discovered 32 extensions
+2018-08-21T23:29:52.824Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-21T23:29:52.830Z - info: Using extension import-export
+2018-08-21T23:29:53.060Z - info: Using extension tags
+2018-08-21T23:29:53.066Z - info: Using extension templates
+2018-08-21T23:29:53.071Z - info: Using extension jsrender
+2018-08-21T23:29:53.072Z - info: Using extension authentication
+2018-08-21T23:29:53.180Z - debug: Extension authentication was disabled
+2018-08-21T23:29:53.181Z - info: Using extension handlebars
+2018-08-21T23:29:53.183Z - info: Using extension cli
+2018-08-21T23:29:53.184Z - info: Using extension freeze
+2018-08-21T23:29:53.186Z - info: Using extension debug
+2018-08-21T23:29:53.188Z - info: Using extension express
+2018-08-21T23:29:53.325Z - info: Using extension fop-pdf
+2018-08-21T23:29:53.330Z - info: Using extension pdf-utils
+2018-08-21T23:29:53.465Z - info: Using extension data
+2018-08-21T23:29:53.469Z - info: Using extension chrome-pdf
+2018-08-21T23:29:53.571Z - info: Using extension html-to-xlsx
+2018-08-21T23:29:53.728Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-21T23:29:53.729Z - info: Using extension child-templates
+2018-08-21T23:29:53.733Z - info: Using extension browser-client
+2018-08-21T23:29:53.736Z - info: Using extension licensing
+2018-08-21T23:29:53.793Z - info: Using extension authorization
+2018-08-21T23:29:53.796Z - debug: Extension authorization was disabled
+2018-08-21T23:29:53.797Z - info: Using extension version-control
+2018-08-21T23:29:53.830Z - info: Using extension reports
+2018-08-21T23:29:53.834Z - info: Using extension text
+2018-08-21T23:29:53.835Z - info: Using extension base
+2018-08-21T23:29:53.837Z - info: Using extension studio
+2018-08-21T23:29:53.870Z - info: Using extension fs-store
+2018-08-21T23:29:54.171Z - debug: Extension fs-store was disabled
+2018-08-21T23:29:54.171Z - info: Using extension scripts
+2018-08-21T23:29:54.176Z - info: Using extension assets
+2018-08-21T23:29:54.191Z - info: Using extension scheduling
+2018-08-21T23:29:54.238Z - info: Using extension xlsx
+2018-08-21T23:29:54.317Z - info: Using extension sample-template
+2018-08-21T23:29:54.320Z - debug: Creating samples is disabled
+2018-08-21T23:29:54.320Z - info: Using extension resources
+2018-08-21T23:29:54.322Z - info: Using extension public-templates
+2018-08-21T23:29:54.324Z - debug: Extension public-templates was disabled
+2018-08-21T23:29:54.387Z - info: Configuring routes for existing express app.
+2018-08-21T23:29:54.409Z - info: Using existing server instance.
+2018-08-21T23:29:54.410Z - info: Verifying license key free
+2018-08-21T23:29:54.412Z - info: Using free license
+2018-08-21T23:29:54.416Z - info: reporter initialized
+2018-08-22T00:02:46.194Z - info: Initializing jsreport@2.1.1 in development mode using configuration file: none
+2018-08-22T00:02:46.196Z - info: Searching for available extensions in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-22T00:02:46.203Z - info: Extensions location cache contains up to date information, skipping crawling in C:\Users\Desarrollo04\Documents\GitHub\AppReact\iFacturacionPale\
+2018-08-22T00:02:46.849Z - info: Found 32 extensions
+2018-08-22T00:02:46.891Z - debug: Writing extension locations cache to C:\Users\DESARR~1\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-22T00:02:46.892Z - debug: Discovered 32 extensions
+2018-08-22T00:02:46.938Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-22T00:02:46.946Z - info: Using extension import-export
+2018-08-22T00:02:47.266Z - info: Using extension tags
+2018-08-22T00:02:47.272Z - info: Using extension templates
+2018-08-22T00:02:47.281Z - info: Using extension jsrender
+2018-08-22T00:02:47.282Z - info: Using extension authentication
+2018-08-22T00:02:47.449Z - debug: Extension authentication was disabled
+2018-08-22T00:02:47.450Z - info: Using extension handlebars
+2018-08-22T00:02:47.461Z - info: Using extension cli
+2018-08-22T00:02:47.463Z - info: Using extension freeze
+2018-08-22T00:02:47.465Z - info: Using extension debug
+2018-08-22T00:02:47.467Z - info: Using extension express
+2018-08-22T00:02:47.747Z - info: Using extension fop-pdf
+2018-08-22T00:02:47.751Z - info: Using extension pdf-utils
+2018-08-22T00:02:47.875Z - info: Using extension data
+2018-08-22T00:02:47.878Z - info: Using extension chrome-pdf
+2018-08-22T00:02:47.974Z - info: Using extension html-to-xlsx
+2018-08-22T00:02:48.134Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-22T00:02:48.135Z - info: Using extension child-templates
+2018-08-22T00:02:48.139Z - info: Using extension browser-client
+2018-08-22T00:02:48.142Z - info: Using extension licensing
+2018-08-22T00:02:48.203Z - info: Using extension authorization
+2018-08-22T00:02:48.206Z - debug: Extension authorization was disabled
+2018-08-22T00:02:48.206Z - info: Using extension version-control
+2018-08-22T00:02:48.245Z - info: Using extension reports
+2018-08-22T00:02:48.248Z - info: Using extension text
+2018-08-22T00:02:48.249Z - info: Using extension base
+2018-08-22T00:02:48.251Z - info: Using extension studio
+2018-08-22T00:02:48.278Z - info: Using extension fs-store
+2018-08-22T00:02:48.598Z - debug: Extension fs-store was disabled
+2018-08-22T00:02:48.598Z - info: Using extension scripts
+2018-08-22T00:02:48.605Z - info: Using extension assets
+2018-08-22T00:02:48.627Z - info: Using extension scheduling
+2018-08-22T00:02:48.673Z - info: Using extension xlsx
+2018-08-22T00:02:48.763Z - info: Using extension sample-template
+2018-08-22T00:02:48.765Z - debug: Creating samples is disabled
+2018-08-22T00:02:48.765Z - info: Using extension resources
+2018-08-22T00:02:48.767Z - info: Using extension public-templates
+2018-08-22T00:02:48.769Z - debug: Extension public-templates was disabled
+2018-08-22T00:02:48.828Z - info: Configuring routes for existing express app.
+2018-08-22T00:02:48.842Z - info: Using existing server instance.
+2018-08-22T00:02:48.844Z - info: Verifying license key free
+2018-08-22T00:02:48.845Z - info: Using free license
+2018-08-22T00:02:48.847Z - info: reporter initialized
