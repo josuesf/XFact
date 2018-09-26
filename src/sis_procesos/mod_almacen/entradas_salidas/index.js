@@ -27,7 +27,7 @@ function VerEntradasSalidas(variables,CodTipoComprobante,fecha_actual) {
     global.variablesES[idTabES]={idTab:idTabES,contador:0,idFilaSeleccionada:0,idFilaSeleccionadaSerie:0}
 
     var tab = yo`
-    <li class="" ><a href="#tab_${idTabES}" data-toggle="tab" aria-expanded="false" id="id_${idTabES}">${CodTipoComprobante=="NE"?"NOTA DE ENTRADA":"NOTA DE SALIDA - GUIA DE REMISION"} <a style="padding-left: 10px;"  onclick=${()=>CerrarTabES(idTabES)} class="btn"><i class="fa fa-close text-danger"></i></a></a></li>`
+    <li class="" ><a href="#tab_${idTabES}" data-toggle="tab" aria-expanded="false" id="id_${idTabES}">${CodTipoComprobante=="NE"?"NOTA DE ENTRADA":"NOTA DE SALIDA - GUIA DE REMISION"} <a style="padding-left: 10px;font-size:15px"  onclick=${()=>CerrarTabES(idTabES)}><i class="zmdi zmdi-close"></i></a></a></li>`
 
     var el = yo`
     <div class="tab-pane" id="tab_${idTabES}">
@@ -692,7 +692,7 @@ function CambioOperacion(CodTipoComprobante,idTab){
         
                 }).catch(function (e) {
                     console.log(e);
-                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 });
                 
         }else{
@@ -716,7 +716,7 @@ function CambioOperacion(CodTipoComprobante,idTab){
             
                     }).catch(function (e) {
                         console.log(e);
-                        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                     });
                 
             }
@@ -766,7 +766,7 @@ function CargarDatosAControles(CodTipoComprobante,fecha_actual,idTab){
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -808,7 +808,7 @@ function CargarElementos(CodTipoComprobante,movimientos_almacen,fecha_actual,idT
             LlenarDetallesMovAlmacen(CodTipoComprobante,res.data.movimientos_detalle_almacen,fecha_actual,idTab)
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -841,7 +841,7 @@ function RecuperarProductos(CodTipoComprobante,fecha_actual,idTab){
             $('#divTablaProductos_'+idTab).waitMe('hide');
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#divTablaProductos_'+idTab).waitMe('hide');
         });
 }
@@ -987,21 +987,21 @@ function AceptarRegistro(CodTipoComprobante,fecha_actual,idTab){
                         fetch(URL + '/productos_serv_api/update_producto_stock', parametros)
                         .then(req => req.json())
                         .then(res => {
-                            toastr.success('Se guardo correctamente el registro','Confirmacion',{timeOut: 5000})
+                            swal("Confirmacion",'Se guardo correctamente el registro', "success") 
                             RefrescarEntradasSalidas(CodTipoComprobante,idTab)
                             //refrescar_movimientos()
                         }).catch(function (e) {
                             console.log(e);
-                            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                         });
                     }else{
-                        toastr.error('Ocurrio un error. Intentelo mas tarde','Error',{timeOut: 5000})
+                        swal("Error!",'Ocurrio un error. Intentelo mas tarde', "error") 
                     }  
                     $('#modal-superior').modal('hide') 
                     $('#modal-superior').waitMe('hide');
                 }).catch(function (e) {
                     console.log(e);
-                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                     $('#modal-superior').waitMe('hide');
                 });
 
@@ -1015,14 +1015,14 @@ function EsValido(idTab){
             if($("#Motivo_"+idTab).val().trim()!=""){
                 return true
             }else{
-                toastr.error('Debe de ingresar un Motivo para el Movimiento de Almacen.','Error',{timeOut: 5000})
+                swal("Error!",'Debe de ingresar un Motivo para el Movimiento de Almacen.', "error") 
             }
         }else{
-            toastr.error('Debe de Selecionar un Tipo de Operacion.','Error',{timeOut: 5000}) 
+            swal("Error!",'Debe de Selecionar un Tipo de Operacion.', "error") 
             $("#Cod_Operacion_"+idTab).focus()
         }
     }else{
-        toastr.error('Debe de Selecionar un Almacen.','Error',{timeOut: 5000}) 
+        swal("Error!",'Debe de Selecionar un Almacen.', "error") 
         $("#Cod_Almacen_"+idTab).focus()
     }
      
@@ -1083,22 +1083,22 @@ function RefrescarEntradasSalidas(Cod_TipoComprobante,idTab) {
                             variables['empresa'] = data_empresa 
                             RefrescarVerEntradasSalidas(variables,Cod_TipoComprobante,fecha_format,idTab)
                         }else{
-                            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+res.detalle_error,'Error',{timeOut: 5000})
+                            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                         }
                         $('#main-contenido').waitMe('hide');
             
                     }).catch(function (e) {
                         console.log(e);
-                        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                         $('#main-contenido').waitMe('hide');
                     });
             }else{
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+res.detalle_error,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 $('#main-contenido').waitMe('hide');
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 }
@@ -1144,23 +1144,23 @@ function EntradasSalidas(Cod_TipoComprobante) {
                             variables['empresa'] = data_empresa 
                             VerEntradasSalidas(variables,Cod_TipoComprobante,fecha_format)
                         }else{
-                            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+res.detalle_error,'Error',{timeOut: 5000})
+                            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+res.detalle_error, "error") 
                         }
                         $('#main-contenido').waitMe('hide');
             
                     }).catch(function (e) {
                         console.log(e);
-                        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                         $('#main-contenido').waitMe('hide');
                     });
             }else{
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+res.detalle_error,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+res.detalle_error, "error") 
                 $('#main-contenido').waitMe('hide');
             }
 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 }

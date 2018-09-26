@@ -235,13 +235,13 @@ function LlenarTablaSeries(productos){
             $("#txtBuscarSerie").val("")
             $("#txtBuscarSerie").focus()
         }else{
-            toastr.error('El producto ya fue despachado de este Almacen','Error',{timeOut: 5000}) 
+            swal("Error!",'El producto ya fue despachado de este Almacen', "error") 
             $("#txtBuscarSerie").val("")
             $("#txtBuscarSerie").focus()
         }
        
     }else{
-        toastr.error('El producto ya se encuentra en este Almacen','Error',{timeOut: 5000}) 
+        swal("Error!",'El producto ya se encuentra en este Almacen', "error") 
         $("#txtBuscarSerie").val("")
         $("#txtBuscarSerie").focus()
     }
@@ -344,7 +344,7 @@ function TraerTOPXSerie(){
             $('#modal-otros-procesos').waitMe('hide');
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#modal-otros-procesos').waitMe('hide');
         });
 }
@@ -438,7 +438,7 @@ function AceptarAsignarSerie() {
             global.arraySeries =arraySeries
         })
     } else {
-        toastr.error('Debe de ingresar todas las series antes de salir de esta ventana', 'Error', { timeOut: 5000 })
+        swal("Error!",'Debe de ingresar todas las series antes de salir de esta ventana', "error") 
     }
 }
 
@@ -506,7 +506,7 @@ function AsignarSeriesModal(Cod_Almacen, Id_Producto, Cantidad, NroDias, _Series
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#modal-otros-procesos').waitMe('hide');
         });
 
@@ -535,7 +535,7 @@ function BuscarPorSerie(){
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#modal-otros-procesos').waitMe('hide');
         });
 }

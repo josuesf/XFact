@@ -96,7 +96,7 @@ function BuscarComprobantePago(CodLibro){
         }
     }).catch(function (e) {
         console.log(e);
-        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
     });
 }
 
@@ -132,14 +132,14 @@ function AceptarComprobante(CodLibro){
                     }
                     global.objComprobantePago = res.data.comprobante[0]
                 }else{
-                    toastr.error('No existe Comprobante','Error',{timeOut: 5000})
+                    swal("Error!",'No existe Comprobante', "error") 
                     $("#NumeroModalBusquedaComprobante").val("")
                     $("#NumeroModalBusquedaComprobante").focus()
                 }
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 
     }else{
@@ -174,14 +174,14 @@ function AceptarComprobante(CodLibro){
                     }
                     global.objComprobantePago = res.data.comprobante[0]
                 }else{
-                    toastr.error('No existe Comprobante','Error',{timeOut: 5000})
+                    swal("Error!",'No existe Comprobante', "error") 
                     $("#NumeroModalBusquedaComprobante").val("")
                     $("#NumeroModalBusquedaComprobante").focus()
                 }
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 
     }

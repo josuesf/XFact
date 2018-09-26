@@ -12,7 +12,7 @@ function Ver(_escritura, variables,fecha_actual,caja_actual) {
     const idTabT = "T_"+cantidad_tabs
 
     var tab = yo`
-    <li class="" ><a href="#tab_${idTabT}" data-toggle="tab" aria-expanded="false" id="id_${idTabT}">Transferencias entre cajas <a style="padding-left: 10px;"  onclick=${()=>CerrarTabT(idTabT)} class="btn"><i class="fa fa-close text-danger"></i></a></a></li>`
+    <li class="" ><a href="#tab_${idTabT}" data-toggle="tab" aria-expanded="false" id="id_${idTabT}">Transferencias entre cajas <a style="padding-left: 10px;font-size:15px"  onclick=${()=>CerrarTabT(idTabT)}><i class="zmdi zmdi-close"></i></a></a></li>`
 
 
     var el = yo`
@@ -435,7 +435,7 @@ function GuardarMovEgresoBanco(Cod_Caja,Cod_Turno,Id_Concepto,Id_ClienteProveedo
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 }
@@ -524,16 +524,16 @@ function GuardarMovCuentaBancaria(variables,idTab){
                     .then(res => {  
                         $('#main-contenido').waitMe('hide');
                         if (res.respuesta == 'ok') {
-                            toastr.success('Se registro correctamente el movimiento','Confirmacion',{timeOut: 5000})
+                            swal("Confirmacion",'Se registro correctamente el movimiento', "success") 
                             RefrescarEnvioEfectivo(true,idTab)
                             //refrescar_movimientos()
                         }
                         else {
-                            toastr.error('No se pudo registrar correctamente el movimiento','Error',{timeOut: 5000})  
+                            swal("Error!",'No se pudo registrar correctamente el movimiento', "error") 
                         }
                     }).catch(function (e) {
                         console.log(e);
-                        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                         $('#main-contenido').waitMe('hide');
                     });
 
@@ -542,12 +542,12 @@ function GuardarMovCuentaBancaria(variables,idTab){
                 } 
             }
             else {
-                toastr.error('No se pudo registrar correctamente el movimiento','Error',{timeOut: 5000})    
+                swal("Error!",'No se pudo registrar correctamente el movimiento', "error")  
                 $('#main-contenido').waitMe('hide');
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 }
@@ -604,12 +604,12 @@ function GuardarMovEgresoCaja(Cod_Caja,Cod_Turno,Id_Concepto,Id_ClienteProveedor
                     GuardarMovIngresoOtraCaja(Cod_Caja,Cod_Turno,Id_Concepto,Id_ClienteProveedor,Cliente,Des_Movimiento,Fecha,Cod_MonedaEgr,Cod_MonedaIng,Fecha_Aut,Serie,Tipo_Cambio,Ingreso,Egreso,Flag_Extornado,Id_MovimientoRef, variables,idTab)
                 }
                 else {
-                    toastr.error('No se pudo registrar correctamente el movimiento','Error',{timeOut: 5000})    
+                    swal("Error!",'No se pudo registrar correctamente el movimiento', "error") 
                     $('#main-contenido').waitMe('hide');
                 }
             }).catch(function (e) {
                 console.log(e);
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 $('#main-contenido').waitMe('hide');
             });
 }
@@ -647,16 +647,16 @@ function GuardarMovIngresoOtraCaja(Cod_Caja,Cod_Turno,Id_Concepto,Id_ClienteProv
         .then(res => { 
             $('#main-contenido').waitMe('hide');
             if (res.respuesta == 'ok') {
-                toastr.success('Se registro correctamente el movimiento','Confirmacion',{timeOut: 5000}) 
+                swal("Confirmacion",'Se registro correctamente el movimiento', "success") 
                 RefrescarEnvioEfectivo(true,idTab)
                 //refrescar_movimientos()
             }
             else {
-                toastr.error('No se pudo registrar correctamente el movimiento','Error',{timeOut: 5000})  
+                swal("Error!",'No se pudo registrar correctamente el movimiento', "error") 
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 }
@@ -697,7 +697,7 @@ function RefrescarEnvioEfectivo(_escritura,idTab) {
             $('#main-contenido').waitMe('hide');
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 }
@@ -737,7 +737,7 @@ function NuevoEnvioEfectivo(_escritura, caja) {
             $('#main-contenido').waitMe('hide');
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 }

@@ -1275,7 +1275,7 @@ function AplicarPercepcion(CodLibro,variables){
         CalcularTotal(CodLibro,variables)
         $("#modal-otros-procesos").modal('hide')
     }else{
-        toastr.error('Error al ingresar el procentaje de Percepcion, intentelo de nuevo.','Error',{timeOut: 5000})
+        swal("Error!",'Error al ingresar el procentaje de Percepcion, intentelo de nuevo.', "error") 
     }
 }
 
@@ -1550,7 +1550,7 @@ function AbrirModalFormasPago(variables,fecha_actual){
             $('#modal-proceso').waitMe('hide');
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#modal-proceso').waitMe('hide');
         });
 }
@@ -1780,7 +1780,7 @@ function AgregarMontoFormaPago(Cod_Moneda,Tipo_Cambio){
                 AgregarFilaFormaPago(_DesFormaPago, _CodFormaPago, _CodMoneda, parseFloat($("#MontoFormaPago").val()).toFixed(2),  parseFloat(_TipoCambio).toFixed(3), $("#ReferenciaFormaPago").val(),Tipo_Cambio,Cod_Moneda);
             }
             else{
-                toastr.error('Para pagos con tarjeta debe especificar un numero de tarjeta','Error',{timeOut: 5000})
+                swal("Error!",'Para pagos con tarjeta debe especificar un numero de tarjeta', "error") 
                 $("#RecuperarTipoCambio").focus();
             }
 
@@ -1789,7 +1789,7 @@ function AgregarMontoFormaPago(Cod_Moneda,Tipo_Cambio){
         }
 
     }else{
-        toastr.error('El monto introduciudo debe ser mayor a 0','Error',{timeOut: 5000})  
+        swal("Error!",'El monto introduciudo debe ser mayor a 0', "error")   
         $("#MontoFormaPago").val("0.00")
         $("#MontoFormaPago").focus()
     }
@@ -1823,7 +1823,7 @@ function CompletarSaldo(){
             $("#MontoFormaPago").val((parseFloat(aSaldo)/parseFloat($("#Tipo_Cambio_FormaPago").val())).toFixed(2))
         }
     }catch(e){
-        toastr.error('Error, valor no valido: -'+ $("#MontoFormaPago").val()+ ' es menor que 0','Error',{timeOut: 5000})
+        swal("Error!",'Error, valor no valido: -'+ $("#MontoFormaPago").val()+ ' es menor que 0', "error") 
     }
 
 }
@@ -2135,7 +2135,7 @@ function EsValido(CodLibro,callback){
                                             if(flag){
                                                 callback(true)
                                             }else{
-                                                toastr.error('Debe de Ingresar una Serie para Cada Producto','Error',{timeOut: 5000}) 
+                                                swal("Error!",'Debe de Ingresar una Serie para Cada Producto', "error") 
                                                 callback(false)
                                             }
                                         })
@@ -2150,27 +2150,27 @@ function EsValido(CodLibro,callback){
                             //    callback(false)
                             //}
                         }else{
-                            toastr.error('Debe de seleccionar un Pago Adelantado que sea superior o igual al Monto Total de Comprobante','Error',{timeOut: 5000}) 
+                            swal("Error!",'Debe de seleccionar un Pago Adelantado que sea superior o igual al Monto Total de Comprobante', "error")  
                             callback(false)
                         }
                     }else{
-                        toastr.error('Debe ingresar como minimo un Detalle en el Comprobante','Error',{timeOut: 5000}) 
+                        swal("Error!",'Debe ingresar como minimo un Detalle en el Comprobante', "error")  
                         callback(false)
                     }
-                }else{
-                    toastr.error('Debe Selecionar un Comprobante','Error',{timeOut: 5000}) 
+                }else{ 
+                    swal("Error!",'Debe Selecionar un Comprobante', "error") 
                     callback(false)
                 }
-            }else{
-                toastr.error('Debe ingresar un Numero para este Comprobante','Error',{timeOut: 5000}) 
+            }else{ 
+                swal("Error!",'Debe ingresar un Numero para este Comprobante', "error")
                 callback(false)
             }
         }else{
-            toastr.error('Debe ingresar o seleccionar una serie para este Comprobante','Error',{timeOut: 5000}) 
+            swal("Error!",'Debe ingresar o seleccionar una serie para este Comprobante', "error") 
             callback(false)
         }
     }else{
-        toastr.error('Debe seleccionar un cliente si por defecto dejarlo en CLIENTES VARIOS','Error',{timeOut: 5000}) 
+        swal("Error!",'Debe seleccionar un cliente si por defecto dejarlo en CLIENTES VARIOS', "error")  
         callback(false)
     }
      
@@ -2276,7 +2276,7 @@ function DeterminarTipoIGV(flagImpuesto,flagExportacion,Por_Impuesto,Tipo,SubTot
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }*/
 
@@ -2315,7 +2315,7 @@ function GuardarFormaPago(id_ComprobantePago,Item,Des_FormaPago,Cod_TipoFormaPag
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -2355,7 +2355,7 @@ function GuardarFormaPagoRecursivo(indiceFormaPago,idComprobante,callback){
                 }
             }).catch(function (e) {
                 console.log(e);
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             });
    }else{
        callback(true)
@@ -2417,7 +2417,7 @@ function GuardarOperacionBancaria(callback){
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
     
 }
@@ -2458,7 +2458,7 @@ function GuardarSeries(indiceSerie,idComprobante,idDetalle,arraySeries,callback)
                 }
             }).catch(function (e) {
                 console.log(e);
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             });
 
     }else{
@@ -2496,7 +2496,7 @@ function GuardarSeries(indiceSerie,idComprobante,idDetalle,arraySeries,callback)
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+           swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }*/
 
@@ -2622,7 +2622,7 @@ function EmisionCompletaDetalles(indiceDetalle,CodLibro,variables,idComprobante,
                         }
                     }).catch(function (e) {
                         console.log(e);
-                        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                     });
             })
         //} 
@@ -2742,7 +2742,7 @@ function PrepararImpresion(arrayData){
                     jsreport.renderAsync(request).then(function(res) {
                         jsreport.render(document.getElementById('divPDF'), request);  
                     }).catch(function (e) {  
-                        toastr.error('Hubo un error al generar el documento. Intentelo mas tarde','Error',{timeOut: 5000})
+                        swal("Error!",'Hubo un error al generar el documento. Intentelo mas tarde', "error") 
                         $('#modal-alerta').modal('hide') 
                     });
                 }
@@ -2952,7 +2952,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                         Cuenta_CajaBanco = ''
                                         GuardarFormaPago(id_ComprobantePago,Item,Des_FormaPago,Cod_TipoFormaPago,Cuenta_CajaBanco,Id_Movimiento,TipoCambio,Cod_Moneda,Monto,null,null,Fecha,function(flagFP){
                                             if(flagFP){
-                                                toastr.success('Se registro correctamente el comprobante','Confirmacion',{timeOut: 5000})
+                                                swal("Confirmacion",'Se registro correctamente el comprobante', "success") 
                                                 $("#modal-proceso").modal("hide")
                                                 $('#modal-alerta').waitMe('hide');
                                                 LimpiarVenta() 
@@ -2967,7 +2967,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
 
                                                 
                                             }else{
-                                                toastr.error('Ocurrio un error al momento de guardar la forma de pago.','Error',{timeOut: 5000})
+                                                swal("Error!",'Ocurrio un error al momento de guardar la forma de pago.', "error") 
                                                 $("#modal-proceso").modal("hide")
                                                 $('#modal-alerta').waitMe('hide')
                                                 $("#modal-alerta").modal("hide")
@@ -2982,7 +2982,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
 
                                                     GuardarFormaPago(id_ComprobantePago,Item,Des_FormaPago,Cod_TipoFormaPago,Cuenta_CajaBanco,Id_Movimiento,TipoCambio,Cod_Moneda,Monto,null,null,Fecha,function(flagFP){
                                                         if(flagFP){
-                                                            toastr.success('Se registro correctamente el comprobante','Confirmacion',{timeOut: 5000})
+                                                            swal("Confirmacion",'Se registro correctamente el comprobante', "success") 
                                                             $("#modal-proceso").modal("hide")
                                                             $('#modal-alerta').waitMe('hide') 
                                                             LimpiarVenta()
@@ -2996,7 +2996,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                                             }
                                                                 
                                                         }else{
-                                                            toastr.error('Ocurrio un error al momento de guardar la forma de pago.','Error',{timeOut: 5000})
+                                                            swal("Error!",'Ocurrio un error al momento de guardar la forma de pago.', "error") 
                                                             $("#modal-proceso").modal("hide")
                                                             $('#modal-alerta').waitMe('hide')
                                                             $("#modal-alerta").modal("hide")
@@ -3004,7 +3004,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                                     })
 
                                                 }else{
-                                                    toastr.error('Ocurrio un error al momento de la guardar operacion bancaria.','Error',{timeOut: 5000})
+                                                    swal("Error!",'Ocurrio un error al momento de la guardar operacion bancaria.', "error") 
                                                     $("#modal-proceso").modal("hide")
                                                     $('#modal-alerta').waitMe('hide')
                                                     $("#modal-alerta").modal("hide")
@@ -3014,7 +3014,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                             Cuenta_CajaBanco = $("#Cuenta_CajaBancos option:selected").text()
                                             GuardarFormaPago(id_ComprobantePago,Item,Des_FormaPago,Cod_TipoFormaPago,Cuenta_CajaBanco,Id_Movimiento,TipoCambio,Cod_Moneda,Monto,null,null,Fecha,function(flagFP){
                                                 if(flagFP){
-                                                    toastr.success('Se registro correctamente el comprobante','Confirmacion',{timeOut: 5000})
+                                                    swal("Confirmacion",'Se registro correctamente el comprobante', "success")  
                                                     $("#modal-proceso").modal("hide")
                                                     $('#modal-alerta').waitMe('hide')
                                                     LimpiarVenta() 
@@ -3028,7 +3028,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                                     } 
                                                         
                                                 }else{
-                                                    toastr.error('Ocurrio un error al momento de guardar la forma de pago.','Error',{timeOut: 5000})
+                                                    swal("Error!",'Ocurrio un error al momento de guardar la forma de pago.', "error") 
                                                     $("#modal-proceso").modal("hide")
                                                     $('#modal-alerta').waitMe('hide')
                                                     $("#modal-alerta").modal("hide")
@@ -3096,7 +3096,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                             .then(req => req.json())
                                             .then(res => {
                                                 if(res.respuesta=='ok'){
-                                                    toastr.success('Se registro correctamente el comprobante','Confirmacion',{timeOut: 5000})
+                                                    swal("Confirmacion",'Se registro correctamente el comprobante', "error") 
                                                     $("#modal-proceso").modal("hide")
                                                     $('#modal-alerta').waitMe('hide') 
                                                     LimpiarVenta()
@@ -3110,7 +3110,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                                     } 
                                                     
                                                 }else{
-                                                    toastr.error('Ocurrio un error al momento de guardar la forma de pago.','Error',{timeOut: 5000})
+                                                    swal("Error!",'Ocurrio un error al momento de guardar la forma de pago.', "error") 
                                                     $("#modal-proceso").modal("hide")
                                                     $('#modal-alerta').waitMe('hide')
                                                     $("#modal-alerta").modal("hide")
@@ -3120,11 +3120,11 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                                 $("#modal-proceso").modal("hide")
                                                 $('#modal-alerta').waitMe('hide')
                                                 $("#modal-alerta").modal("hide")
-                                                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                                                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                                             });
                                         
                                         }else{
-                                            toastr.error('Ocurrio un error al momento de guardar la forma de pago.','Error',{timeOut: 5000})
+                                            swal("Error!",'Ocurrio un error al momento de guardar la forma de pago.', "error") 
                                             $("#modal-proceso").modal("hide")
                                             $('#modal-alerta').waitMe('hide')
                                             $("#modal-alerta").modal("hide")
@@ -3189,7 +3189,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                         if(res.respuesta=='ok'){
                                             GuardarFormaPagoRecursivo(0,idComprobante,function(flag){
                                                 if(flag){
-                                                    toastr.success('Se registro correctamente el comprobante','Confirmacion',{timeOut: 5000})
+                                                    swal("Confirmacion",'Se registro correctamente el comprobante', "success") 
                                                     $("#modal-proceso").modal("hide")
                                                     $('#modal-alerta').waitMe('hide') 
                                                     LimpiarVenta()
@@ -3203,7 +3203,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                                     }
                                                     
                                                 }else{
-                                                    toastr.error('Ocurrio un error al momento de guardar la forma de pago.','Error',{timeOut: 5000})
+                                                    swal("Error!",'Ocurrio un error al momento de guardar la forma de pago.', "error") 
                                                     $("#modal-proceso").modal("hide")
                                                     $('#modal-alerta').waitMe('hide')
                                                     $("#modal-alerta").modal("hide")
@@ -3211,7 +3211,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                             })
                                         
                                         }else{
-                                            toastr.error('Ocurrio un error al momento de guardar la comprobante de pago.','Error',{timeOut: 5000})
+                                            swal("Error!",'Ocurrio un error al momento de guardar la comprobante de pago.', "error") 
                                             $("#modal-proceso").modal("hide")
                                             $('#modal-alerta').waitMe('hide')
                                             $("#modal-alerta").modal("hide")
@@ -3221,20 +3221,20 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                         $("#modal-proceso").modal("hide")
                                         $('#modal-alerta').waitMe('hide')
                                         $("#modal-alerta").modal("hide")
-                                        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error") 
                                     });
 
                                 }
                             }
                     }else{
-                            toastr.error('Ocurrio un error al momento de guardar los detalles del comprobante.','Error',{timeOut: 5000})
+                        swal("Error!",'Ocurrio un error al momento de guardar los detalles del comprobante.', "error") 
                             $("#modal-proceso").modal("hide")
                             $('#modal-alerta').waitMe('hide')
                             $("#modal-alerta").modal("hide")
                     }
                 })
                 }else{
-                    toastr.error('Ocurrio un error al momento de guardar el comprobante.','Error',{timeOut: 5000})
+                    swal("Error!",'Ocurrio un error al momento de guardar el comprobante.', "error")  
                     $("#modal-proceso").modal("hide")
                     $('#modal-alerta').waitMe('hide')
                     $("#modal-alerta").modal("hide")
@@ -3245,7 +3245,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                 $("#modal-proceso").modal("hide")
                 $('#modal-alerta').waitMe('hide')
                 $("#modal-alerta").modal("hide")
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             });
 
 
@@ -3276,7 +3276,7 @@ function CargarTipoPrecio(){
             } 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -3302,7 +3302,7 @@ function CargarUnidadMedida(Id_Producto,Cod_Almacen){
                 }
             }).catch(function (e) {
                 console.log(e);
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             });
     }else{
         
@@ -3327,7 +3327,7 @@ function CargarUnidadMedida(Id_Producto,Cod_Almacen){
                     }
                 }).catch(function (e) {
                     console.log(e);
-                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 });
         }
     }
@@ -3364,7 +3364,7 @@ function CargarUnidadMedida(Id_Producto,Cod_Almacen){
             } 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }*/
 
@@ -3391,12 +3391,12 @@ function CargarSeries(CodLibro){
                         TraerSiguienteNumero(CodLibro)
                     }else{
                         $("#Serie").val("")
-                        toastr.error('No se cuenta con ninguna Serie Autorizada para este tipo de Comprobante.\n\n Solicite al Administrador Autorice una serie para Continuar.','Error',{timeOut: 5000})
+                        swal("Error!",'No se cuenta con ninguna Serie Autorizada para este tipo de Comprobante.\n\n Solicite al Administrador Autorice una serie para Continuar.', "error") 
                     }
                 } 
             }).catch(function (e) {
                 console.log(e);
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             });
 
         CambioComprobantes() 
@@ -3424,7 +3424,7 @@ function CargarAlmacenes(Id_Producto,Cod_Almacen){
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });  
 }
 
@@ -3534,7 +3534,7 @@ function CambioCodCuentaBancaria(CodLibro){
             } 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -3588,7 +3588,7 @@ function CambioNumero(){
         }
     }else{
         $("#Numero").val("")
-        toastr.error('Ingrese un numero correcto y vuelva a intentarlo','Error',{timeOut: 5000})
+        swal("Error!",'Ingrese un numero correcto y vuelva a intentarlo', "error") 
     }
 }
  
@@ -3632,7 +3632,7 @@ function CambioExportacion(CodLibro,variables){
                     }
                 }).catch(function (e) {
                     console.log(e);
-                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 });
  
         });
@@ -3668,7 +3668,7 @@ function CambioExportacion(CodLibro,variables){
                     }
                 }).catch(function (e) {
                     console.log(e);
-                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 });
            
      
@@ -3708,7 +3708,7 @@ function RecorrerTablaDetalles_Series(indiceDetalle,callback){
                
             }).catch(function (e) {
                 console.log(e);
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             });
     }else{
         callback(true)
@@ -3820,7 +3820,7 @@ function CambioCreditoContado(){
                         }
                     }).catch(function (e) {
                         console.log(e);
-                        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                     });
 
             }
@@ -3863,7 +3863,7 @@ function CambioUnidadMedida() {
                 }
             }).catch(function (e) {
                 console.log(e);
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             });
     }
 }
@@ -3917,7 +3917,7 @@ function CambioFormasPago(CodLibro){
                         $("#lbCuentaCajaBanco").text("# de Cheque: ")
                         TraerCuentaBancariaPorSucursal(CodLibro)
                     }else{
-                        toastr.error('No Existe la Operacion de CHEQUE para ventas.\nSe debe de Depositar el Cheque eh ingresarlo como Deposito en Cuenta.','Error',{timeOut: 5000})
+                        swal("Error!",'No Existe la Operacion de CHEQUE para ventas.\nSe debe de Depositar el Cheque eh ingresarlo como Deposito en Cuenta.', "error") 
                         $("#Cod_FormaPago").val(null)
                     }
                     break 
@@ -4030,7 +4030,7 @@ function TraerTipoCambio(CodLibro){
                     } 
                 }).catch(function (e) {
                     console.log(e);
-                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 });
 
         }catch(e){
@@ -4068,7 +4068,7 @@ function TraerSiguienteNumero(CodLibro){
                 } 
             }).catch(function (e) {
                 console.log(e);
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             });
     }
 }
@@ -4099,7 +4099,7 @@ function TraerSaldoPagoAdelantado(){
             } 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -4123,7 +4123,7 @@ function TraerCuentaBancariaPorSucursal(CodLibro){
             } 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -4147,7 +4147,7 @@ function TraerCuentasBancariasXIdClienteProveedor(CodLibro){
             } 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -4173,7 +4173,7 @@ function TraerCredito(CodLibro,callback){
                     if(aLimiteCredito-aCreditoUtilizado-parseFloat($("#Gran_Total"))>0){
                         callback(true)
                     }else{
-                        toastr.error('No hay Credito Suficiente!!!.\nSu Linea es: '+aLimiteCredito+'.\nCredito Utilizado: '+aCreditoUtilizado+'.','Error',{timeOut: 5000})
+                        swal("Error!",'No hay Credito Suficiente!!!.\nSu Linea es: '+aLimiteCredito+'.\nCredito Utilizado: '+aCreditoUtilizado+'.', "error") 
                         callback(false)
                     }
 
@@ -4185,7 +4185,7 @@ function TraerCredito(CodLibro,callback){
             } 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -4338,7 +4338,7 @@ function BuscarClienteDoc(CodLibro) {
             $("#Cod_TipoDoc").attr("disabled",false);
 
 
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#div-cliente-comprobante-pago').waitMe('hide');
         });
     }
@@ -4363,7 +4363,7 @@ function AbrirModalObsComprobantePago(){
             AbrirModalObs(variables.diagramas,global.obs_xml,"modal_observaciones","modal_obs_body")
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -4414,13 +4414,13 @@ function ComprobantePago(Cod_Libro,Cliente,Detalles) {
                      
                 }).catch(function (e) {
                     console.log(e);
-                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                     $('#main-contenido').waitMe('hide');
                 });
 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         }); 
 }

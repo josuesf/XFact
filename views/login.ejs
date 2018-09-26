@@ -14,124 +14,149 @@
     <!-- BEGIN STYLESHEETS -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet'
         type='text/css' />
-    <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/bootstrap0f9f.css" />
-    <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/materialadmin6b47.css" />
-    <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/font-awesome.min5914.css" />
-    <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/material-design-iconic-font.min5730.css" />
-    <link type="text/css" rel="stylesheet" href="/assets/css/main.css" /> 
-</head>
+    <link href="/assets/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <link href="/assets/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/assets/css/app_1.min.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/app_2.min.css" /> 
 
 <body>
  
-    <div class="background"></div>
-	<div class="backdrop"></div>
-	<div class="login-form-container" id="login-form">
-		<div class="login-form-content">
-            <div class="row">
+    <div class="login-content">
+        <!-- Login -->
+        <div class="lc-block toggled" id="l-login">
             <% if(typeof err != 'undefined' && err!='') { %>
                 <div class="alert alert-callout alert-danger" id="divError" data-value="0">
-                    <p id="textError" class="text-danger">
+                    <p id="textError">
                         <%=err%>
                     </p>
                 </div>
                 <% }else{ %>
                 <div class="alert alert-callout alert-danger" id="divError" data-value="1" style="display: none;">
-                    <p id="textError" class="text-danger"></p>
+                    <p id="textError"></p>
                 </div>
             <% } %>
-            
-            </div>
-
-			<div class="login-form-header">
-                <span class="text-lg text-bold text-default"> IFACTURACION LOGIN </span> 
-            </div>
-            <br />
-            
-            <form class="form form-validate" accept-charset="utf-8" action="login" method="post">
-                <div class="form-group floating-label">
-                    <input type="text" class="form-control dirty" id="empresa" name="RUC" required>
-                    <label for="empresa">RUC</label>
-                </div>
-                <div class="form-group floating-label">
-                    <input type="text" class="form-control dirty" id="usuario" name="usuario" required>
-                    <label for="usuario">Usuario</label>
-                </div>
-                <div class="form-group floating-label">
-                    <input type="password" class="form-control dirty" id="password" name="password" required>
-                    <label for="password">Contraseña</label>
-                    <p class="help-block"><a href="/empresa_api/cambiar_password">¿Olvidaste tu contraseña?</a></p>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="col-xs-6 text-left">
-                        <div class="checkbox checkbox-inline checkbox-styled">
-                            <label>
-                                <input type="checkbox" id="chbRecordar"> <span>Recordar datos</span>
-                            </label>
+                
+            <div class="lcb-form">
+                <form accept-charset="utf-8" action="login" method="post" id="formLogin">
+                    <div class="input-group m-b-20">
+                        <span class="input-group-addon"><i class="zmdi zmdi-store"></i></span>
+                        <div class="fg-line">
+                            <input type="text" class="form-control" id="empresa" name="RUC" placeholder="RUC" required>
                         </div>
                     </div>
-                    <!--end .col -->
-                    <div class="col-xs-6 text-right">
-                        <button class="btn btn-info btn-raised" type="submit" id="login">Iniciar sesión</button>
+
+                    <div class="input-group m-b-20">
+                        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+                        <div class="fg-line">
+                            <input type="text" class="form-control" id="usuario" placeholder="Usuario" name="usuario" required>
+                        </div>
                     </div>
-                    <!--end .col -->
+
+                    <div class="input-group m-b-20">
+                        <span class="input-group-addon"><i class="zmdi zmdi-lock-open"></i></span>
+                        <div class="fg-line">
+                            <input type="password" class="form-control" id="password" placeholder="Contraseña" name="password" required>
+                        </div>
+                    </div>
+ 
+
+                    <a class="btn btn-login btn-success btn-float" id="login"><i class="zmdi zmdi-arrow-forward" ></i></a>
+                </form>
+            </div>
+
+          
+        </div>
+
+        <!-- Register -->
+        <div class="lc-block" id="l-register">
+            <div class="lcb-form">
+                <form accept-charset="utf-8" action="/empresa_api/register" method="post" id="formRegister">
+                    <div class="input-group m-b-20">
+                        <span class="input-group-addon"><i class="zmdi zmdi-store"></i></span>
+                        <div class="fg-line">
+                            <input type="text" class="form-control" id="ruc" name="ruc" placeholder="RUC" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group m-b-20">
+                        <span class="input-group-addon"></span>
+                        <div class="fg-line">
+                            <input type="text" class="form-control" id="razon" name="razon" placeholder="Razon Social" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group m-b-20">
+                        <span class="input-group-addon"><i class="zmdi zmdi-pin-drop"></i></span>
+                        <div class="fg-line">
+                            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" required>
+                        </div>
+                    </div>
+                    <div class="input-group m-b-20">
+                        <span class="input-group-addon"><i class="zmdi zmdi-phone"></i></span>
+                        <div class="fg-line">
+                            <input type="text" class="form-control" id="celular" name="celular" placeholder="Celular" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group m-b-20">
+                        <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
+                        <div class="fg-line">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <a class="btn btn-login btn-success btn-float" id="register"><i class="zmdi zmdi-arrow-forward" ></i></a>
+                </form>
+ 
+            </div>
+
+            <div class="lcb-navigation">
+                <a href="#" data-ma-action="login-switch" data-ma-block="#l-login"><i class="zmdi zmdi-long-arrow-right"></i> <span>Iniciar Sesion</span></a>
+                <a href="#" data-ma-action="login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>Recuperar contraseña</span></a>
+            </div>
+        </div>
+
+        <!-- Forgot Password -->
+        <div class="lc-block" id="l-forget-password">
+            <div class="lcb-form">
+                <p class="text-left">Para recuperar tu contraseña es necesario ingresar los siguientes campos.</p>
+                <div class="input-group m-b-20">
+                    <span class="input-group-addon"><i class="zmdi zmdi-store"></i></span>
+                    <div class="fg-line">
+                            <input type="text" class="form-control dirty" id="ruc" name="ruc" placeholder="RUC" required>
+                    </div>
                 </div>
-			</form>
-			<div class="separator">
-					<span class="separator-text">OR</span>
-			</div>
-			<div class="socmed-login">
-                
-                <a class="btn btn-block btn-raised btn-info" href="/empresa_api/register">Registrate aqui</a>
-				 
-			</div>
-		</div>
-	</div>
-    
+
+                <div class="input-group m-b-20">
+                    <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
+                    <div class="fg-line">
+                        <input type="email" class="form-control dirty" id="email" name="email" placeholder="Email" required>
+                    </div>
+                </div> 
+                <a class="btn btn-login btn-success btn-float" id="recovery"><i class="zmdi zmdi-arrow-forward" ></i></a>
+            </div>
+
+            <div class="lcb-navigation">
+                <a href="#" data-ma-action="login-switch" data-ma-block="#l-login"><i class="zmdi zmdi-long-arrow-right"></i> <span>Iniciar Sesion</span></a>
+                <a href="#" data-ma-action="login-switch" data-ma-block="#l-register"><i class="zmdi zmdi-plus"></i> <span>Registrarse</span></a>
+            </div>
+        </div>
+    </div>
     <!-- END LOGIN SECTION -->
 
     <!-- BEGIN JAVASCRIPT -->
-    <script src="/assets/js/libs/jquery/jquery-1.9.1.js"></script> 
-    <script src='/assets/js/libs/jquery/jquery.cookie.js'></script>
-    <script src="/assets/js/libs/bootstrap/bootstrap.min.js"></script>
-    <script src="/assets/js/core/cache/63d0445130d69b2868a8d28c93309746.js"></script> 
+    <script src="/assets/vendors/bower_components/jquery/dist/jquery.min.js"></script> 
+    <script src='/assets/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
+    <script src="/assets/vendors/bower_components/Waves/dist/waves.min.js"></script>
+    <script src="/assets/js/app.min.js"></script> 
     <script>
         $(document).ready(function () {
 
-            var remember = $.cookie('remember'); 
-            if (remember == 'true') {
-                var usuario = $.cookie('usuario');
-                var ruc = $.cookie('ruc');
-                // autofill the fields
-                $('#usuario').addClass('dirty')
-                $('#empresa').addClass('dirty')
-                $('#usuario').val(usuario);
-                $('#empresa').val(ruc);
-                $('#chbRecordar').attr("checked",true)
-            }
-
-
             $("#login").click(function () {
-                console.log("click")
-                if ($('#chbRecordar').is(':checked')) {
-                    var usuario = $('#usuario').val();
-                    var ruc = $('#empresa').val();
+                $("#formLogin").submit();
+            });
 
-                    var date = new Date();
-                    var minutes = 43200;
-                    date.setTime(date.getTime() + (minutes * 60 * 1000));
-
-                    // set cookies to expire in 14 days
-                    $.cookie('usuario', usuario, {
-                        expires: date
-                    });
-                    $.cookie('ruc', ruc, {
-                        expires: date
-                    });
-                    $.cookie('remember', true, {
-                        expires: date
-                    });
-                } 
+            $("#register").click(function () {
+                $("#formRegister").submit();
             });
         });
     </script>

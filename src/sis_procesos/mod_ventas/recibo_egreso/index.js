@@ -18,7 +18,7 @@ function CargarFormulario(variables, fecha_actual,empresa) {
     const idTabRE = "RE_"+cantidad_tabs
     global.variablesRE[idTabRE]={idTab:idTabRE,flag_cliente:false,Id_ClienteProveedor:null,Obs_Recibo:null}//push({idTab:idTabRI,flag_cliente:false,Id_ClienteProveedor:null,Obs_Recibo})
     var tab = yo`
-    <li class=""  ><a href="#tab_${idTabRE}" data-toggle="tab" aria-expanded="false" id="id_${idTabRE}">Recibo de Egreso <a style="padding-left: 10px;"  onclick=${()=>CerrarTabRE(idTabRE)} class="btn"><i class="fa fa-close text-danger"></i></a></a></li>`
+    <li class=""  ><a href="#tab_${idTabRE}" data-toggle="tab" aria-expanded="false" id="id_${idTabRE}">Recibo de Egreso <a style="padding-left: 10px;font-size:15px"  onclick=${()=>CerrarTabRE(idTabRE)}><i class="zmdi zmdi-close"></i></a></a></li>`
 
 
     var el = yo`
@@ -560,7 +560,7 @@ function BuscarClienteDoc(idTab) {
                 $("#Cliente_"+idTab).attr("disabled",false); 
                 $("#Cod_TipoDoc_"+idTab).attr("disabled",false);
 
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 $('#div-cliente-recibo-egreso_'+idTab).waitMe('hide');
             });
     }
@@ -637,15 +637,15 @@ function Guardar(idTab) {
         .then(req => req.json())
         .then(res => {
             if (res.respuesta == 'ok') {
-                toastr.success('Se registro correctamente el egreso','Confirmacion',{timeOut: 5000})
+                swal("Confirmacion",'Se registro correctamente el egreso', "success") 
                 RefrescarEgreso(idTab)
             }else{
-                toastr.error('No se pudo registrar correctamente el egreso','Error',{timeOut: 5000})
+                swal("Error!",'No se pudo registrar correctamente el egreso', "error") 
             } 
             $('#main-contenido').waitMe('hide');
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
     }
@@ -680,11 +680,11 @@ function RefrescarEgreso(idTab) {
                 RefrescarFormulario(res.data, fecha_format,res.empresa,idTab)
             }
             else
-                toastr.error('Ocurrio un error al momento de cargar los datos.','Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error al momento de cargar los datos.', "error") 
             $('#main-contenido').waitMe('hide');
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 
@@ -718,11 +718,11 @@ function NuevoEgreso() {
                 CargarFormulario(res.data, fecha_format,res.empresa)
             }
             else
-                toastr.error('Ocurrio un error al momento de cargar los datos.','Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error al momento de cargar los datos.', "error") 
             $('#main-contenido').waitMe('hide');
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 

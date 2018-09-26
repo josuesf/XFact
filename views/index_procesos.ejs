@@ -11,153 +11,137 @@
   
       <!-- BEGIN STYLESHEETS -->
       <link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet'
-          type='text/css' />
-      <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/bootstrap0f9f.css" />
-      <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/materialadmin6b47.css" />
-      <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/font-awesome.min5914.css" />
-      <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/material-design-iconic-font.min5730.css" />
-      <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/libs/DataTables/jquery.dataTables.css" />
-      <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/libs/toastr/toastr.css" />
-      <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/libs/bootstrap-datepicker/datepicker3ddea.css" />
-      <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/libs/timepicker/bootstrap-timepicker.min.css" />
-      <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/libs/waitMe/waitMe.min.css" />
+      type='text/css' />
+      <link href="/assets/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+      <link href="/assets/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+      <link href="/assets/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet"> 
+      <link href="/assets/vendors/bower_components/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+      <link href="/assets/vendors/bower_components/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="/assets/css/app_1.min.css" />
+      <link type="text/css" rel="stylesheet" href="/assets/css/app_2.min.css" /> 
+      <link type="text/css" rel="stylesheet" href="/assets/css/waitMe.min.css" />
       <link type="text/css" rel="stylesheet" href="/assets/css/custom.css" />
-      <link type="text/css" rel="stylesheet" href="/assets/css/theme-default/libs/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" />
        
 	</head>
  
 	
 
-	<body class="menubar-hoverable header-fixed menubar-pin ">
-		<!-- BEGIN HEADER-->
-	<header id="header" >
-    <div class="headerbar">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="headerbar-left">
-        <ul class="header-nav header-nav-options">
-          <li class="header-nav-brand" >
-            <div class="brand-holder">
-              <a href="javascript:void(0);" class="name-bussiness">
-                <span class="text-lg text-bold text-default"><%= Nom_Empresa %></span>
-              </a>
+	<body>
+    <!-- BEGIN HEADER-->
+    
+    <header id="header" class="clearfix" data-ma-theme="blue">
+        <ul class="h-inner">
+            <li class="hi-trigger ma-trigger" data-ma-action="sidebar-open" data-ma-target="#sidebar">
+                <div class="line-wrap">
+                    <div class="line top"></div>
+                    <div class="line center"></div>
+                    <div class="line bottom"></div>
+                </div>
+            </li>
+
+            <li class="hi-logo hidden-xs">
+                <a href="javascript:void(0);"><%= Nom_Empresa %></a>
+            </li>
+
+            <li class="pull-right">
+                <ul class="hi-menu">
+
+                    <li data-ma-action="search-open">
+                        <a href="#"><i class="him-icon zmdi zmdi-search"></i></a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" href="#">
+                            <i class="him-icon zmdi zmdi-email"></i>
+                            <i class="him-counts">6</i>
+                        </a>
+                       
+                    </li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" href="#">
+                            <i class="him-icon zmdi zmdi-notifications"></i>
+                            <i class="him-counts">9</i>
+                        </a>
+                       
+                    </li>
+                     
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Top Search Content -->
+        <div class="h-search-wrap">
+            <div class="hsw-inner">
+                <i class="hsw-close zmdi zmdi-arrow-left" data-ma-action="search-close"></i>
+                <input type="text">
             </div>
-          </li>
-          <li>
-            <a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
-              <i class="fa fa-bars"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+        </div>
+    </header>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="headerbar-right"> 
-
-        <ul class="header-nav header-nav-options">
-              
-          <li class="dropdown hidden-xs">
-            <a href="javascript:void(0);">
-              <span class="badge style-primary" style="font-size: 15px;">TURNO : <%=Turno%></span> 
-            </a>
-          </li>
-        
-        </ul>
-
-        <ul class="header-nav header-nav-profile">
-          <li class="dropdown">
-            <a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
-              <img src='images/default_profile_image.png' alt="" />
-              <span class="profile-info">
-                <p id="nick"><%=Nick%></p>
-                <small><%=Cod_Usuarios%></small>
-              </span>
-            </a>
-            <ul class="dropdown-menu animation-dock"> 
-              <li><a href="javascript:void(0)" id="btnCambiarTurno"><i class="fa fa-fw fa-refresh text-warning"></i> Cambiar de turno</a></li>
-              <li><a href="logout"><i class="fa fa-fw fa-power-off text-danger"></i> Salir</a></li>
-            </ul><!--end .dropdown-menu -->
-          </li><!--end .dropdown -->
-        </ul><!--end .header-nav-profile -->
-      
-      </div><!--end #header-navbar-collapse -->
-    </div>
-	</header>
-	<!-- END HEADER-->
-
+ 
 	<!-- BEGIN BASE-->
-	<div id="base">
-		<!-- BEGIN OFFCANVAS LEFT -->
-		<div class="offcanvas">
-		</div><!--end .offcanvas-->
-		<!-- END OFFCANVAS LEFT -->
-
+  <section id="main">
+	 
 		<!-- BEGIN CONTENT-->
-		<div id="content">
-      <section>
-       
-        <div class="section-body" id="main-contenido">
+		<aside id="sidebar" class="sidebar c-overflow">
+      <div class="s-profile">
+          <a href="#" data-ma-action="profile-menu-toggle">
+              <div class="sp-pic">
+                  <img src='images/default_profile_image.png' alt="">
+              </div>
 
-        </div>
-        <div class="section-footer" id="content_footer">
-           
-        </div>
+              <div class="sp-info">
+                   <%=Nick%> 
+                    <p id="nick" style="display: none"><%=Nick%> </p>
+                  <i class="zmdi zmdi-caret-down"></i>
+              </div>
+          </a>
+
+          <ul class="main-menu">
+              
+              <li>
+                  <a  href="javascript:void(0)" id="btnCambiarTurno"><i class="zmdi zmdi-refresh"></i> Cambiar de turno</a>
+              </li>
+              <li>
+                  <a href="logout"><i class="zmdi zmdi-time-restore"></i> Logout</a>
+              </li>
+          </ul>
+      </div>
+      <div id="nav-container">  
+      </div>
+    </aside>
+    <section id="content">
       
-      </section>
+      <div class="container" id="main-contenido">
 
-		</div> 
+      </div>
+      
+    
+    </section>
+    <footer id="content_footer">
+          
+    </footer>
+  </section> 
 		<!-- END CONTENT -->
 
-		<!-- BEGIN MENUBAR-->
-		<div id="menubar" class="menubar-inverse ">
-			<div class="menubar-fixed-panel">
-				<div>
-					<a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
-						<i class="fa fa-bars"></i>
-					</a>
-				</div>
-				<div class="expanded">
-          <a href="javascript:void(0);" class="name-bussiness">
-						<span class="text-lg text-bold text-default "><%= Nom_Empresa %></span>
-					</a>
-				</div>
-			</div>
-			<div class="menubar-scroll-panel">
-        <!-- BEGIN MAIN MENU -->
-        <div id="nav-container"> 
-         
-        </div>
-				<!-- END MAIN MENU -->
-
-				<div class="menubar-foot-panel">
-					<small class="no-linebreak hidden-folded">
-						<span class="opacity-75">Copyright &copy; 2018</span> <strong>Palerp Consultores</strong>
-					</small>
-				</div>
-			</div><!--end .menubar-scroll-panel-->
-		</div><!--end #menubar-->
-		<!-- END MENUBAR --> 
-
+	 
 	</div><!--end #base-->	
 	<!-- END BASE -->
 
 
 	<!-- BEGIN JAVASCRIPT -->
-  <script src="/assets/js/libs/jquery/jquery-1.9.1.js"></script> 
-  <script src="/assets/js/libs/jquery-ui/jquery-ui.min.js"></script>  
-  <script src="/assets/js/libs/bootstrap/bootstrap.min.js"></script>
-  <script src="/assets/js/libs/spin.js/spin.min.js"></script>
-  <script src="/assets/js/libs/autosize/jquery.autosize.min.js"></script>
-  <script src="/assets/js/core/cache/9782537cea5b6dc42cb13bd7821cceca.js"></script> 
-  <script src="/assets/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
-  <script src="/assets/js/libs/toastr/toastr.js"></script> 
-  <script src="/assets/js/libs/jsreport/jsreport.js"></script> 
+  <script src="/assets/vendors/bower_components/jquery/dist/jquery.min.js"></script> 
+  <script src="/assets/js/jquery-ui.min.js"></script>  
+  <script src='/assets/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
+  <script src="/assets/vendors/bower_components/Waves/dist/waves.min.js"></script>
+  <script src="/assets/vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+  <script src="/assets/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="/assets/js/app.min.js"></script> 
   <script src="/assets/js/custom.js"></script>
-  <script src="/assets/js/libs/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-  <script src="/assets/js/libs/ckeditor/ckeditor.js"></script>
-  <script src="/assets/js/libs/bootstrap-datepicker/bootstrap-datepicker.js"></script>
-  <script src="/assets/js/libs/timepicker/bootstrap-timepicker.min.js"></script>
-  <script src="/assets/js/libs/waitMe/waitMe.min.js"></script>
-  <script src="/assets/js/libs/jquery-ui/jquery.ui.combobox.js"></script>  
+  <script src="/assets/js/waitMe.min.js"></script>
+  <script src="/assets/vendors/bower_components/sweetalert2/dist/sweetalert2.min.js"></script>
+  <script src="/assets/vendors/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="/assets/js/jquery.ui.combobox.js"></script> 
   <script src="/app_proc.js"></script>
 
 	

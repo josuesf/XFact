@@ -35,7 +35,7 @@ function Ver(Flag_Cerrado,movimientos,saldos,callback) {
                     <div class="col-md-12"> 
                         <div class="card">
                             <div  class="card-head">
-                                <ul class="nav nav-tabs" id="tabs">
+                                <ul class="tab-nav tn-justified" id="tabs">
                                     <li class="active"><a href="#tab_1" id="id_1" data-toggle="tab" aria-expanded="true" onclick=${()=>refrescar_movimientos_caja()}>Movimientos caja</a></li>
                                 </ul>
                             </div>
@@ -176,7 +176,7 @@ function GenerarPDF(titulo,subtitulo,subtitulo_extra,arrayData){
                 console.log(res)
                 jsreport.render(document.getElementById('divPDF'), request); 
             }).catch(function (e) { 
-                toastr.error('Hubo un error al generar el documento. Intentelo mas tarde','Error',{timeOut: 5000})
+                swal("Error!",'Hubo un error al generar el documento. Intentelo mas tarde', "error") 
                 $('#modal-alerta').modal('hide') 
             });
         }
@@ -558,7 +558,7 @@ function TraerPeriodos(){
             TraerTurnos()
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -581,7 +581,7 @@ function TraerTurnos(){
             LlenarTurnos(res.data.turnos,'Turno')
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -622,13 +622,13 @@ function GuardarCambioTurno(movimiento){
                     $("#modal-alerta").modal("hide") 
                     refrescar_movimientos_caja()
                     if (res.respuesta == 'ok') { 
-                        toastr.success('Se modifico correctamente el turno','Confirmacion',{timeOut: 5000})
+                        swal("Confirmacion",'Se modifico correctamente el turno', "success") 
                     }else{
-                        toastr.error('No se pudo modificar el turno','Error',{timeOut: 5000})
+                        swal("Error!",'No se pudo modificar el turno', "error") 
                     }
                 }).catch(function (e) {
                     console.log(e);
-                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 });
             break;
         case "CAJ_CAJA_MOVIMIENTOS":
@@ -654,13 +654,13 @@ function GuardarCambioTurno(movimiento){
                     $("#modal-alerta").modal("hide") 
                     refrescar_movimientos_caja()
                     if (res.respuesta == 'ok') { 
-                        toastr.success('Se modifico correctamente el turno','Confirmacion',{timeOut: 5000})
+                        swal("Confirmacion",'Se modifico correctamente el turno', "success") 
                     }else{
-                        toastr.error('No se pudo modificar el turno','Error',{timeOut: 5000})
+                        swal("Error!",'No se pudo modificar el turno', "error") 
                     }
                 }).catch(function (e) {
                     console.log(e);
-                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 });
             break;
         case "ALM_ALMACEN_MOV":
@@ -686,13 +686,13 @@ function GuardarCambioTurno(movimiento){
                     $("#modal-alerta").modal("hide") 
                     refrescar_movimientos_caja()
                     if (res.respuesta == 'ok') { 
-                        toastr.success('Se modifico correctamente el turno','Confirmacion',{timeOut: 5000})
+                        swal("Confirmacion",'Se modifico correctamente el turno', "success") 
                     }else{
-                        toastr.error('No se pudo modificar el turno','Error',{timeOut: 5000})
+                        swal("Error!",'No se pudo modificar el turno', "error") 
                     }
                 }).catch(function (e) {
                     console.log(e);
-                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 });
             break;
     }
@@ -721,18 +721,18 @@ function VerFormatoDocumento(movimiento){
             if(descripcion!='REQUIERE DE AUTORIZACION'){ 
                 PrepararImpresionMovimientos(id_Movimiento,function(flag){
                     if(!flag){
-                        toastr.error('No Puede imprimir el comprobante. Comuniquese con su Administrador.','Error',{timeOut: 5000})
+                        swal("Error!",'No Puede imprimir el comprobante. Comuniquese con su Administrador.', "error") 
                     }
                 })
 
             }else{
-                toastr.error('No Puede imprimir un documento que Requiere de Autorizacion. Comuniquese con su Administrador.','Error',{timeOut: 5000})
+                swal("Error!",'No Puede imprimir un documento que Requiere de Autorizacion. Comuniquese con su Administrador.', "error")  
             }
             break
         case 'CAJ_COMPROBANTE_PAGO':
             PrepararImpresionComprobante(id_Movimiento,function(flag){
                 if(!flag){
-                    toastr.error('No Puede imprimir el comprobante. Comuniquese con su Administrador.','Error',{timeOut: 5000})
+                    swal("Error!",'No Puede imprimir el comprobante. Comuniquese con su Administrador.', "error")   
                 }
             })
             break
@@ -740,7 +740,7 @@ function VerFormatoDocumento(movimiento){
 
             PrepararImpresionAlmacen(id_Movimiento,function(flag){
                 if(!flag){
-                    toastr.error('No Puede imprimir el comprobante. Comuniquese con su Administrador.','Error',{timeOut: 5000})
+                    swal("Error!",'No Puede imprimir el comprobante. Comuniquese con su Administrador.', "error")  
                 }
             })
 
@@ -781,13 +781,13 @@ function ExtornarAnular(movimiento,flag) {
                             //refrescar_movimientos_caja()
                             if (res.respuesta == 'ok') { 
                                 refrescar_movimientos_caja()
-                                toastr.success('Se anulo correctamente el movimiento','Confirmacion',{timeOut: 5000})
+                                swal("Confirmacion",'Se anulo correctamente el movimiento', "success") 
                             }else{
-                                toastr.error('No se pudo anular correctamente el movimiento','Error',{timeOut: 5000})
+                                swal("Error!",'No se pudo anular correctamente el movimiento', "error")  
                             }
                         }).catch(function (e) {
                             console.log(e);
-                            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+                            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                         });
                     break;
                 case "CAJ_COMPROBANTE_PAGO":
@@ -829,16 +829,16 @@ function ExtornarAnular(movimiento,flag) {
                                         if(res.respuesta=='ok'){
                                             PrepararImpresionComprobante(id_ComprobantePago,function(flag){
                                                 if(flag)
-                                                    toastr.success('Se anulo correctamente el comprobante','Confirmacion',{timeOut: 5000})
+                                                    swal("Confirmacion",'Se anulo correctamente el comprobante', "success") 
                                                 refrescar_movimientos_caja()
                                             })
                                             
                                         }else{
-                                            toastr.error('No se pudo anular correctamente el comprobante','Error',{timeOut: 5000})
+                                            swal("Error!",'No se pudo anular correctamente el comprobante', "error") 
                                         }
                                     }).catch(function (e) {
                                         console.log(e);
-                                        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+                                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                                     });
                             }else{
                                 if(comprobante_pago.Cod_TipoComprobante=='FE' || comprobante_pago.Cod_TipoComprobante=='BE'){
@@ -862,15 +862,15 @@ function ExtornarAnular(movimiento,flag) {
                                             if(res.respuesta=='ok'){
                                                 PrepararImpresionComprobante(id_ComprobantePago,function(flag){
                                                     if(flag)
-                                                        toastr.success('Se anulo correctamente el comprobante','Confirmacion',{timeOut: 5000})
+                                                        swal("Confirmacion",'Se anulo correctamente el comprobante', "success") 
                                                     refrescar_movimientos_caja()
                                                 })
                                             }else{
-                                                toastr.error('No se pudo anular correctamente el comprobante','Error',{timeOut: 5000})
+                                                swal("Error!",'No se pudo anular correctamente el comprobante', "error") 
                                             }
                                         }).catch(function (e) {
                                             console.log(e);
-                                            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+                                            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                                         });
                                 }else{
                                     
@@ -894,30 +894,24 @@ function ExtornarAnular(movimiento,flag) {
                                             if(res.respuesta=='ok'){
                                                 PrepararImpresionComprobante(id_ComprobantePago,function(flag){
                                                     if(flag)
-                                                        toastr.success('Se anulo correctamente el comprobante','Confirmacion',{timeOut: 5000})
+                                                        swal("Confirmacion",'Se anulo correctamente el comprobante', "success") 
                                                     refrescar_movimientos_caja()
                                                 })
                                             }else{
-                                                toastr.error('No se pudo anular correctamente el comprobante','Error',{timeOut: 5000})
+                                                swal("Error!",'No se pudo anular correctamente el comprobante', "error") 
                                             }
                                         }).catch(function (e) {
                                             console.log(e);
-                                            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+                                            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                                         });
 
 
                                 }
                             }
-                            /*$("#modal-justificacion").modal("hide")  
-                            if (res.respuesta == 'ok') { 
-                                refrescar_movimientos_caja()
-                                toastr.success('Se anulo correctamente el comprobante','Confirmacion',{timeOut: 5000})
-                            }else{
-                                toastr.error('No se pudo anular correctamente el comprobante','Error',{timeOut: 5000})
-                            }*/
+                         
                         }).catch(function (e) {
                             console.log(e);
-                            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+                            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                         });
                     break;
                 case "ALM_ALMACEN_MOV":
@@ -940,13 +934,13 @@ function ExtornarAnular(movimiento,flag) {
                             //refrescar_movimientos_caja()
                             if (res.respuesta == 'ok') { 
                                 refrescar_movimientos_caja()
-                                toastr.success('Se anulo correctamente el movimiento','Confirmacion',{timeOut: 5000})
+                                swal("Confirmacion",'Se anulo correctamente el movimiento', "success") 
                             }else{
-                                toastr.error('No se pudo anular correctamente el movimiento','Error',{timeOut: 5000})
+                                swal("Error!",'No se pudo anular correctamente el movimiento', "error") 
                             }
                         }).catch(function (e) {
                             console.log(e);
-                            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+                            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                         });
                     break;
                 case "CAJ_FORMA_PAGO":
@@ -971,13 +965,13 @@ function ExtornarAnular(movimiento,flag) {
                             //refrescar_movimientos_caja()
                             if (res.respuesta == 'ok') { 
                                 refrescar_movimientos_caja()
-                                toastr.success('Se anulo correctamente el movimiento','Confirmacion',{timeOut: 5000})
+                                swal("Confirmacion",'Se anulo correctamente el movimiento','Confirmacion', "success") 
                             }else{
-                                toastr.error('No se pudo anular correctamente el movimiento','Error',{timeOut: 5000})
+                                swal("Error!",'No se pudo anular correctamente el movimiento', "error") 
                             }
                         }).catch(function (e) {
                             console.log(e);
-                            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+                            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                         });
                     break;
 
@@ -1010,13 +1004,13 @@ function ExtornarAnular(movimiento,flag) {
                             //refrescar_movimientos_caja()
                             if (res.respuesta == 'ok') { 
                                 refrescar_movimientos_caja()
-                                toastr.success('Se elimino correctamente el movimiento','Confirmacion',{timeOut: 5000})
+                                swal("Confirmacion",'Se elimino correctamente el movimiento', "success") 
                             }else{
-                                toastr.error('No se pudo eliminar correctamente el movimiento','Error',{timeOut: 5000})
+                                swal("Error!",'No se pudo eliminar correctamente el movimiento', "error") 
                             } 
                         }).catch(function (e) {
                             console.log(e);
-                            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+                            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                         });
                     break;
                 case "CAJ_COMPROBANTE_PAGO":
@@ -1041,13 +1035,13 @@ function ExtornarAnular(movimiento,flag) {
                             //refrescar_movimientos_caja()
                             if (res.respuesta == 'ok') { 
                                 refrescar_movimientos_caja()
-                                toastr.success('Se elimino correctamente el comprobante','Confirmacion',{timeOut: 5000})
+                                swal("Confirmacion",'Se elimino correctamente el comprobante', "success") 
                             }else{
-                                toastr.error('No se pudo eliminar correctamente el comprobante','Error',{timeOut: 5000})
+                                swal("Error!",'No se pudo eliminar correctamente el comprobante', "error") 
                             } 
                         }).catch(function (e) {
                             console.log(e);
-                            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+                            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                         });
                     break;
                 case "ALM_ALMACEN_MOV": 
@@ -1070,13 +1064,13 @@ function ExtornarAnular(movimiento,flag) {
                             //refrescar_movimientos_caja()
                             if (res.respuesta == 'ok') { 
                                 refrescar_movimientos_caja()
-                                toastr.success('Se elimino correctamente el movimiento','Confirmacion',{timeOut: 5000})
+                                swal("Confirmacion",'Se elimino correctamente el movimiento', "success") 
                             }else{
-                                toastr.error('No se pudo eliminar correctamente el movimiento','Error',{timeOut: 5000})
+                                swal("Error!",'No se pudo eliminar correctamente el movimiento', "error") 
                             } 
                         }).catch(function (e) {
                             console.log(e);
-                            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+                            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                         });
                     break;
 
@@ -1181,7 +1175,7 @@ function TraerSerieAutorizada(Cod_TipoComprobante,Serie,callback){
         }).catch(function (e) {
             callback(false,'')
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -1263,40 +1257,33 @@ function PrepararImpresionAlmacen(id_Movimiento,callback){
                                     })
 
                                 }else{
-                                    toastr.error('No se pudo recuperar los detalles del movimiento','Error',{timeOut: 5000})  
+                                    swal("Error!",'No se pudo recuperar los detalles del movimiento', "error") 
                                     callback(false)
                                 }   
 
                             }).catch(function (e) {
                                 console.log(e);
                                 callback(false)
-                                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente','Error',{timeOut: 5000})
+                                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                             });
 
-                        /*TraerSerieAutorizada(res.data.movimiento[0].Cod_TipoComprobante,res.data.movimiento[0].Serie,function(flag,nombreDoc){
-                            if(flag){
-
-                                FormatearDataDetalles 
-                            }else{
-                                toastr.error('No tiene autorizada la serie del documento','Error',{timeOut: 5000})
-                            }
-                        })*/
+                      
                     }else{
                         callback(false)
-                        toastr.error('No tiene autorizada la serie del documento','Error',{timeOut: 5000})
+                        swal("Error!",'No tiene autorizada la serie del documento', "error") 
                     }
                 })
         
             }
             else{
-                toastr.error('No se pudo recuperar el movimiento','Error',{timeOut: 5000}) 
+                swal("Error!",'No se pudo recuperar el movimiento', "error") 
                 callback(false)
             }
           
         }).catch(function (e) {
             console.log(e);
             callback(false)
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -1346,20 +1333,20 @@ function PrepararImpresionMovimientos(id_Movimiento,callback){
                         GenerarPDF(arrayData.cuerpo.DOCUMENTO.toString().toUpperCase(),arrayData.COD_TIPO_DOCUMENTO!=undefined?arrayData.COD_TIPO_DOCUMENTO:""+""+arrayData.cuerpo.SERIE+"-"+arrayData.cuerpo.NUMERO,"",arrayData)
                     }else{
                         callback(false)
-                        toastr.error('No tiene autorizada la serie del documento','Error',{timeOut: 5000})
+                        swal("Error!",'No tiene autorizada la serie del documento', "error") 
                     }
                 })
  
             }
             else{
-                toastr.error('No se pudo recuperar el movimiento','Error',{timeOut: 5000}) 
+                swal("Error!",'No se pudo recuperar el movimiento', "error") 
                 callback(false)
             }
           
         }).catch(function (e) {
             console.log(e);
             callback(false)
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -1446,25 +1433,25 @@ function PrepararImpresionComprobante(id_ComprobantePago,callback){
                                
                             })
                         }else{
-                            toastr.error('No se pudo recuperar los detalles del comprobante','Error',{timeOut: 5000})  
+                            swal("Error!",'No se pudo recuperar los detalles del comprobante', "error") 
                             callback(false)
                         }
                     }).catch(function (e) {
                         console.log(e);
                         callback(false)
-                        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                     });
 
             }
             else{
-                toastr.error('No se pudo recuperar el comprobante','Error',{timeOut: 5000}) 
+                swal("Error!",'No se pudo recuperar el comprobante', "error") 
                 callback(false)
             }
           
         }).catch(function (e) {
             console.log(e);
             callback(false)
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -1488,12 +1475,12 @@ function refrescar_movimientos_caja(){
                 $('#main-contenido').waitMe('hide'); 
             }
             else{
-                toastr.error('Ocurrio un error. Actualice la pagina e intentelo nuevamente','Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error. Actualice la pagina e intentelo nuevamente', "error") 
                 $('#main-contenido').waitMe('hide');
             } 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 }
@@ -1519,15 +1506,14 @@ module.exports = function movimientos_caja(ctx, next) {
                 })
             }
             else{
-                
-                toastr.error('Ocurrio un error. Actualice la pagina e intentelo nuevamente','Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error. Actualice la pagina e intentelo nuevamente', "error") 
                 $('#base').waitMe('hide');
             }
             
         }).catch(function (e) {
             console.log(e);
             
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos. Inténtelo nuevamente refrescando la pantalla','Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#base').waitMe('hide');
         });
     next();

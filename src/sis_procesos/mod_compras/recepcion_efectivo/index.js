@@ -19,7 +19,7 @@ function Ver(variables) {
     global.variablesR[idTabR]={idTab:idTabR,flag_button:false,total:0,totalMonto:0,totalRecibido:0}
     
     var tab = yo`
-    <li class="" ><a href="#tab_${idTabR}" data-toggle="tab" aria-expanded="false" id="id_${idTabR}">Recepcion de Transferencia <a style="padding-left: 10px;"  onclick=${()=>CerrarTabR(idTabR)} class="btn"><i class="fa fa-close text-danger"></i></a></a></li>`
+    <li class="" ><a href="#tab_${idTabR}" data-toggle="tab" aria-expanded="false" id="id_${idTabR}">Recepcion de Transferencia <a style="padding-left: 10px;font-size:15px"  onclick=${()=>CerrarTabR(idTabR)}><i class="zmdi zmdi-close"></i></a></a></li>`
 
 
     var el = yo`
@@ -307,21 +307,21 @@ function RegistrarRecepcion(u,idInputCliente,idTab){
             .then(req => req.json())
             .then(res => {
                 if (res.respuesta == 'ok') {
-                    toastr.success('Se recepciono correctamente el movimiento de dinero','Confirmacion',{timeOut: 5000})
+                    swal("Confirmacion",'Se recepciono correctamente el movimiento de dinero', "success") 
                     RefrescarRecepcion(idTab)
                     //refrescar_movimientos()
                 }else{
-                    toastr.error('No se pudo recepcionar correctamente el movimiento de dinero','Error',{timeOut: 5000})
+                    swal("Error",'No se pudo recepcionar correctamente el movimiento de dinero', "error")  
                 } 
                 $('#main-contenido').waitMe('hide');
             }).catch(function (e) {
                 console.log(e);
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 $('#main-contenido').waitMe('hide');
             });
         
     }else{
-        toastr.error('No Existe un Responsable asignado para la Diferencia','Error',{timeOut: 5000})
+        swal("Error",'No Existe un Responsable asignado para la Diferencia', "error")   
     }
 }
 
@@ -346,16 +346,16 @@ function Reactivar(u,idInputCliente,idTab){
         .then(req => req.json())
         .then(res => {
             if (res.respuesta == 'ok') {
-                toastr.success('Se coloco como pendiente a esta Recepción','Confirmacion',{timeOut: 5000})
+                swal("Confirmacion",'Se coloco como pendiente a esta Recepción', "success")  
                 RefrescarRecepcion(idTab)
             }else{
-                toastr.error('No se pudo colocar como pendiente a esta recepcion','Error',{timeOut: 5000})
+                swal("Error!",'No se pudo colocar como pendiente a esta recepcion', "error") 
             }
             console.log(res.data)
             $('#main-contenido').waitMe('hide');
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 }
@@ -387,7 +387,7 @@ function Recepcionados(idTab){
                 $('#main-contenido').waitMe('hide');
             }).catch(function (e) {
                 console.log(e);
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 $('#main-contenido').waitMe('hide');
             });
         
@@ -420,12 +420,12 @@ function RefrescarRecepcion(idTab) {
                 
                 RefrescarVer(variables,idTab)
             }else{
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+res.detalle_error,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+res.detalle_error, "error") 
             }
             $('#main-contenido').waitMe('hide');
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 }
@@ -451,12 +451,12 @@ function NuevaRecepcion() {
                 
                 Ver(variables)
             }else{
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+res.detalle_error,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+res.detalle_error, "error") 
             }
             $('#main-contenido').waitMe('hide');
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 }

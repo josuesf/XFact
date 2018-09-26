@@ -29,7 +29,7 @@ function VerNuevaVenta(variables,CodLibro) {
     global.objProductoVentas = ''
     global.variablesVentas.push({idTab:idTabVenta,Total:0,TotalDescuentos:0,TipodeCambio:1,_CantidadOriginal:null,SimboloMoneda:'',SimboloMonedaExtra:'',Cod_FormaPago:null,Cliente:null,Detalles:[]})
     var tab = yo`
-        <li class="" onclick=${()=>TabVentaSeleccionado(idTabVenta)}><a href="#tab_${idTabVenta}" data-toggle="tab" aria-expanded="false" id="id_${idTabVenta}">Ventas <a style="padding-left: 10px;" onclick=${()=>CerrarTabVenta(idTabVenta)} class="btn"><i class="fa fa-close text-danger"></i></a></a></li>`
+        <li class="" onclick=${()=>TabVentaSeleccionado(idTabVenta)}><a href="#tab_${idTabVenta}" data-toggle="tab" aria-expanded="false" id="id_${idTabVenta}">Ventas <a style="padding-left: 10px;font-size:15px" onclick=${()=>CerrarTabVenta(idTabVenta)}><i class="zmdi zmdi-close"></i></a></a></li>`
 
     var tabContent = yo`
         <div class="tab-pane" id="tab_${idTabVenta}">
@@ -372,7 +372,7 @@ function VerNuevaVenta(variables,CodLibro) {
                    
                     
                 }else{
-                    toastr.error('No existe stock para dicho producto','Error',{timeOut: 5000})  
+                    swal("Error!",'No existe stock para dicho producto', "error") 
                 }
             })
             $("#txtBusqueda_"+IdTabSeleccionado).focus()
@@ -670,10 +670,10 @@ function CrearBotonesProductos(c,idTab,callback){
         
             }).catch(function (e) {
                 console.log(e);
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             }); 
     }else{
-        toastr.error('Es necesario seleccionar un almacen','Error',{timeOut: 5000})
+        swal("Error!",'Es necesario seleccionar un almacen', "error") 
     }
 }
 
@@ -1128,14 +1128,14 @@ function CambioMonedaFormaPagoEuros(idTab){
                         }
                     }).catch(function (e) {
                         console.log(e);
-                        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                     });
 
 
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
  
 }
@@ -1216,14 +1216,14 @@ function CambioMonedaFormaPagoDolares(idTab){
                         }
                     }).catch(function (e) {
                         console.log(e);
-                        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                     });
 
 
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
  
 }
@@ -1293,7 +1293,7 @@ function CambioCantidadVenta(idFila,idTab){
                         if(res.data.producto.length>0){
                             var producto = res.data.producto[0]
                             if(parseFloat($('#'+idFila).find('td.Cantidad').find('input').val()) > parseFloat(producto.Stock_Act)){
-                                toastr.error('El stock maximo es de : '+parseFloat(producto.Stock_Act).toFixed(0),'Error',{timeOut: 5000})  
+                                swal("Error!",'El stock maximo es de : '+parseFloat(producto.Stock_Act).toFixed(0), "error") 
                                 $('#'+idFila).find('td.Cantidad').find('input').val(getObjectArrayJsonVentas(global.variablesVentas,idTab)[0]._CantidadOriginal)
                             }
                         }else{
@@ -1305,7 +1305,7 @@ function CambioCantidadVenta(idFila,idTab){
 
                 }).catch(function (e) {
                     console.log(e);
-                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 }); 
         } 
         RecalcularSubtotales(idTab)
@@ -1494,21 +1494,21 @@ function AgregarProducto(producto,favoritos,idTab){
                             
                                 
                             }else{
-                                toastr.error('No existe stock para dicho producto','Error',{timeOut: 5000})  
+                                swal("Error!",'No existe stock para dicho producto', "error") 
                             }
                         })
                     
                     }else{
-                        toastr.error('El producto seleccionado no existe para el almacen y precio seleccionado.','Error',{timeOut: 5000})
+                        swal("Error!",'El producto seleccionado no existe para el almacen y precio seleccionado.', "error")
                     }
                 }
         
             }).catch(function (e) {
                 console.log(e);
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             });
     }else{
-        toastr.error('Es necesario seleccionar un almacen.','Error',{timeOut: 5000})
+        swal("Error!",'Es necesario seleccionar un almacen.', "error") 
     }
 }
 
@@ -1643,7 +1643,7 @@ function BuscarClienteDoc(CodLibro,idTab) {
                     Cod_TipoDocumento:  $('#Cod_TipoDoc_'+idTab).val(),
                 }
                 changeArrayJsonVentas(global.variablesVentas,idTab,[null,null,null,null,null,null,cl,null]) 
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 $('#div-cliente').waitMe('hide');
             });
     }
@@ -1679,22 +1679,22 @@ function EmisionRapida(idTab,pCod_Moneda,callback){
         .then(res => {
             console.log(res)
             if(res.respuesta == 'ok'){
-                toastr.success('Se registro correctamente el comprobante','Confirmacion',{timeOut: 5000})
+                swal("Confirmacion",'Se registro correctamente el comprobante', "success") 
                  
                 preparar_impresion_comprobante(res.data,function(flag){
                     if(!flag){
-                        toastr.error('No Puede imprimir el comprobante. Comuniquese con su Administrador.','Error',{timeOut: 5000})
+                        swal("Error!",'No Puede imprimir el comprobante. Comuniquese con su Administrador.', "error") 
                     }
                 })
                 callback(true)
             }else{
-                toastr.error(res.detalle_error,'Error',{timeOut: 5000}) 
+                swal("Error!",res.detalle_error, "error") 
                 callback(false)
             }
             $('#main-contenido').waitMe('hide');
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
             callback(false)
         });
@@ -1790,7 +1790,7 @@ function CrearClientesVarios(idTab,callback){
         }).catch(function (e) {
             callback(false,{})
             //console.log(e);
-            toastr.error('Ocurrio un error en la conexion.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
     }else{
         callback(true,{
@@ -1859,25 +1859,25 @@ function CompraSimple(idTab,_MontoComprar,_NombreMoneda,_TipoCambio,_CodMoneda){
                 .then(req => req.json())
                 .then(res => {
                     if (res.respuesta == 'ok') {     
-                        LimpiarVenta(idTab)          
-                        toastr.success('Se registro correctamente el movimiento','Confirmacion',{timeOut: 5000})
+                        LimpiarVenta(idTab)   
+                        swal("Confirmacion",'Se registro correctamente el movimiento', "success")        
                         preparar_impresion_movimientos(res.data.movimiento.id_Movimiento,function(flag){
                             if(!flag){
-                                toastr.error('No Puede imprimir el documento. Comuniquese con su Administrador.','Error',{timeOut: 5000})
+                                swal("Error!",'No Puede imprimir el documento. Comuniquese con su Administrador.', "error") 
                             }
                         })
                     }
                     else{
-                        toastr.error('No se pudo registrar correctamente el movimiento','Error',{timeOut: 5000}) 
+                        swal("Error!",'No se pudo registrar correctamente el movimiento', "error")  
                     }
                 }).catch(function (e) {
                     console.log(e);
-                    toastr.error('Ocurrio un error en la conexion.  Tipo error : '+e,'Error',{timeOut: 5000})
+                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 });
 
 
             }else{
-                toastr.error('Ocurrio un error en la conexion.  Tipo error : '+e,'Error',{timeOut: 5000}) 
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.', "error") 
             }
         })
     }else{
@@ -1918,7 +1918,7 @@ function CompraSimple(idTab,_MontoComprar,_NombreMoneda,_TipoCambio,_CodMoneda){
         console.log("respuesta de compra simple moneda",res)
     }).catch(function (e) {
         console.log(e);
-        toastr.error('Ocurrio un error en la conexion.  Tipo error : '+e,'Error',{timeOut: 5000})
+         swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
     });*/
 
 }
@@ -1970,12 +1970,12 @@ function NuevaVenta() {
             if (res.respuesta == 'ok') {
                 VerNuevaVenta(variables,null)
             }else{
-                toastr.error(res.detalle_error,'Error',{timeOut: 5000})
+                swal("Error!",res.detalle_error, "error") 
             }
             $('#main-contenido').waitMe('hide');
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 }
@@ -2024,7 +2024,7 @@ function VentaSimple(){
                     }
                 }
             }else{
-                toastr.error('No se puede Utilizar esta opcion sin haber ingresado al menos una venta.\n\n Ingrese la venta y vuelva a intentarlo.','Error',{timeOut: 5000})     
+                swal("Error!",'No se puede Utilizar esta opcion sin haber ingresado al menos una venta.\n\n Ingrese la venta y vuelva a intentarlo.', "error")      
             }
             
         }
@@ -2042,7 +2042,7 @@ function VentaCompleta(){
                 LimpiarVariablesGlobales()
                 ComprobantePago('14',getObjectArrayJsonVentas(global.variablesVentas,IdTabSeleccionado)[0].Cliente,getObjectArrayJsonVentas(global.variablesVentas,IdTabSeleccionado)[0].Detalles)
             }else{
-                toastr.error('No se puede Utilizar esta opcion sin haber ingresado al menos una venta.\n\n Ingrese la venta y vuelva a intentarlo.','Error',{timeOut: 5000})     
+                swal("Error!",'No se puede Utilizar esta opcion sin haber ingresado al menos una venta.\n\n Ingrese la venta y vuelva a intentarlo.', "error")    
             }
         }
     }else{

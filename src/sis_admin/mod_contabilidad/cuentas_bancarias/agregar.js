@@ -6,7 +6,7 @@ import { URL } from '../../../constantes_entorno/constantes'
 function Ver(_escritura, variables, cuenta) {
 
     var tab = yo`
-    <li class=""><a href="#tab_crear_cuentas_bancarias_2" data-toggle="tab" aria-expanded="false" id="id_tab_crear_cuentas_bancarias_2">Nueva Cuenta<a style="padding-left: 10px;" class="btn" onclick=${()=>CerrarTab()}><i class="fa fa-close text-danger"></i></a></a></li>`
+    <li class=""><a href="#tab_crear_cuentas_bancarias_2" data-toggle="tab" aria-expanded="false" id="id_tab_crear_cuentas_bancarias_2">Nueva Cuenta<a style="padding-left: 10px;font-size:15px" onclick=${()=>CerrarTab()}><i class="zmdi zmdi-close"></i></a></a></li>`
 
 
     var el = yo`
@@ -190,7 +190,7 @@ function GuardarCuentaBancaria(_escritura, cuenta) {
                 $('#main-contenido').waitMe('hide');
             }).catch(function (e) {
                 console.log(e);
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 $('#main-contenido').waitMe('hide');
             });
     }
@@ -219,7 +219,7 @@ function NuevaCuentaBancaria(_escritura, variables, cuenta) {
                 $('#main-contenido').waitMe('hide');
             }).catch(function (e) {
                 console.log(e);
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 $('#main-contenido').waitMe('hide');
             });
     } else Ver(_escritura, variables)

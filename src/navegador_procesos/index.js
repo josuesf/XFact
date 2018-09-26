@@ -52,13 +52,10 @@ function Ver(Flag_Cerrado) {
     var el = yo`
         ${!Flag_Cerrado?
             yo` 
-            <ul id="main-menu" class="gui-controls"> 
+            <ul id="main-menu" class="main-menu"> 
 
-                <li class="gui-folder expanded">
-                    <a href="javascript:void(0)">
-                        <div class="gui-icon"><i class="fa fa-th"></i></div>
-                        <span class="title">Movimientos de Caja</span>
-                    </a> 
+                <li class="sub-menu">
+                    <a href="javascript:void(0)" data-ma-action="submenu-toggle"><i class="zmdi zmdi-home"></i> Movimientos de Caja</a>
                     <ul>
                         <li><a href="javascript:void(0)" onclick=${() => NuevoIngreso()}><span class="title">Recibo de Ingreso</span></a></li>
 
@@ -73,68 +70,53 @@ function Ver(Flag_Cerrado) {
                     </ul> 
                 </li>
 
-                <li class="gui-folder">
-                    <a>
-                        <div class="gui-icon"><i class="md md-shopping-cart"></i></div>
-                        <span class="title"> Ventas</span>
-                    </a> 
+                <li class="sub-menu">
+                    <a href="javascript:void(0)" data-ma-action="submenu-toggle"><i class="zmdi zmdi-shopping-basket"></i> Venta</a>
+                   
                     <ul>
                         <li><a href="javascript:void(0)" onclick=${() => NuevaVenta()}><span class="title">Nueva Venta</span></a></li>
                     </ul> 
                 </li>
 
-                <li class="gui-folder">
-                    <a>
-                        <div class="gui-icon"><i class="fa fa-cart-arrow-down"></i></div>
-                        <span class="title"> Compras</span>
-                    </a> 
+                <li class="sub-menu">
+                    <a href="javascript:void(0)" data-ma-action="submenu-toggle"><i class="zmdi zmdi-shopping-cart"></i> Compra</a>
                     <ul>
                         <li><a href="javascript:void(0)" onclick=${() => ComprobantePago('08')}><span class="title">Facturas recibidas</span></a></li>
                     </ul> 
                 </li>
 
-                <li class="gui-folder">
-                    <a>
-                        <div class="gui-icon"><i class="fa fa-circle-o"></i></div>
-                        <span class="title"> Almacen</span>
-                    </a> 
+                <li class="sub-menu">
+                    <a href="javascript:void(0)" data-ma-action="submenu-toggle"><i class="zmdi zmdi-ruler"></i> Almacen</a>
                     <ul>
                         <li><a href="javascript:void(0)" onclick=${() => EntradasSalidas('NE')}><span class="title"> Registro de Entradas</span></a></li>
                         <li><a href="javascript:void(0)" onclick=${() => EntradasSalidas('NS')}><span class="title"> Registro de Salidas</span></a></li>
                     </ul> 
                 </li>
 
-                <li class="gui-folder">
-                    <a>
-                        <div class="gui-icon"><i class="fa fa-cogs"></i></div>
-                        <span class="title"> Administracion</span>
-                    </a> 
+                <li class="sub-menu">
+                    <a href="javascript:void(0)" data-ma-action="submenu-toggle"><i class="zmdi zmdi-case"></i> Administracion</a>
+                  
                     <ul>
                         <li><a href="javascript:void(0)" onclick=${() => Cuentas('14')}><span class="title"> Cuentas por Cobrar</span></a></li>
                         <li><a href="javascript:void(0)" onclick=${() => Cuentas('08')}><span class="title"> Cuentas por Pagar</span></a></li>
                     </ul> 
                 </li>
 
-                <li class="gui-folder">
-                    <a>
-                        <div class="gui-icon"><i class="fa fa-laptop"></i></div>
-                        <span class="title"> Sistema</span>
-                    </a> 
+                <li class="sub-menu">
+                    <a href="javascript:void(0)" data-ma-action="submenu-toggle"><i class="zmdi zmdi-laptop"></i> Sistema</a>
+                    
                     <ul>
                         <li><a href="javascript:void(0)" onclick=${() => NuevoArqueoCaja()}><span class="title"> Arqueo de Caja</span></a></li> 
                     </ul> 
                 </li>
 
-                <li class="gui-folder">
-                    <a>
-                        <div class="gui-icon"><i class="fa fa-cog"></i></div>
-                        <span class="title"> Extras</span>
-                    </a> 
-
+                <li class="sub-menu">
+                    <a href="javascript:void(0)" data-ma-action="submenu-toggle"><i class="zmdi zmdi-code-setting"></i> Extras</a>
+                 
                     <ul>
 
-                        <li class="gui-folder">
-                            <a> 
+                        <li class="sub-menu">
+                            <a data-ma-action="submenu-toggle"> 
                                 <span class="title">Mantenimientos</span>
                             </a> 
                             <ul>
@@ -147,8 +129,8 @@ function Ver(Flag_Cerrado) {
                             </ul>
                         </li>
 
-                        <li class="gui-folder">
-                            <a> 
+                        <li class="sub-menu">
+                            <a data-ma-action="submenu-toggle"> 
                                 <span class="title">Contabilidad</span>
                             </a> 
                             <ul>
@@ -158,8 +140,8 @@ function Ver(Flag_Cerrado) {
                             </ul>
                         </li>
 
-                        <li class="gui-folder">
-                            <a> 
+                        <li class="sub-menu">
+                            <a data-ma-action="submenu-toggle"> 
                                 <span class="title">Logistica</span>
                             </a> 
                             <ul>
@@ -180,8 +162,8 @@ function Ver(Flag_Cerrado) {
                         </li>
 
                         
-                        <li class="gui-folder">
-                            <a> 
+                        <li class="sub-menu">
+                            <a data-ma-action="submenu-toggle"> 
                                 <span class="title">Configuracion</span>
                             </a> 
                             <ul>
@@ -218,177 +200,157 @@ function Ver(Flag_Cerrado) {
 
             </ul>`
             :yo`
-            <ul id="main-menu" class="gui-controls"> 
+            <ul id="main-menu" class="main-menu"> 
 
-            <li class="gui-folder expanded not-active">
-                <a>
-                    <div class="gui-icon"><i class="fa fa-th"></i></div>
-                    <span class="title">Movimientos de Caja</span>
-                </a> 
-                <ul>
-                    <li><a href="javascript:void(0)"><span class="title">Recibo de Ingreso</span></a></li>
+                <li class="sub-menu not-active">
+                    <a href="javascript:void(0)" data-ma-action="submenu-toggle"><i class="zmdi zmdi-home"></i> Movimientos de Caja</a>
+                    <ul>
+                        <li><a href="javascript:void(0)" ><span class="title">Recibo de Ingreso</span></a></li>
 
-                    <li><a href="javascript:void(0)"><span class="title">Recibo de Egreso</span></a></li>
+                        <li><a href="javascript:void(0)" ><span class="title">Recibo de Egreso</span></a></li>
 
-                    <li><a href="javascript:void(0)"><span class="title">Compra y Venta de Dolares</span></a></li>
+                        <li><a href="javascript:void(0)" ><span class="title">Compra y Venta de Dolares</span></a></li>
 
-                    <li><a href="javascript:void(0)"><span class="title"> Envio Efectivo</span></a></li>
+                        <li><a href="javascript:void(0)" ><span class="title"> Envio Efectivo</span></a></li>
 
-                    <li><a href="javascript:void(0);"><span class="title"> Recepcion de Efectivo</span></a></li>
+                        <li><a href="javascript:void(0);" ><span class="title"> Recepcion de Efectivo</span></a></li>
 
-                </ul> 
-            </li>
+                    </ul> 
+                </li>
 
-            <li class="gui-folder not-active">
-                <a>
-                    <div class="gui-icon"><i class="md md-shopping-cart"></i></div>
-                    <span class="title"> Ventas</span>
-                </a> 
-                <ul>
-                    <li><a href="javascript:void(0)"><span class="title">Nueva Venta</span></a></li>
-                </ul> 
-            </li>
+                <li class="sub-menu not-active">
+                    <a href="javascript:void(0)" data-ma-action="submenu-toggle"><i class="zmdi zmdi-shopping-basket"></i> Venta</a>
+                   
+                    <ul>
+                        <li><a href="javascript:void(0)" ><span class="title">Nueva Venta</span></a></li>
+                    </ul> 
+                </li>
 
-            <li class="gui-folder not-active">
-                <a>
-                    <div class="gui-icon"><i class="fa fa-cart-arrow-down"></i></div>
-                    <span class="title"> Compras</span>
-                </a> 
-                <ul>
-                    <li><a href="javascript:void(0)"><span class="title">Facturas recibidas</span></a></li>
-                </ul> 
-            </li>
+                <li class="sub-menu not-active">
+                    <a href="javascript:void(0)" data-ma-action="submenu-toggle"><i class="zmdi zmdi-shopping-cart"></i> Compra</a>
+                    <ul>
+                        <li><a href="javascript:void(0)"><span class="title">Facturas recibidas</span></a></li>
+                    </ul> 
+                </li>
 
-            <li class="gui-folder not-active">
-                <a>
-                    <div class="gui-icon"><i class="fa fa-circle-o"></i></div>
-                    <span class="title"> Almacen</span>
-                </a> 
-                <ul>
-                    <li><a href="javascript:void(0)"><span class="title"> Registro de Entradas</span></a></li>
-                    <li><a href="javascript:void(0)"><span class="title"> Registro de Entradas</span></a></li>
-                </ul> 
-            </li>
+                <li class="sub-menu not-active">
+                    <a href="javascript:void(0)" data-ma-action="submenu-toggle"><i class="zmdi zmdi-ruler"></i> Almacen</a>
+                    <ul>
+                        <li><a href="javascript:void(0)" ><span class="title"> Registro de Entradas</span></a></li>
+                        <li><a href="javascript:void(0)" ><span class="title"> Registro de Salidas</span></a></li>
+                    </ul> 
+                </li>
 
-            <li class="gui-folder not-active">
-                <a>
-                    <div class="gui-icon"><i class="fa fa-cogs"></i></div>
-                    <span class="title"> Administracion</span>
-                </a> 
-                <ul>
-                    <li><a href="javascript:void(0)"><span class="title"> Cuentas por Cobrar</span></a></li>
-                    <li><a href="javascript:void(0)"><span class="title"> Cuentas por Pagar</span></a></li>
-                </ul> 
-            </li>
+                <li class="sub-menu not-active">
+                    <a href="javascript:void(0)" data-ma-action="submenu-toggle"><i class="zmdi zmdi-case"></i> Administracion</a>
+                  
+                    <ul>
+                        <li><a href="javascript:void(0)" ><span class="title"> Cuentas por Cobrar</span></a></li>
+                        <li><a href="javascript:void(0)" ><span class="title"> Cuentas por Pagar</span></a></li>
+                    </ul> 
+                </li>
 
-            <li class="gui-folder not-active">
-                <a>
-                    <div class="gui-icon"><i class="fa fa-laptop"></i></div>
-                    <span class="title"> Sistema</span>
-                </a> 
-                <ul>
-                    <li><a href="javascript:void(0)"><span class="title"> Arqueo de Caja</span></a></li> 
-                </ul> 
-            </li>
+                <li class="sub-menu not-active">
+                    <a href="javascript:void(0)" data-ma-action="submenu-toggle"><i class="zmdi zmdi-laptop"></i> Sistema</a>
+                    
+                    <ul>
+                        <li><a href="javascript:void(0)" ><span class="title"> Arqueo de Caja</span></a></li> 
+                    </ul> 
+                </li>
 
+                <li class="sub-menu not-active">
+                    <a href="javascript:void(0)" data-ma-action="submenu-toggle"><i class="zmdi zmdi-code-setting"></i> Extras</a>
+                 
+                    <ul>
 
-            <li class="gui-folder not-active">
-                <a>
-                    <div class="gui-icon"><i class="fa fa-cog"></i></div>
-                    <span class="title"> Configuracion</span>
-                </a> 
+                        <li class="sub-menu">
+                            <a> 
+                                <span class="title">Mantenimientos</span>
+                            </a> 
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)" ><span class="title"> Productos y servicios</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" ><span class="title"> Cliente/Proveedor</span></a>
+                                </li>
+                            </ul>
+                        </li>
 
-                <ul>
+                        <li class="sub-menu">
+                            <a> 
+                                <span class="title">Contabilidad</span>
+                            </a> 
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)" ><span class="title"> Cuentas Bancarias</span></a>
+                                </li>
+                            </ul>
+                        </li>
 
-                    <li class="gui-folder">
-                        <a> 
-                            <span class="title">Mantenimientos</span>
-                        </a> 
-                        <ul>
-                            <li>
-                                <a href="javascript:void(0)"><span class="title"> Productos y servicios</span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><span class="title"> Cliente/Proveedor</span></a>
-                            </li>
-                        </ul>
-                    </li>
+                        <li class="sub-menu">
+                            <a> 
+                                <span class="title">Logistica</span>
+                            </a> 
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)" ><span class="title"> Categoria</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" ><span class="title"> Turnos de Atencion</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" ><span class="title"> Almacenes</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" ><span class="title"> Conceptos</span></a>
+                                </li>
+                                
+                            </ul>
+                        </li>
 
-                    <li class="gui-folder">
-                        <a> 
-                            <span class="title">Contabilidad</span>
-                        </a> 
-                        <ul>
-                            <li>
-                                <a href="javascript:void(0)"><span class="title"> Cuentas Bancarias</span></a>
-                            </li>
-                        </ul>
-                    </li>
+                        
+                        <li class="sub-menu">
+                            <a> 
+                                <span class="title">Configuracion</span>
+                            </a> 
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)" ><span class="title"> Empresa</span></a>
+                                </li>
+                                
+                                <li>
+                                    <a href="javascript:void(0)" ><span class="title"> Sucursales</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" ><span class="title"> Usuarios</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" ><span class="title"> Perfiles</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" ><span class="title"> Cajas</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" ><span class="title"> Parametros</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" ><span class="title"> Modulos</span></a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+        
 
-                    <li class="gui-folder">
-                        <a> 
-                            <span class="title">Logistica</span>
-                        </a> 
-                        <ul>
-                            <li>
-                                <a href="javascript:void(0)"><span class="title"> Categoria</span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><span class="title"> Turnos de Atencion</span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><span class="title"> Almacenes</span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><span class="title"> Conceptos</span></a>
-                            </li>
-                            
-                        </ul>
-                    </li>
+                    </ul> 
+                    
+                </li>
 
-                    <li class="gui-folder">
-                        <a> 
-                            <span class="title">Configuracion</span>
-                        </a> 
-                        <ul>
-                            <li>
-                                <a href="javascript:void(0)"><span class="title"> Empresa</span></a>
-                            </li>
-                            
-                            <li>
-                                <a href="javascript:void(0)"><span class="title"> Sucursales</span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><span class="title"> Usuarios</span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><span class="title"> Perfiles</span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><span class="title"> Cajas</span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><span class="title"> Parametros</span></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"><span class="title"> Modulos</span></a>
-                            </li>
-                            
-                        </ul>
-                    </li>
-
-                </ul> 
-                
-            </li>
-
-        </ul>
+            </ul>
             `}`;
     var container = document.getElementById('nav-container')
     empty(container).appendChild(el);
     
-    $.getScript("/assets/js/core/cache/63d0445130d69b2868a8d28c93309746.js", function( data, textStatus, jqxhr ) {
-    });
-
     $(document).ready(function(){
         $("#btnCambiarTurno").click(function(){
             AbrirModalCambiarTurno()

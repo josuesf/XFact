@@ -376,7 +376,7 @@ function LlenarTabla(billetes){
             $("#laCantidadBilletesSoles").text("Total en Soles S/")
             $("#CantidadBilletesSoles").val($("#SaldoTotalSoles").val())
         }else{
-            toastr.error('No puede realizar aun el Cierre verifique no tenga saldo final Menor a Cero y vuelta a intentarlo.\n\n','Error',{timeOut: 5000})
+            swal("Error!",'No puede realizar aun el Cierre verifique no tenga saldo final Menor a Cero y vuelta a intentarlo.\n\n', "error") 
             $('#modal-proceso').modal('hide')
         }
 
@@ -384,7 +384,7 @@ function LlenarTabla(billetes){
             $("#laCantidadBilletesDolares").text("Total en Dolares USD")
             $("#CantidadBilletesDolares").val($("#SaldoTotalDolares").val())
         }else{
-            toastr.error('No puede realizar aun el Cierre verifique no tenga saldo final Menor a Cero y vuelta a intentarlo.\n\n','Error',{timeOut: 5000})
+            swal("Error!",'No puede realizar aun el Cierre verifique no tenga saldo final Menor a Cero y vuelta a intentarlo.\n\n', "error")  
             $('#modal-proceso').modal('hide')
         }
     }
@@ -505,7 +505,7 @@ function CargarBilletes(arqueo){
                 LlenarTabla(res.data.billetes)
             }).catch(function (e) {
                 console.log(e);
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             });
 
     }else{
@@ -528,7 +528,7 @@ function CargarBilletes(arqueo){
                  LlenarTabla(res.data.billetes)
             }).catch(function (e) {
                 console.log(e);
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             });
 
     }
@@ -539,10 +539,10 @@ function esValido(){
         if(parseFloat($("#DiferenciaDolares").val())>-1){
             return true
         }else{
-            toastr.error('La Diferencia en Dolares debe ser Mayor a -1.00','Error',{timeOut: 5000})
+            swal("Error!",'La Diferencia en Dolares debe ser Mayor a -1.00', "error") 
         }
     }else{
-        toastr.error('La Diferencia en Soles debe ser Mayor a -1.00','Error',{timeOut: 5000})
+        swal("Error!",'La Diferencia en Soles debe ser Mayor a -1.00', "error")  
     }
     return false
 }
@@ -586,14 +586,14 @@ function AceptarConfirmacion(){
             if(res.respuesta == 'ok'){
                 window.location.href = '/logout';
             }else{
-                toastr.error('Ocurrio un erro en el arqueo, comuniquese con el administrador de sistemas','Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un erro en el arqueo, comuniquese con el administrador de sistemas', "error") 
                 $('#modal-alerta').modal('hide')
                 $('#modal-alerta').waitMe('hide');
             }
            
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#modal-alerta').waitMe('hide');
         });
 }
@@ -627,7 +627,7 @@ function NuevoArqueoCaja(pCargarEfectivo) {
 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 

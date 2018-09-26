@@ -18,7 +18,7 @@ function VerCuentas(variables,fecha_actual,CodLibro) {
     global.variablesPC[idTabPC]={idTab:idTabPC,flag_cliente:false}
 
     var tab = yo`
-    <li class="" ><a href="#tab_${idTabPC}" data-toggle="tab" aria-expanded="false" id="id_${idTabPC}">${CodLibro=='08'?'CUENTAS POR PAGAR':'CUENTAS POR COBRAR'} <a style="padding-left: 10px;"  onclick=${()=>CerrarTabPC(idTabPC)} class="btn"><i class="fa fa-close text-danger"></i></a></a></li>`
+    <li class="" ><a href="#tab_${idTabPC}" data-toggle="tab" aria-expanded="false" id="id_${idTabPC}">${CodLibro=='08'?'CUENTAS POR PAGAR':'CUENTAS POR COBRAR'} <a style="padding-left: 10px;font-size:15px"  onclick=${()=>CerrarTabPC(idTabPC)}><i class="zmdi zmdi-close"></i></a></a></li>`
 
 
     //flag_cliente = false 
@@ -642,24 +642,25 @@ function EsValido(idTab){
                if(parseFloat($("#TotalAmortizar_"+idTab).val())!=0){
                     return true
                }else{
-                    toastr.error('El Monto a Amortizar debe ser Mayor a CERO (0.00).','Error',{timeOut: 5000})
+                    swal("Error!",'El Monto a Amortizar debe ser Mayor a CERO (0.00).', "error") 
                     $("#TotalAmortizar_"+idTab).focus()
                }    
            }else{
                if($("#Cod_FormaPago_"+idTab).val().toString()=="998"){
-                    toastr.error('Debe de selecionar un Pago Adelantado que sea superior o igual al Monto Total de Comprobante.','Error',{timeOut: 5000})
+                    swal("Error!",'Debe de selecionar un Pago Adelantado que sea superior o igual al Monto Total de Comprobante.', "error")  
                }else{
                    if($("#Cod_FormaPago_"+idTab).val().toString()=="007"){
-                        toastr.error('Debe de selecionar un Cheque que sea superior o igual al Monto Total de Comprobante.','Error',{timeOut: 5000})
+                        swal("Error!",'Debe de selecionar un Cheque que sea superior o igual al Monto Total de Comprobante.', "error") 
                    }
                }
                $("#Cuenta_CajaBancos_"+idTab).focus()
            }
        }else{
-            toastr.error('Debe ingresar como minimo un Detalle en el Comprobante.','Error',{timeOut: 5000})
+            swal("Error!",'Debe ingresar como minimo un Detalle en el Comprobante.', "error") 
+            
        }
    }else{
-        toastr.error('Debe selecionar un cliente si por defecto dejarlo en CLIENTES VARIOS.','Error',{timeOut: 5000})
+        swal("Error!",'Debe selecionar un cliente si por defecto dejarlo en CLIENTES VARIOS.', "error") 
         $("#Cliente_"+idTab).focus()
    }
 
@@ -754,7 +755,7 @@ function BuscarPorFecha(CodLibro,idTab){
             } 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
     
 }
@@ -817,7 +818,7 @@ function CambioCodCuentaBancaria(CodLibro,idTab){
             } 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -842,7 +843,7 @@ function CambioFormasPago(CodLibro,idTab){
                         $("#lbCuentaCajaBanco_"+idTab).text("# de Cheque: ")
                         TraerCuentaBancariaPorSucursal(CodLibro,idTab)
                     }else{
-                        toastr.error('No Existe la Operacion de CHEQUE para ventas.\nSe debe de Depositar el Cheque eh ingresarlo como Deposito en Cuenta.','Error',{timeOut: 5000})
+                        swal("Error!",'No Existe la Operacion de CHEQUE para ventas.\nSe debe de Depositar el Cheque eh ingresarlo como Deposito en Cuenta.', "error") 
                         $("#Cod_FormaPago_"+idTab).val(null)
                     }
                     break 
@@ -908,14 +909,14 @@ function TraerPorCuentaOperacion(idTab){
             if (res.respuesta == 'ok') {
                 var cuentas = res.data.cuentas
                 if(cuentas.length > 0){
-                    toastr.error('En la Cuenta: '+$("#Cod_CuentaBancaria_"+idTab+" option:selected").text()+' la Operacion N°: '+$("#Cuenta_CajaBancos_"+idTab+" option:selected").text()+', ya Existe. Verifique y Vuelva a Intentarlo','Error',{timeOut: 5000})
+                    swal("Error!",'En la Cuenta: '+$("#Cod_CuentaBancaria_"+idTab+" option:selected").text()+' la Operacion N°: '+$("#Cuenta_CajaBancos_"+idTab+" option:selected").text()+', ya Existe. Verifique y Vuelva a Intentarlo', "error") 
                     $("#Cuenta_CajaBancos_"+idTab).val("")
                     $("#Cuenta_CajaBancos_"+idTab).focus()
                 }
             } 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -951,7 +952,7 @@ function TraerTipoCambio(CodLibro,idTab){
                     } 
                 }).catch(function (e) {
                     console.log(e);
-                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 });
 
         }catch(e){
@@ -986,7 +987,7 @@ function TraerSaldoPagoAdelantado(idTab){
             } 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -1010,7 +1011,7 @@ function TraerCuentasBancariasXIdClienteProveedor(CodLibro,idTab){
             } 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -1034,7 +1035,7 @@ function TraerCuentaBancariaPorSucursal(CodLibro,idTab){
             } 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -1126,7 +1127,7 @@ function BuscarClienteDoc(CodLibro,idTab) {
                 $("#Direccion_"+idTab).attr("disabled",false);
                 $("#Cod_TipoDoc_"+idTab).attr("disabled",false);
 
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 $('#div-cliente-cuentas_'+idTab).waitMe('hide');
             });
     }
@@ -1162,7 +1163,7 @@ function CargarLicitacionesCliente(Id_ClienteProveedor){
             } 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
 }
 
@@ -1172,7 +1173,7 @@ function VerGuardar(CodLibro,idTab){
             CargarModalConfirmacionCuentas(CodLibro,idTab)
         }
     }catch(e){
-        toastr.error('Error al agregar nuevo elemento, intentelo mas luego.\n\n','Error',{timeOut: 5000})
+        swal("Error!",'Error al agregar nuevo elemento, intentelo mas luego.\n\n', "error") 
     }
 }
  
@@ -1228,7 +1229,7 @@ function GuardarMovimientoBancario(Facturas,CodLibro,idTab){
             console.log(res)
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         }); 
 
 }
@@ -1293,7 +1294,7 @@ function GuardarMovimientoCaja(Facturas,CodLibro,idTab){
             console.log(res)
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         }); 
  
 }
@@ -1401,7 +1402,7 @@ function AceptarConfirmacionCuenta(CodLibro,idTab){
                         }
                     }).catch(function (e) {
                         console.log(e);
-                        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                     }); 
 
 
@@ -1508,14 +1509,14 @@ function AceptarConfirmacionCuenta(CodLibro,idTab){
                                 }
                             }).catch(function (e) {
                                 console.log(e);
-                                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                             }); 
                         
 
                     }
                 }).catch(function (e) {
                     console.log(e);
-                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 }); 
             
         }         
@@ -1569,13 +1570,13 @@ function Cuentas(Cod_Libro) {
     
                 }).catch(function (e) {
                     console.log(e);
-                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                     $('#main-contenido').waitMe('hide');
                 });
 
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 }

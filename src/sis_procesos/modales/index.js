@@ -406,15 +406,15 @@ function GuardarNuevoCliente(){
             $('#modal-superior').modal('hide')
             $('#modal-superior').waitMe('hide');
             if (res.respuesta == 'ok') { 
-                toastr.success('Se registro correctamente el cliente','Confirmacion',{timeOut: 5000})              
+                swal("Confirmacion",'Se registro correctamente el cliente', "success")             
                 $('#modal-superior').modal('hide')
             }
             else{
-                toastr.error('No se pudo registrar correctamente el cliente','Error',{timeOut: 5000})
+                swal("Error!",'No se pudo registrar correctamente el cliente', "error") 
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#modal-superior').waitMe('hide');
         });
     }
@@ -444,7 +444,7 @@ function CargarCategoria(){
     }).catch(function (e) {
         console.log(e);
         $('#divCodCategoriaProducto').waitMe('hide');
-        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
     });
 }
 
@@ -471,7 +471,7 @@ function CargarTipoPrecio(){
     }).catch(function (e) {
         console.log(e);
         $('#divCodPrecioProducto').waitMe('hide');
-        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
     });
 }
 
@@ -527,7 +527,7 @@ function BusquedaProducto(){
         }).catch(function (e) {
             console.log(e);
             $('#contenedorTablaProductos').waitMe('hide');
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
     } 
 }
@@ -565,7 +565,7 @@ function BusquedaXIdClienteProveedor(){
                 empty(document.getElementById('contenedorTablaProductos'));
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
         });
     }
 }
@@ -610,7 +610,7 @@ function BusquedaClienteModal(idInputCliente,idInputDoc,Cod_TipoCliente){
             }).catch(function (e) {
                 console.log(e);
                 $('#contenedorTablaClientes').waitMe('hide');
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             });
         }else{
             
@@ -644,7 +644,7 @@ function BusquedaClienteModal(idInputCliente,idInputDoc,Cod_TipoCliente){
             }).catch(function (e) {
                 console.log(e);
                 $('#contenedorTablaClientes').waitMe('hide');
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             });
         }
         $("#txtBuscarClienteModal").focus()

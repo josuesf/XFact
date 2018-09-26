@@ -16,7 +16,7 @@ function CargarFormulario(variables, fecha_actual,empresa) {
     const idTabRI = "RI_"+cantidad_tabs
     global.variablesRI[idTabRI]={idTab:idTabRI,flag_cliente:false,Id_ClienteProveedor:null,Obs_Recibo:null}//push({idTab:idTabRI,flag_cliente:false,Id_ClienteProveedor:null,Obs_Recibo})
     var tab = yo`
-    <li class=""  ><a href="#tab_${idTabRI}" data-toggle="tab" aria-expanded="false" id="id_${idTabRI}">Recibo de Ingreso <a style="padding-left: 10px;"  onclick=${()=>CerrarTabRI(idTabRI)} class="btn"><i class="fa fa-close text-danger"></i></a></a></li>`
+    <li class=""  ><a href="#tab_${idTabRI}" data-toggle="tab" aria-expanded="false" id="id_${idTabRI}">Recibo de Ingreso <a style="padding-left: 10px;font-size:15px"  onclick=${()=>CerrarTabRI(idTabRI)} ><i class="zmdi zmdi-close"></i></a></a></li>`
 
     var el = yo`
         <div class="tab-pane" id="tab_${idTabRI}">
@@ -565,7 +565,7 @@ function BuscarClienteDoc(idTab) {
                 $("#Cliente_"+idTab).attr("disabled",false); 
                 $("#Cod_TipoDoc_"+idTab).attr("disabled",false);
 
-                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
                 $('#div-cliente-recibo-ingreso_'+idTab).waitMe('hide');
             });
     }
@@ -647,15 +647,15 @@ function Guardar(idTab) {
             //$('#modal-proceso').modal('hide')
             //$('#modal-proceso').waitMe('hide');
             if (res.respuesta == 'ok') {
-                toastr.success('Se registro correctamente el ingreso','Confirmacion',{timeOut: 5000})
+                swal("Confirmacion",'Se registro correctamente el ingreso', "success") 
                 RefrescarIngreso(idTab)
                 //refrescar_movimientos()
             }else{
-                toastr.error('No se pudo registrar correctamente el ingreso','Error',{timeOut: 5000})
+                swal("Error!",'No se pudo registrar correctamente el ingreso', "error") 
             }
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
     }
@@ -689,12 +689,12 @@ function RefrescarIngreso(idTab){
                 console.log("ri get variables",global.variablesRI)
                 RefrescarFormulario(res.data, fecha_format,res.empresa,idTab)
             }else{
-                toastr.error('Ocurrio un error al momento de cargar los datos.','Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error al momento de cargar los datos.', "error") 
             } 
             $('#main-contenido').waitMe('hide');
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 }
@@ -726,12 +726,12 @@ function NuevoIngreso() {
                 CargarFormulario(res.data, fecha_format,res.empresa)
             }
             else{
-                toastr.error('Ocurrio un error al momento de cargar los datos.','Error',{timeOut: 5000})
+                swal("Error!",'Ocurrio un error al momento de cargar los datos.', "error") 
             }
             $('#main-contenido').waitMe('hide');
         }).catch(function (e) {
             console.log(e);
-            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
+            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
             $('#main-contenido').waitMe('hide');
         });
 }

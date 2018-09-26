@@ -44,6 +44,7 @@
     "babelify": "^7.3.0",
     "bootstrap": "^4.1.0",
     "browserify": "^13.0.0",
+    "electron": "^1.6.6",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.2.2",
@@ -51,8 +52,7 @@
     "gulp-uglify": "^3.0.0",
     "nodemon": "^1.17.3",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0",
-    "electron": "^1.6.6"
+    "watchify": "^3.7.0"
   },
   "scripts": {
     "build": "gulp",
