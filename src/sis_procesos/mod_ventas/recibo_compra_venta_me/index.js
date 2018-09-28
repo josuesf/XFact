@@ -32,18 +32,19 @@ function Ver(_escritura, Serie, variables,fecha_actual,empresa) {
                     <div class="row">
                         <div class="col-md-8">
                             <div class="card">
-                                <div class="card-head">
+                                <div class="card-header bgm-blue">
                                     <header>A favor de : </header>
-                                    <div class="tools">
-                                        <div class="btn-group">
-                                            <a class="btn btn-icon-toggle btn-info btn-refresh" onclick=${()=>NuevoCliente(variables.tipos_documento)}><i class="fa fa-plus"></i></a>
-                                            <a class="btn btn-icon-toggle btn-warning" onclick=${()=>EditarCliente(idTabCVME)}><i class="fa fa-pencil"></i></a>
-                                            <a class="btn btn-icon-toggle btn-success btn-refresh" onclick=${()=>BuscarCliente("txtNombreCliente_"+idTabCVME,"Nro_DocumentoBuscar_"+idTabCVME,"002")}><i class="fa fa-search"></i></a>
-                                            <a class="btn btn-icon-toggle btn-primary"><i class="fa fa-globe"></i></a>
-                                        </div>
-                                    </div>
+                                    <ul class="actions">
+                                        <li>
+                                            <a href="javascript:void(0);" onclick=${()=>NuevoCliente(variables.documentos)}><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);"  onclick=${()=>EditarCliente(idTabCVME)}><i class="zmdi zmdi-edit"></i></a>
+                                            <a href="javascript:void(0);"  onclick=${()=>BuscarCliente("txtNombreCliente_"+idTabCVME,"Nro_DocumentoBuscar_"+idTabCVME,"002")}><i class="zmdi zmdi-search"></i></a>
+                                            <a href="javascript:void(0);" ><i class="zmdi zmdi-globe"></i></a>
+                                        </li>
+                                    </ul>
+                                   
                                 </div> 
-                                <div class="card-body">
+                                <div class="card-body card-padding">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -270,18 +271,18 @@ function RefrescarVer(_escritura, Serie, variables,fecha_actual,empresa,idTabCVM
                     <div class="row">
                         <div class="col-md-8">
                             <div class="card">
-                                <div class="card-head">
+                                <div class="card-header bgm-blue">
                                     <header>A favor de : </header>
-                                    <div class="tools">
-                                        <div class="btn-group">
-                                            <a class="btn btn-icon-toggle btn-info btn-refresh" onclick=${()=>NuevoCliente(variables.tipos_documento)}><i class="fa fa-plus"></i></a>
-                                            <a class="btn btn-icon-toggle btn-warning" onclick=${()=>EditarCliente(idTabCVME)}><i class="fa fa-pencil"></i></a>
-                                            <a class="btn btn-icon-toggle btn-success btn-refresh" onclick=${()=>BuscarCliente("txtNombreCliente_"+idTabCVME,"Nro_DocumentoBuscar_"+idTabCVME,"002")}><i class="fa fa-search"></i></a>
-                                            <a class="btn btn-icon-toggle btn-primary"><i class="fa fa-globe"></i></a>
-                                        </div>
-                                    </div>
+                                    <ul class="actions">
+                                        <li>
+                                            <a href="javascript:void(0);" onclick=${()=>NuevoCliente(variables.documentos)}><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);"  onclick=${()=>EditarCliente(idTabCVME)}><i class="zmdi zmdi-edit"></i></a>
+                                            <a href="javascript:void(0);"  onclick=${()=>BuscarCliente("txtNombreCliente_"+idTabCVME,"Nro_DocumentoBuscar_"+idTabCVME,"002")}><i class="zmdi zmdi-search"></i></a>
+                                            <a href="javascript:void(0);" ><i class="zmdi zmdi-globe"></i></a>
+                                        </li>
+                                    </ul>
                                 </div> 
-                                <div class="card-body">
+                                <div class="card-body card-padding">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">

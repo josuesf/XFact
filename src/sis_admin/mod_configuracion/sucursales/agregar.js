@@ -53,16 +53,16 @@ module.exports = function NuevaSucursal(_escritura, sucursal) {
        
         <section class="content">
             <div class="card">
-                <div class="card-head">
+                <div class="card-header">
                     <header>
                         <a onclick=${() => ListarSucursales(_escritura)}
                         class="btn btn-xs btn-icon-toggle">
-                            <i class="fa fa-arrow-left"></i></a>
+                            <i class="zmdi zmdi-arrow-left"></i></a>
                              ${sucursal ? 'Editar' : 'Nueva'} Sucursal
                     </header>
                    
                 </div> 
-                <div class="card-body">
+                <div class="card-body card-padding">
                     <div class="panel">
                         
                         <!-- form start -->
@@ -228,7 +228,7 @@ function AgregarTabla(usuarios) {
         <tr>
             <td>${u.Cod_Usuarios}</td>
             <td>${u.Nick}</td>
-            <td><button class="btn btn-xs btn-primary" data-dismiss="modal" onclick="${() => SeleccionarUsuario(u)}"><i class="fa fa-check"></i> Elegir</button></td>
+            <td><button class="btn btn-xs btn-primary" data-dismiss="modal" onclick="${() => SeleccionarUsuario(u)}"><i class="zmdi zmdi-check"></i> Elegir</button></td>
         </tr>`)}
     </tbody>
 

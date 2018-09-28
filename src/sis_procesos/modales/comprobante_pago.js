@@ -22,7 +22,7 @@ function VerBuscarComprobatePago(CodLibro,tipos_comprobantes){
                             <div class="input-group">
                                 <input type="text" class="form-control" value="" id="txtBusquedaModalComprobantePago" data-id=null>
                                 <div class="input-group-btn">
-                                    <button type="button" class="btn btn-success" onclick="${()=>BuscarCliente("txtBusquedaModalComprobantePago",null,null)}"><i class="fa fa-search"></i> Buscar</button>
+                                    <button type="button" class="btn btn-success" onclick="${()=>BuscarCliente("txtBusquedaModalComprobantePago",null,null)}"><i class="zmdi zmdi-search"></i> Buscar</button>
                                 </div>
                             </div>
                         </div>

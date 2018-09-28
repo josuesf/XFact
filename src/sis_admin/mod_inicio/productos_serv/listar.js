@@ -33,16 +33,17 @@ function Ver(variables, paginas, pagina_actual, _escritura){
         </section>
         <section class="content">
             <div class="card">
-                <div class="card-head">
+                <div class="card-header">
                     <header>Lista de Productos y Servicios</header>
-                    <div class="tools">
-                        <div class="btn-group">
-                        ${_escritura ? yo`<a onclick=${()=>NuevoProductoServ(_escritura, variables)} class="btn btn-info pull-right">
-                            <i class="fa fa-plus"></i> Nuevo</a>`: yo``}
-                        </div>
-                    </div>
+                    <ul class="actions">
+                        <li>
+                            ${_escritura ? yo`<a onclick=${()=>NuevoProductoServ(_escritura, variables)} class="btn btn-info pull-right">
+                            <i class="zmdi zmdi-plus"></i> Nuevo</a>`: yo``}
+                        </li>
+                    </ul> 
+                   
                 </div>
-                <div class="card-body">
+                <div class="card-body card-padding">
                     <div class="table-responsive">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
@@ -68,8 +69,8 @@ function Ver(variables, paginas, pagina_actual, _escritura){
                                 <td>${u.Nom_Marca}</td>
                                 <td>${u.Flag_Activo?"Si":"No"}</td>
                                 <td>
-                                    ${_escritura ? yo`<button class="btn btn-xs btn-success" onclick="${()=>NuevoProductoServ(_escritura, variables, u.Id_Producto)}"><i class="fa fa-edit"></i></button>` : yo``}
-                                    ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-conf" onclick="${()=>EliminarProductoServ(_escritura, u.Id_Producto)}"><i class="fa fa-trash"></i></button>` : yo``}
+                                    ${_escritura ? yo`<button class="btn btn-xs btn-success" onclick="${()=>NuevoProductoServ(_escritura, variables, u.Id_Producto)}"><i class="zmdi zmdi-edit"></i></button>` : yo``}
+                                    ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-conf" onclick="${()=>EliminarProductoServ(_escritura, u.Id_Producto)}"><i class="zmdi zmdi-delete"></i></button>` : yo``}
                                     
                                 </td>
                             </tr>`)}

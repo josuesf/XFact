@@ -38,7 +38,7 @@ function VerBuscarPorSerie(almacenes) {
                         </div>
                         <div  class="col-md-2">
                             <div class="form-group">
-                               <button class="btn btn-success btn-sm" onclick=${()=>BuscarSerie(event)}><i class="fa fa-search"></i> Buscar</button>
+                               <button class="btn btn-success btn-sm" onclick=${()=>BuscarSerie(event)}><i class="zmdi zmdi-search"></i> Buscar</button>
                             </div>
                         </div>
                     </div>

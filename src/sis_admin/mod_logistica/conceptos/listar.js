@@ -37,16 +37,17 @@ function Ver(conceptos, paginas, pagina_actual, _escritura, tipos_conceptos) {
         </section>
         <section class="content">
             <div class="card">
-                <div class="card-head">
+                <div class="card-header">
                     <header>Lista de Conceptos</header>
-                    <div class="tools">
-                        <div class="btn-group">
-                        ${_escritura ? yo`<a onclick=${() => NuevoConcepto(_escritura, tipos_conceptos)} class="btn btn-info pull-right">
-                            <i class="fa fa-plus"></i> Nuevo Concepto</a>`: yo``}
-                        </div>
-                    </div>
+                    <ul class="actions">
+                        <li>
+                            ${_escritura ? yo`<a onclick=${() => NuevoConcepto(_escritura, tipos_conceptos)} class="btn btn-info pull-right">
+                            <i class="zmdi zmdi-plus"></i> Nuevo Concepto</a>`: yo``}
+                        </li>
+                    </ul> 
+                    
                 </div> 
-                <div class="card-body">
+                <div class="card-body card-padding">
                     <div class="table-responsive">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
@@ -69,8 +70,8 @@ function Ver(conceptos, paginas, pagina_actual, _escritura, tipos_conceptos) {
                                 <td>${u.Cod_UsuarioReg}</td>
                                 <td>${getFechaHora(u.Fecha_Reg, true, false)}</td>
                                 <td>
-                                    ${_escritura ? yo`<button class="btn btn-xs btn-success" onclick="${() => NuevoConcepto(_escritura, tipos_conceptos, u)}"><i class="fa fa-edit"></i></button>` : yo``}
-                                    ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-conceptos" onclick="${() => Eliminar(_escritura, u)}"><i class="fa fa-trash"></i></button>` : yo``}
+                                    ${_escritura ? yo`<button class="btn btn-xs btn-success" onclick="${() => NuevoConcepto(_escritura, tipos_conceptos, u)}"><i class="zmdi zmdi-edit"></i></button>` : yo``}
+                                    ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-conceptos" onclick="${() => Eliminar(_escritura, u)}"><i class="zmdi zmdi-delete"></i></button>` : yo``}
                                     
                                 </td>
                             </tr>`)}

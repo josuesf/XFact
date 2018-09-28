@@ -46,16 +46,16 @@ function Ver(cajas, paginas, pagina_actual, _escritura, _sucursales) {
         </section>
         <section class="content">
             <div class="card">
-                <div class="card-head">
+                <div class="card-header">
                     <header>Lista de Cajas</header>
-                    <div class="tools">
-                        <div class="btn-group">
+                    <ul class="actions">
+                        <li>
                             ${_escritura ? yo`<a onclick=${()=>NuevaCaja(_escritura, _sucursales, [], [])} class="btn btn-info pull-right">
-                            <i class="fa fa-plus"></i> Nueva Caja</a>`: yo``}
-                        </div>
-                    </div>
+                            <i class="zmdi zmdi-plus"></i> Nueva Caja</a>`: yo``}
+                        </li>
+                    </ul> 
                 </div>
-                <div class="card-body">
+                <div class="card-body card-padding">
                     <div class="table-responsive">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
@@ -77,8 +77,8 @@ function Ver(cajas, paginas, pagina_actual, _escritura, _sucursales) {
                                 <td>${u.Cod_UsuarioCajero}</td>
                                 <td>${u.Cod_CuentaContable}</td>
                                 <td>
-                                    ${_escritura ? yo`<button class="btn btn-xs btn-success" onclick="${()=>NuevaCaja(_escritura, _sucursales, [], [], u)}"><i class="fa fa-edit"></i></button>` : yo``}
-                                    ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-cajas" onclick="${()=>EliminarCaja(_escritura, u)}"><i class="fa fa-trash"></i></button>` : yo``}
+                                    ${_escritura ? yo`<button class="btn btn-xs btn-success" onclick="${()=>NuevaCaja(_escritura, _sucursales, [], [], u)}"><i class="zmdi zmdi-edit"></i></button>` : yo``}
+                                    ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-cajas" onclick="${()=>EliminarCaja(_escritura, u)}"><i class="zmdi zmdi-delete"></i></button>` : yo``}
                                     
                                 </td>
                             </tr>`)}

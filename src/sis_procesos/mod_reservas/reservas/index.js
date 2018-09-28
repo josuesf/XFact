@@ -531,13 +531,13 @@ function VerRegistroReserva(variables) {
                                                 <div class="input-group input-group-sm">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-success" id="AgregarCliente"  onclick=${()=>NuevoCliente(variables.documentos)}>
-                                                            <i class="fa fa-plus"></i>
+                                                            <i class="zmdi zmdi-plus"></i>
                                                         </button>
                                                     </div>
                                                     <input type="text" id="Cliente" class="form-control required" data-id=null>
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-info" id="BuscarCliente"  onclick=${()=>BuscarCliente("Cliente","Nro_Documento","001")}>
-                                                            <i class="fa fa-search"></i>
+                                                            <i class="zmdi zmdi-search"></i>
                                                         </button>
                                                     </div>
                                                 </div>

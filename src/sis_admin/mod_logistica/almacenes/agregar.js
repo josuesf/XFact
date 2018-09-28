@@ -36,16 +36,16 @@ function Ver(_escritura, tipo_almacenes, almacen, cajas_almacen) {
        
         <section class="content">
             <div class="card">
-                <div class="card-head">
+                <div class="card-header">
                     <header>
                         <a onclick=${() => ListarAlmacenes(_escritura)}
                         class="btn btn-xs btn-icon-toggle">
-                            <i class="fa fa-arrow-left"></i></a>
+                            <i class="zmdi zmdi-arrow-left"></i></a>
                             ${almacen ? 'Editar' : 'Nuevo'} Almacen
                     </header>   
                     
                 </div> 
-                <div class="card-body">
+                <div class="card-body card-padding">
                     <div class="panel">
                         <!-- form start -->
                         <div role="form">
@@ -106,14 +106,14 @@ function Ver(_escritura, tipo_almacenes, almacen, cajas_almacen) {
                                                 <ul class="nav nav-tabs">
                                                     <li class="active">
                                                         <a href="#tab_1" data-toggle="tab" aria-expanded="true">
-                                                            <i class="fa fa-file"></i> Relacion con Caja</a>
+                                                            <i class="zmdi zmdi-file"></i> Relacion con Caja</a>
                                                     </li>
                                                 </ul>
                                                 <div class="tab-content">
                                                     <div class="tab-pane active" id="tab_1">
                                                         <div class="box-header">
                                                             <a class="btn btn-info pull-right" data-toggle="modal" data-target="#modal-nuevo-editar-caja_almacen" onclick="${() => AgregarCaja(_escritura, tipo_almacenes, almacen)}">
-                                                                <i class="fa fa-plus"></i> Agregar</a>
+                                                                <i class="zmdi zmdi-plus"></i> Agregar</a>
                                                         </div>
                                                         <div class="table-responsive">
                                                             <table class="table table-bordered table-striped">
@@ -139,11 +139,11 @@ function Ver(_escritura, tipo_almacenes, almacen, cajas_almacen) {
                                                                             ${_escritura ? yo`
                                                                             <button class="btn btn-xs btn-success" data-toggle="modal" data-target="#modal-nuevo-editar-caja_almacen"
                                                                                 onclick="${() => AgregarCaja(_escritura, tipo_almacenes, almacen, u)}">
-                                                                                <i class="fa fa-edit"></i>
+                                                                                <i class="zmdi zmdi-edit"></i>
                                                                             </button>` : yo``} ${_escritura ? yo`
                                                                             <button class="btn btn-xs btn-danger" data-toggle="modal"
                                                                                 data-target="#modal-danger-caja_almacen" onclick="${() => EliminarCajaAlmacen(_escritura, tipo_almacenes, almacen, u)}">
-                                                                                <i class="fa fa-trash"></i>
+                                                                                <i class="zmdi zmdi-delete"></i>
                                                                             </button>` : yo``}
                                     
                                                                         </td>

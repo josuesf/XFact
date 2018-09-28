@@ -35,10 +35,10 @@ function Ver(empresa, _escritura) {
         </section>
         <section class="content">
             <div class="card">
-                <div class="card-head">
+                <div class="card-header">
                     <header>Datos de Empresa</header>
                 </div>
-                <div class="card-body">
+                <div class="card-body card-padding">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -102,7 +102,7 @@ function Ver(empresa, _escritura) {
                                 <ul class="nav nav-tabs">
                                     <li class="active">
                                         <a href="#tab_1" data-toggle="tab" aria-expanded="true">
-                                            <i class="fa fa-file"></i> Impuestos</a>
+                                            <i class="zmdi zmdi-file"></i> Impuestos</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">

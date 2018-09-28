@@ -57,8 +57,8 @@ function Ver(variables) {
                                     <td><input value="${u.Responsable}" type="text" id="${btoa(u.id_Movimiento).toString().replace(/=/g ,"")}_${idTabR}" class="form-control" onchange=${()=>BuscarResponsable(btoa(u.id_Movimiento).replace(/=/g ,""),idTabR)} data-id="-1"></td>
                                     <td>
                                         <div class="btn-group">
-                                            <button class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Poner como pendiente" onclick=${()=>Reactivar(u,btoa(u.id_Movimiento).replace(/=/g ,""),idTabR)}><i class="fa fa-share"></i> </button>
-                                            <button class="btn btn-success btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Recepcionar" onclick=${()=>RegistrarRecepcion(u,btoa(u.id_Movimiento).replace(/=/g ,""),idTabR)}><i class="fa fa-arrow-circle-down"></i> </button>
+                                            <button class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Poner como pendiente" onclick=${()=>Reactivar(u,btoa(u.id_Movimiento).replace(/=/g ,""),idTabR)}><i class="zmdi zmdi-share"></i> </button>
+                                            <button class="btn btn-success btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Recepcionar" onclick=${()=>RegistrarRecepcion(u,btoa(u.id_Movimiento).replace(/=/g ,""),idTabR)}><i class="zmdi zmdi-arrow-circle-down"></i> </button>
                                         </div>
                                     </td>
                                 </tr>`)}
@@ -68,7 +68,7 @@ function Ver(variables) {
                     </div>
                     <div class="row">
                         <div class="col-md-2">
-                            <button type="button" class="btn btn-success" onclick=${()=>Recepcionados(idTabR)}><i class="fa fa-arrow-circle-down"></i> Recepcionados</button>
+                            <button type="button" class="btn btn-success" onclick=${()=>Recepcionados(idTabR)}><i class="zmdi zmdi-arrow-circle-down"></i> Recepcionados</button>
                         </div>
                         <div class="col-md-10">
                             <div class="row" id="divTotales_${idTabR}">
@@ -151,8 +151,8 @@ function RefrescarVer(variables,idTabR) {
                                     <td><input value="${u.Responsable}" type="text" id="${btoa(u.id_Movimiento).toString().replace(/=/g ,"")}_${idTabR}" class="form-control" onchange=${()=>BuscarResponsable(btoa(u.id_Movimiento).replace(/=/g ,""),idTabR)} data-id="-1"></td>
                                     <td>
                                         <div class="btn-group">
-                                            <button class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Poner en pendiente"  onclick=${()=>Reactivar(u,btoa(u.id_Movimiento).replace(/=/g ,""),idTabR)}><i class="fa fa-share"></i> </button>
-                                            <button class="btn btn-success btn-xs"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Recepcionar" onclick=${()=>RegistrarRecepcion(u,btoa(u.id_Movimiento).replace(/=/g ,""),idTabR)}><i class="fa fa-arrow-circle-down"></i> </button>
+                                            <button class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Poner en pendiente"  onclick=${()=>Reactivar(u,btoa(u.id_Movimiento).replace(/=/g ,""),idTabR)}><i class="zmdi zmdi-share"></i> </button>
+                                            <button class="btn btn-success btn-xs"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Recepcionar" onclick=${()=>RegistrarRecepcion(u,btoa(u.id_Movimiento).replace(/=/g ,""),idTabR)}><i class="zmdi zmdi-arrow-circle-down"></i> </button>
                                         </div>
                                     </td>
                                 </tr>`)}
@@ -162,7 +162,7 @@ function RefrescarVer(variables,idTabR) {
                     </div>
                     <div class="row">
                         <div class="col-md-2">
-                            <button type="button" class="btn btn-success" onclick=${()=>Recepcionados(idTabR)}><i class="fa fa-arrow-circle-down"></i> Recepcionados</button>
+                            <button type="button" class="btn btn-success" onclick=${()=>Recepcionados(idTabR)}><i class="zmdi zmdi-arrow-circle-down"></i> Recepcionados</button>
                         </div>
                         <div class="col-md-10">
                             <div class="row" id="divTotales_${idTabR}">

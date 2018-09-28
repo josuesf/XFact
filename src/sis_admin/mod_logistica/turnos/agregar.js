@@ -14,15 +14,15 @@ function Ver(_escritura, turno){
         
         <section class="content">
             <div class="card">
-                <div class="card-head">
+                <div class="card-header">
                     <header>
                         <a onclick=${()=>ListarTurnos(_escritura)}
                         class="btn btn-xs btn-icon-toggle">
-                            <i class="fa fa-arrow-left"></i></a>
+                            <i class="zmdi zmdi-arrow-left"></i></a>
                             ${turno?'Editar':'Nuevo'} Turno
                     </header>
                 </div> 
-                <div class="card-body">
+                <div class="card-body card-padding">
                     <div class="panel">
                         
                         <!-- form start -->
@@ -55,7 +55,7 @@ function Ver(_escritura, turno){
                             
                                             <div class="input-group date">
                                                 <div class="input-group-addon">
-                                                    <i class="fa fa-calendar"></i>
+                                                    <i class="zmdi zmdi-calendar"></i>
                                                 </div>
                                                 <input type="text" class="form-control pull-right required" id="Fecha_Inicio" value="${turno?getFechaHora(turno.Fecha_Inicio,true,false):''}">
                                             </div>
@@ -72,7 +72,7 @@ function Ver(_escritura, turno){
                                                     <input type="text" class="form-control timepicker required" id="Hora_Inicio" value="${turno?getFechaHora(turno.Fecha_Inicio,false,true):''}">
 
                                                     <div class="input-group-addon">
-                                                        <i class="fa fa-clock-o"></i>
+                                                        <i class="zmdi zmdi-clock-o"></i>
                                                     </div>
                                                 </div>
                                             <!-- /.input group -->
@@ -86,7 +86,7 @@ function Ver(_escritura, turno){
                             
                                             <div class="input-group date">
                                                 <div class="input-group-addon">
-                                                    <i class="fa fa-calendar"></i>
+                                                    <i class="zmdi zmdi-calendar"></i>
                                                 </div>
                                                 <input type="text" class="form-control pull-right required" id="Fecha_Fin"  value="${turno?getFechaHora(turno.Fecha_Fin,true,false):''}">
                                             </div>
@@ -102,7 +102,7 @@ function Ver(_escritura, turno){
                                                     <input type="text" class="form-control timepicker required" id="Hora_Fin"  value="${turno?getFechaHora(turno.Fecha_Fin,false,true):''}">
 
                                                     <div class="input-group-addon">
-                                                        <i class="fa fa-clock-o"></i>
+                                                        <i class="zmdi zmdi-clock-o"></i>
                                                     </div>
                                                 </div>
                                             <!-- /.input group -->

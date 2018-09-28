@@ -51,20 +51,19 @@ function VerNuevaVenta(variables,CodLibro) {
             <div class="row">
                 <div class="col-md-3">
                     <div class="card" id="div-cliente">
-                        <div class="card-head card-head-sm style-primary text-center">
+                        <div class="card-header bgm-blue card-header bgm-blue-sm style-primary text-center">
                             <header>Datos del cliente</header>
-
-                            <div class="tools">
-                                <div class="btn-group">
-                                    <a class="btn btn-icon-toggle text-white" onclick=${()=>NuevoCliente(variables.documentos)}><i class="fa fa-plus"></i></a>
-                                    <a class="btn btn-icon-toggle text-white" onclick=${()=>EditarCliente(idTabVenta)}><i class="fa fa-pencil"></i></a>
-                                    <a class="btn btn-icon-toggle text-white" onclick=${()=>BuscarCliente("Cliente_"+idTabVenta,"Nro_Documento_"+idTabVenta,null)}><i class="fa fa-search"></i></a>
-                                    <a class="btn btn-icon-toggle text-white"><i class="fa fa-globe"></i></a>
-                                </div>
-                            </div>
-
+                            <ul class="actions">
+                                <li>
+                                    <a href="javascript:void(0);" onclick=${()=>NuevoCliente(variables.documentos)}><i class="zmdi zmdi-plus"></i></a>
+                                    <a href="javascript:void(0);"  onclick=${()=>EditarCliente(idTabVenta)}><i class="zmdi zmdi-edit"></i></a>
+                                    <a href="javascript:void(0);"  onclick=${()=>BuscarCliente("Cliente_"+idTabVenta,"Nro_Documento_"+idTabVenta,null)}><i class="zmdi zmdi-search"></i></a>
+                                    <a href="javascript:void(0);" ><i class="zmdi zmdi-globe"></i></a>
+                                </li>
+                            </ul>
+                            
                         </div>
-                        <div class="card-body">
+                        <div class="card-body card-padding">
                             <form class="form floating-label" novalidate="novalidate">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -165,10 +164,10 @@ function VerNuevaVenta(variables,CodLibro) {
                 </div>
                 <div class="col-md-9">
                     <div class="card">
-                        <div class="card-head card-head-sm style-primary text-center">
+                        <div class="card-header bgm-blue card-header bgm-blue-sm style-primary text-center">
                             <h4>Detalle de la venta</h4>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body card-padding">
 
                             <div class="row">
                                 <div class="col-md-12">
@@ -225,9 +224,9 @@ function VerNuevaVenta(variables,CodLibro) {
                             <div class="row">
                                 <div class="col-md-12 text-right">
                                     <div class="btn-group">
-                                        <button class="btn btn-default btn-lg btn-raised btn-danger" id="btnDescuentos_${idTabVenta}" style="display:none"><i class="fa fa-arrow-circle-down"></i>TOTAL DESCUENTOS: 0.00</button>
-                                        <button class="btn btn-default btn-lg btn-raised btn-primary" id="btnTotal_${idTabVenta}" data-toggle="button" aria-pressed="false" autocomplete="off" onclick=${()=>VerVuelto(variables,idTabVenta)}><i class="fa fa-money text-green"></i></button>
-                                        <button class="btn btn-default btn-lg btn-raised btn-success" id="btnConversion_${idTabVenta}" style="display:none"><i class="fa fa-refresh text-green"></i></button> 
+                                        <button class="btn btn-default btn-lg btn-raised btn-danger" id="btnDescuentos_${idTabVenta}" style="display:none"><i class="zmdi zmdi-arrow-circle-down"></i>TOTAL DESCUENTOS: 0.00</button>
+                                        <button class="btn btn-default btn-lg btn-raised btn-primary" id="btnTotal_${idTabVenta}" data-toggle="button" aria-pressed="false" autocomplete="off" onclick=${()=>VerVuelto(variables,idTabVenta)}><i class="zmdi zmdi-money text-green"></i></button>
+                                        <button class="btn btn-default btn-lg btn-raised btn-success" id="btnConversion_${idTabVenta}" style="display:none"><i class="zmdi zmdi-refresh text-green"></i></button> 
                                     </div>
                                 </div>
                             </div>
@@ -247,55 +246,11 @@ function VerNuevaVenta(variables,CodLibro) {
     $("#id_"+idTabVenta).click()
 
     TraerSimboloSOLES(variables.monedas,'PEN',idTabVenta)
-    //CambioMonedaFormaPagoSoles(idTabVenta)
-    //CambioMonedaFormaPagoDolares(idTabVenta)
-    //CambioMonedaFormaPagoEuros(idTabVenta)
     CambioMonedaVentas(idTabVenta)
     CambioMonedaFormaPagoMasterCard(idTabVenta)
     CambioMonedaFormaPagoVisa(idTabVenta)
-    
-
-    /*$("#Nro_Documento_"+idTabVenta).tagsinput({
-        maxTags: 1
-    });
-
-    $("#Cliente_"+idTabVenta).tagsinput({
-        maxTags: 1
-    })
-
-    $("#Direccion_"+idTabVenta).tagsinput({
-        maxTags: 1
-    })
-
-    $('#Nro_Documento_'+idTabVenta).on('beforeItemRemove',function(event) {
-        if(!arrayValidacion.includes($("#Cliente_"+idTabVenta).attr("data-id"))){ 
-            $("#Cliente_"+idTabVenta).tagsinput('removeAll')
-            $("#Cliente_"+idTabVenta).attr("data-id",null)
-            $("#Direccion_"+idTabVenta).tagsinput('removeAll') 
-        }
-    });
-
-    $('#Nro_Documento_'+idTabVenta).on('beforeItemAdd', function(event) {
-        global.objClienteVenta = ''
-        getObjectArrayJsonVentas(global.variablesVentas,idTabVenta)[0].Cliente={}
-        $("#Nro_Documento_"+idTabVenta).tagsinput('removeAll') 
-        $("#Cliente_"+idTabVenta).tagsinput('removeAll') 
-        $("#Cliente_"+idTabVenta).attr("data-id",null)
-        $("#Direccion_"+idTabVenta).tagsinput('removeAll') 
-    });
-
-    $('#Nro_Documento_'+idTabVenta).on('itemAdded', function(event) { 
-        console.log("add item")
-        if($("#Nro_Documento_"+idTabVenta).val().trim()!=''){
-            BuscarClienteDoc(CodLibro,idTabVenta) 
-        }  
-        KeyPressClienteDoc(idTabVenta)
-    });*/
  
-    
-
-    $('#modal-superior').off('hidden.bs.modal').on('hidden.bs.modal', function () { 
-        //console.log("producto seleccionado", global.objProductoVentas)
+    $('#modal-superior').off('hidden.bs.modal').on('hidden.bs.modal', function () {  
         if(global.objProductoVentas!=''){ 
             $("#txtBusqueda_"+IdTabSeleccionado).val("")
 
@@ -329,7 +284,7 @@ function VerNuevaVenta(variables,CodLibro) {
                                 <td class="Precio">${global.objProductoVentas.Precio_Venta}</td>
                                 <td>
                                     <div style="display:flex;"> 
-                                        <button type="button" onclick="${()=>EliminarFila(idFila+''+IdTabSeleccionado,IdTabSeleccionado)}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                        <button type="button" onclick="${()=>EliminarFila(idFila+''+IdTabSeleccionado,IdTabSeleccionado)}" class="btn btn-danger btn-sm"><i class="zmdi zmdi-delete"></i></button>
                                     </div>
                                 </td>
                             </tr>`
@@ -380,14 +335,7 @@ function VerNuevaVenta(variables,CodLibro) {
 
 
         if(global.objClienteVenta!=''){ 
-            console.log(global.objClienteVenta)
-            //$("#Nro_Documento_"+IdTabSeleccionado).tagsinput('removeAll') 
-            //$("#Cliente_"+IdTabSeleccionado).tagsinput('removeAll') 
-            //$("#Direccion_"+IdTabSeleccionado).tagsinput('removeAll') 
-
-            //$("#Nro_Documento_"+IdTabSeleccionado).tagsinput('add',global.objCliente.Nro_Documento)
-            //$("#Cliente_"+IdTabSeleccionado).tagsinput('add',global.objCliente.Cliente)
-            //$("#Direccion_"+IdTabSeleccionado).tagsinput('add',global.objCliente.Direccion)
+            
             $("#Cod_TipoDoc_"+IdTabSeleccionado).val(global.objCliente.Cod_TipoDocumento)
             $("#Nro_Documento_"+IdTabSeleccionado).val(global.objCliente.Nro_Documento)
             $("#Cliente_"+IdTabSeleccionado).val(global.objCliente.Cliente)
@@ -446,7 +394,7 @@ function CrearDivFavoritos(variables,idTab){
                                     <h3 class="box-title">Productos</h3>
                                     
                                     <div class="box-tools" style="left: 10px;display:none" id="divTools_${idTab}">
-                                        <button type="button" class="btn btn-box-tool" onclick=${()=>CrearBotonesCategoriasXSeleccion(variables.categorias,'',idTab)}><i class="fa fa-arrow-left"></i></button>
+                                        <button type="button" class="btn btn-box-tool" onclick=${()=>CrearBotonesCategoriasXSeleccion(variables.categorias,'',idTab)}><i class="zmdi zmdi-arrow-left"></i></button>
                                     </div>
 
                                 </div>
@@ -714,10 +662,10 @@ function CrearBotonesCategoriasXSeleccion(categorias,CodPadre,idTab){
 
 function CrearBotonesFavoritos(favoritos,idTab){
     return yo`<ul> 
-                ${favoritos.map(e=>yo`<li><a class="btn btn-block btn-default btn-sm" onclick=${()=>AgregarProducto(e,favoritos,idTab)}><i class="fa fa-star text-orange"></i>  ${e.Nom_Producto}</a></li>`)}       
+                ${favoritos.map(e=>yo`<li><a class="btn btn-block btn-default btn-sm" onclick=${()=>AgregarProducto(e,favoritos,idTab)}><i class="zmdi zmdi-star text-orange"></i>  ${e.Nom_Producto}</a></li>`)}       
             </ul>` 
     /*return  yo`<div> 
-                ${favoritos.map(e=>yo`<a class="btn btn-app" onclick=${()=>AgregarProducto(e,favoritos,idTab)} style="height:80px"><i class="fa fa-star text-orange"></i> ${e.Nom_Producto}<p></p> ${parseFloat(e.Valor).toFixed(4)}</a>`)}
+                ${favoritos.map(e=>yo`<a class="btn btn-app" onclick=${()=>AgregarProducto(e,favoritos,idTab)} style="height:80px"><i class="zmdi zmdi-star text-orange"></i> ${e.Nom_Producto}<p></p> ${parseFloat(e.Valor).toFixed(4)}</a>`)}
             </div>`*/
 }
 
@@ -781,7 +729,7 @@ function TraerSimboloSOLES(monedas,pCodMoneda,idTab){
             break
         }
     }
-    $("#btnTotal_"+idTab).html('<i class="fa fa-money text-green"></i> TOTAL: '+getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].SimboloMoneda+' '+parseFloat(getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].Total).toFixed(2))
+    $("#btnTotal_"+idTab).html('<i class="zmdi zmdi-money text-green"></i> TOTAL: '+getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].SimboloMoneda+' '+parseFloat(getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].Total).toFixed(2))
 }
 
 function ExisteProducto(CodProducto,idTab,callback){
@@ -926,7 +874,7 @@ function CalcularTotalDescuentos(idTab){
     _total = parseFloat(_total.toFixed(2))
     changeArrayJsonVentas(global.variablesVentas,idTab,[null,_total,null,null,null,null,null,null])
     //TotalDescuentos = _total
-    $("#btnDescuentos_"+idTab).html('<i class="fa fa-arrow-circle-down text-red"></i> TOTAL DESCUENTOS: '+getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].SimboloMoneda+' '+parseFloat(getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].TotalDescuentos).toFixed(2))
+    $("#btnDescuentos_"+idTab).html('<i class="zmdi zmdi-arrow-circle-down text-red"></i> TOTAL DESCUENTOS: '+getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].SimboloMoneda+' '+parseFloat(getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].TotalDescuentos).toFixed(2))
     if(_total!=0){
         $("#btnDescuentos_"+idTab).css("display","block")
     }else{
@@ -942,15 +890,15 @@ function CalcularTotal(idTab){
     _total = parseFloat(_total.toFixed(2))
     changeArrayJsonVentas(global.variablesVentas,idTab,[_total,null,null,null,null,null,null,null])
     //Total = _total
-    $("#btnTotal_"+idTab).html('<i class="fa fa-money text-green"></i> TOTAL: '+getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].SimboloMoneda+' '+parseFloat(getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].Total).toFixed(2))
+    $("#btnTotal_"+idTab).html('<i class="zmdi zmdi-money text-green"></i> TOTAL: '+getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].SimboloMoneda+' '+parseFloat(getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].Total).toFixed(2))
     if($('#Cod_Moneda_Forma_Pago_'+idTab).val() == 'USD' || $('#Cod_Moneda_Forma_Pago_'+idTab).val() == 'EUR'){
     //if ($('input[name=Cod_Moneda_Forma_Pago_'+idTab+']:checked').val() == 'dolares' || $('input[name=Cod_Moneda_Forma_Pago_'+idTab+']:checked').val() == 'euros') {
         if ($('input[name=Cod_Moneda_Forma_Pago_'+idTab+']:checked').val() == 'euros'){
             $("#btnConversion_"+idTab).css("display","block")
-            $("#btnConversion_"+idTab).html('<i class="fa fa-refresh text-green"></i> EN EUROS: '+getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].SimboloMonedaExtra+' '+(parseFloat(getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].Total)/parseFloat(getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].TipodeCambio)).toFixed(2))
+            $("#btnConversion_"+idTab).html('<i class="zmdi zmdi-refresh text-green"></i> EN EUROS: '+getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].SimboloMonedaExtra+' '+(parseFloat(getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].Total)/parseFloat(getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].TipodeCambio)).toFixed(2))
         }else{
             $("#btnConversion_"+idTab).css("display","block")
-            $("#btnConversion_"+idTab).html('<i class="fa fa-refresh text-green"></i> EN DOLARES: '+getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].SimboloMonedaExtra+' '+(parseFloat(getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].Total)/parseFloat(getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].TipodeCambio)).toFixed(2))
+            $("#btnConversion_"+idTab).html('<i class="zmdi zmdi-refresh text-green"></i> EN DOLARES: '+getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].SimboloMonedaExtra+' '+(parseFloat(getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].Total)/parseFloat(getObjectArrayJsonVentas(global.variablesVentas,idTab)[0].TipodeCambio)).toFixed(2))
         }
     }else{
         $("#btnConversion_"+idTab).css("display","none")
@@ -1289,7 +1237,7 @@ function CambioCantidadVenta(idFila,idTab){
             fetch(URL + '/productos_serv_api/get_codigo_unidad_by_codP_codA_codTP', parametros)
                 .then(req => req.json())
                 .then(res => {
-                    if(res.respuesta=="ok"){
+                    /*if(res.respuesta=="ok"){
                         if(res.data.producto.length>0){
                             var producto = res.data.producto[0]
                             if(parseFloat($('#'+idFila).find('td.Cantidad').find('input').val()) > parseFloat(producto.Stock_Act)){
@@ -1301,7 +1249,7 @@ function CambioCantidadVenta(idFila,idTab){
                         }
                     }else{
                         $('#'+idFila).find('td.Cantidad').find('input').val(getObjectArrayJsonVentas(global.variablesVentas,idTab)[0]._CantidadOriginal)
-                    }
+                    }*/
 
                 }).catch(function (e) {
                     console.log(e);
@@ -1417,7 +1365,7 @@ function AgregarProducto(producto,favoritos,idTab){
                                             <td class="Precio">${RecuperarPrecio(favoritos,dataProducto)}</td>
                                             <td>
                                                 <div style="display:flex;"> 
-                                                    <button type="button" onclick="${()=>EliminarFila(idFila+''+idTab,idTab)}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                    <button type="button" onclick="${()=>EliminarFila(idFila+''+idTab,idTab)}" class="btn btn-danger btn-sm"><i class="zmdi zmdi-delete"></i></button>
                                                 </div>
                                             </td>
                                         </tr>`
@@ -1478,8 +1426,8 @@ function AgregarProducto(producto,favoritos,idTab){
                                             <td class="Series hidden"><input class="form-control" type="text" value=${JSON.stringify([])} name="Series"></td>
                                             <td>
                                             <div style="display:flex;">
-                                                <button type="button" onclick="${()=>AsignarSeries(idFila,CodLibro)}" class="btn btn-primary btn-sm"><i class="fa fa-tasks"></i></a>  
-                                                <button type="button" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                <button type="button" onclick="${()=>AsignarSeries(idFila,CodLibro)}" class="btn btn-primary btn-sm"><i class="zmdi zmdi-tasks"></i></a>  
+                                                <button type="button" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}" class="btn btn-danger btn-sm"><i class="zmdi zmdi-delete"></i></button>
                                             </div>
                                             </td>
                                         </tr>`

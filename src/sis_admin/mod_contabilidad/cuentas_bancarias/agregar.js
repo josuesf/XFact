@@ -14,16 +14,16 @@ function Ver(_escritura, variables, cuenta) {
         
         <section class="content">
             <div class="card">
-                <div class="card-head">
+                <div class="card-header">
                     <header>
                     <a onclick=${() => ListarCuentasBancarias(_escritura)}
                     class="btn btn-xs btn-icon-toggle">
-                        <i class="fa fa-arrow-left"></i></a>
+                        <i class="zmdi zmdi-arrow-left"></i></a>
                         ${cuenta ? 'Editar' : 'Nuevo'} Cuenta Bancaria
                     </header>
                     
                 </div> 
-                <div class="card-body">
+                <div class="card-body card-padding">
                     <div class="panel">
                         
                         <!-- form start -->

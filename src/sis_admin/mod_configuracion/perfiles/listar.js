@@ -38,16 +38,16 @@ function Ver(perfiles, paginas,pagina_actual, _escritura,modulos) {
         </section>
         <section class="content">
             <div class="card">
-                <div class="card-head">
+                <div class="card-header">
                     <header>Lista de Perfiles</header>
-                    <div class="tools">
-                        <div class="btn-group">
-                        ${_escritura ? yo`<a onclick=${()=>NuevoPerfil(_escritura,modulos)} class="btn btn-info pull-right">
-                            <i class="fa fa-plus"></i> Nuevo Perfil</a>`: yo``}
-                        </div>
-                    </div>
+                    <ul class="actions">
+                        <li>
+                            ${_escritura ? yo`<a onclick=${()=>NuevoPerfil(_escritura,modulos)} class="btn btn-info pull-right">
+                            <i class="zmdi zmdi-plus"></i> Nuevo Perfil</a>`: yo``}
+                        </li>
+                    </ul> 
                 </div> 
-                <div class="card-body">
+                <div class="card-body card-padding">
                     <div class="table-responsive">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
@@ -67,8 +67,8 @@ function Ver(perfiles, paginas,pagina_actual, _escritura,modulos) {
                                 <td>${u.Cod_UsuarioReg}</td>
                                 <td>${u.Fecha_Reg}</td>
                                 <td>
-                                    ${_escritura ? yo`<button class="btn btn-xs btn-success" onclick="${()=>NuevoPerfil(_escritura,modulos, u)}"><i class="fa fa-edit"></i></button>` : yo``}
-                                    ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-perfiles" onclick="${()=>Eliminar(_escritura, u)}"><i class="fa fa-trash"></i></button>` : yo``}
+                                    ${_escritura ? yo`<button class="btn btn-xs btn-success" onclick="${()=>NuevoPerfil(_escritura,modulos, u)}"><i class="zmdi zmdi-edit"></i></button>` : yo``}
+                                    ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-perfiles" onclick="${()=>Eliminar(_escritura, u)}"><i class="zmdi zmdi-delete"></i></button>` : yo``}
                                     
                                 </td>
                             </tr>`)}

@@ -61,18 +61,19 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
                 <div class="row">
                     <div class="col-md-8" id="div-cliente-comprobante-pago">
                         <div class="card">
-                            <div class="card-head">
+                            <div class="card-header bgm-blue">
                                 <header> Cliente/Proveedor </header>
-                                <div class="tools">
-                                    <div class="btn-group">
-                                        <a class="btn btn-icon-toggle btn-info btn-refresh" onclick=${()=>NuevoCliente(variables.documentos)}><i class="fa fa-plus"></i></a>
-                                        <a class="btn btn-icon-toggle btn-warning" onclick=${()=>EditarCliente()}><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-icon-toggle btn-success btn-refresh" onclick=${()=>BuscarCliente("Cliente","Nro_Documento",CodLibro == "08" ? "001" : "002")}><i class="fa fa-search"></i></a>
-                                        <a class="btn btn-icon-toggle btn-primary"><i class="fa fa-globe"></i></a>
-                                    </div>
-                                </div>
+                                <ul class="actions">
+                                    <li>
+                                        <a href="javascript:void(0);" onclick=${()=>NuevoCliente(variables.documentos)}><i class="zmdi zmdi-plus"></i></a>
+                                        <a href="javascript:void(0);"  onclick=${()=>EditarCliente()}><i class="zmdi zmdi-edit"></i></a>
+                                        <a href="javascript:void(0);"  onclick=${()=>BuscarCliente("Cliente","Nro_Documento",CodLibro == "08" ? "001" : "002")}><i class="zmdi zmdi-search"></i></a>
+                                        <a href="javascript:void(0);" ><i class="zmdi zmdi-globe"></i></a>
+                                    </li>
+                                </ul>
+                                
                             </div>
-                            <div class="card-body">
+                            <div class="card-body card-padding">
                                 <div class="row">
                                     <div class="col-md-3" id="divCodTipoDoc">
                                         <div class="form-group">
@@ -178,7 +179,7 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
                                                     </label> 
                                                 </div>
                                                 <div class="col-sm-1" id="divMultiplesPagos">
-                                                    <button type="button" class="btn btn-success btn-raised btn-xs" onclick="${()=>AbrirModalFormasPago(variables,fecha_actual)}" id="btnMultiplesPagos"><i class="fa fa-money"></i></button>
+                                                    <button type="button" class="btn btn-success btn-raised btn-xs" onclick="${()=>AbrirModalFormasPago(variables,fecha_actual)}" id="btnMultiplesPagos"><i class="zmdi zmdi-money"></i></button>
                                                 </div>
                                                 <div class="col-sm-4" id="divOperacion">
                                                     <label id="lbCuentaCajaBanco">#Operacion</label>
@@ -262,13 +263,13 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
                                                     <div class="input-group input-group-sm">
                                                         <div class="input-group-btn">
                                                             <button type="button" class="btn btn-raised btn-success" id="AgregarGuia"  >
-                                                                <i class="fa fa-plus"></i>
+                                                                <i class="zmdi zmdi-plus"></i>
                                                             </button>
                                                         </div>
                                                         <input type="text" id="Guia" class="form-control required input-sm">
                                                         <div class="input-group-btn">
                                                             <button type="button" class="btn btn-raised btn-info" id="BuscarGuia"  >
-                                                                <i class="fa fa-search"></i>
+                                                                <i class="zmdi zmdi-search"></i>
                                                             </button>
                                                         </div>
                                                     </div>
@@ -308,7 +309,7 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-12"> 
-                                        <button type="button" class="btn btn-raised btn-success btn-sm" onclick="${()=>AgregarFilaTabla(CodLibro,variables)}"><i class="fa fa-plus"></i> Agregar Item</button>
+                                        <button type="button" class="btn btn-raised btn-success btn-sm" onclick="${()=>AgregarFilaTabla(CodLibro,variables)}"><i class="zmdi zmdi-plus"></i> Agregar Item</button>
                                     </div>
                                 </div>
 
@@ -320,7 +321,7 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
                                                     <div class="input-group">
                                                         <label>Codigo/Producto/Servicio</label>
                                                         <span class="input-group-btn">
-                                                            <button type="button" class="btn btn-raised btn-default btn-xs" onclick=${()=>BuscarProductoCP(CodLibro,'click')}><i class="fa fa-search"></i></button>
+                                                            <button type="button" class="btn btn-raised btn-default btn-xs" onclick=${()=>BuscarProductoCP(CodLibro,'click')}><i class="zmdi zmdi-search"></i></button>
                                                         </span>
                                                     </div>
                                                 </th>
@@ -1027,8 +1028,8 @@ function AgregarFilaTabla_(CodLibro,variables,Detalles){
                                 <td class="Series hidden"><input class="form-control" type="text" value=${JSON.stringify(u.Series)} name="Series"></td>
                                 <td>
                                 <div style="display:flex;">
-                                    <button type="button" onclick="${()=>AsignarSeries(index+ u.Id_Producto,CodLibro)}" class="btn btn-raised btn-primary btn-sm"><i class="fa fa-tasks"></i></a>  
-                                    <button type="button" onclick="${()=>EliminarFila(index+ u.Id_Producto,CodLibro,variables)}" class="btn btn-raised btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                    <button type="button" onclick="${()=>AsignarSeries(index+ u.Id_Producto,CodLibro)}" class="btn btn-raised btn-primary btn-sm"><i class="zmdi zmdi-tasks"></i></a>  
+                                    <button type="button" onclick="${()=>EliminarFila(index+ u.Id_Producto,CodLibro,variables)}" class="btn btn-raised btn-danger btn-sm"><i class="zmdi zmdi-delete"></i></button>
                                 </div>
                                 </td>
                             </tr>`
@@ -1071,8 +1072,8 @@ function AgregarFilaTabla_(CodLibro,variables,Detalles){
             <td class="Series hidden"><input class="form-control" type="text" value=${JSON.stringify(Detalles[i].Series)} name="Series"></td>
             <td>
             <div style="display:flex;">
-                <button type="button" onclick="${()=>AsignarSeries(idFila,CodLibro)}" class="btn btn-primary btn-sm"><i class="fa fa-tasks"></i></a>  
-                <button type="button" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                <button type="button" onclick="${()=>AsignarSeries(idFila,CodLibro)}" class="btn btn-primary btn-sm"><i class="zmdi zmdi-tasks"></i></a>  
+                <button type="button" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}" class="btn btn-danger btn-sm"><i class="zmdi zmdi-delete"></i></button>
             </div>
             </td>
         </tr>`
@@ -1139,8 +1140,8 @@ function AgregarFilaTabla(CodLibro,variables){
             <td class="Series hidden"><input class="form-control" type="text" value=${JSON.stringify([])} name="Series"></td>
             <td>
             <div style="display:flex;">
-                <button type="button" onclick="${()=>AsignarSeries(idFila,CodLibro)}" class="btn btn-raised btn-primary btn-sm"><i class="fa fa-tasks"></i></a>  
-                <button type="button" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}" class="btn btn-raised btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                <button type="button" onclick="${()=>AsignarSeries(idFila,CodLibro)}" class="btn btn-raised btn-primary btn-sm"><i class="zmdi zmdi-tasks"></i></a>  
+                <button type="button" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}" class="btn btn-raised btn-danger btn-sm"><i class="zmdi zmdi-delete"></i></button>
             </div>
             </td>
         </tr>`
@@ -1190,8 +1191,8 @@ function AgregarFilaTabla(CodLibro,variables){
                     <td class="Series hidden"><input class="form-control" type="text" value=${JSON.stringify([])} name="Series"></td>
                     <td>
                     <div style="display:flex;">
-                        <button type="button" onclick="${()=>AsignarSeries(idFila,CodLibro)}" class="btn btn-raised btn-primary btn-sm"><i class="fa fa-tasks"></i></a>  
-                        <button type="button" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}" class="btn btn-raised btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                        <button type="button" onclick="${()=>AsignarSeries(idFila,CodLibro)}" class="btn btn-raised btn-primary btn-sm"><i class="zmdi zmdi-tasks"></i></a>  
+                        <button type="button" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}" class="btn btn-raised btn-danger btn-sm"><i class="zmdi zmdi-delete"></i></button>
                     </div>
                     </td>
                 </tr>`
@@ -1264,8 +1265,8 @@ function AplicarPercepcion(CodLibro,variables){
                     <td class="Series hidden"><input class="form-control" type="text" value=${JSON.stringify([])} name="Series"></td>
                     <td>
                         <div style="display:flex;">
-                            <button type="button" class="btn btn-raised btn-primary btn-sm"  onclick="${()=>AsignarSeries(idFila,CodLibro)}"><i class="fa fa-tasks"></i></button>  
-                            <button type="button" class="btn btn-raised btn-danger btn-sm" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}"><i class="fa fa-trash"></i></button>
+                            <button type="button" class="btn btn-raised btn-primary btn-sm"  onclick="${()=>AsignarSeries(idFila,CodLibro)}"><i class="zmdi zmdi-tasks"></i></button>  
+                            <button type="button" class="btn btn-raised btn-danger btn-sm" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}"><i class="zmdi zmdi-delete"></i></button>
                         </div>
                     </td>
                    
@@ -1298,7 +1299,7 @@ function AgregarFilaFormaPago(pDescFormaPago,pCodFormaPago,pCodMoneda,pMonto,pTi
         <td name="Total" class="Total" data-value="${(parseFloat(pMonto)*parseFloat(pTipoCambio)).toFixed(2)}">${((parseFloat((parseFloat(pMonto)*parseFloat(pTipoCambio)).toFixed(2)))*(parseFloat(pTipoCambio)/parseFloat(Tipo_Cambio))).toFixed(2)}</td>
         <td name="Fecha" class="Fecha"><input type="date" class="form-control input-sm" value="${fecha_actual}"></td>
         <td name="Referencia" class="Referencia"><input class="form-control input-sm" value="${pReferencia==null?"":pReferencia}"></td>
-        <td><button type="button" class="btn btn-raised btn-danger btn-sm" onclick=${()=>EliminarFilaPagosMultiples(index,Cod_Moneda,Tipo_Cambio)}><i class="fa fa-trash"></i></button></td>
+        <td><button type="button" class="btn btn-raised btn-danger btn-sm" onclick=${()=>EliminarFilaPagosMultiples(index,Cod_Moneda,Tipo_Cambio)}><i class="zmdi zmdi-delete"></i></button></td>
     </tr>`
     $("#tablaBodyPagosMultiples").append(fila)
     $("#MontoFormaPago").val("0.00")
@@ -1364,7 +1365,7 @@ function LlenarFormasPago(Cod_Moneda,Tipo_Cambio){
                                     <td name="Total" class="Total" data-value="${(parseFloat(u.Monto)*parseFloat(u.TipoCambio)).toFixed(2)}">${((parseFloat((parseFloat(u.Monto)*parseFloat(u.TipoCambio)).toFixed(2)))*(parseFloat(u.TipoCambio)/parseFloat(Tipo_Cambio))).toFixed(2)}</td>
                                     <td name="Fecha" class="Fecha"><input type="date" class="form-control input-sm" value="${u.Fecha==null?fecha_actual:u.Fecha}"></td>
                                     <td name="Referencia" class="Referencia"><input  class="form-control input-sm" value="${u.CuentaCajaBanco==null?"":u.CuentaCajaBanco}"></td>
-                                    <td><button type="button" class="btn btn-raised btn-danger btn-sm" onclick=${()=>EliminarFilaPagosMultiples(index,Cod_Moneda,Tipo_Cambio)}><i class="fa fa-trash"></i></button></td>
+                                    <td><button type="button" class="btn btn-raised btn-danger btn-sm" onclick=${()=>EliminarFilaPagosMultiples(index,Cod_Moneda,Tipo_Cambio)}><i class="zmdi zmdi-delete"></i></button></td>
                                 </tr>`
                         )}
                     </tbody>
@@ -1971,7 +1972,7 @@ function AceptarFormaPago(amodo){
             $("#divMultiplesPagos").removeClass()
             $("#divMultiplesPagos").addClass("col-sm-12")
             $("#btnMultiplesPagos").addClass("btn-block")
-            $("#btnMultiplesPagos").html('<i class="fa fa-money"></i>'+" PAGOS MULTIPLES")
+            $("#btnMultiplesPagos").html('<i class="zmdi zmdi-money"></i>'+" PAGOS MULTIPLES")
             /*
               rbCredito.Checked = true;
                 rbEfectivo.Visible = false;

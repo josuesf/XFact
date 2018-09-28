@@ -34,7 +34,7 @@ function Ver(Flag_Cerrado,movimientos,saldos,callback) {
                 <div class="row">
                     <div class="col-md-12"> 
                         <div class="card">
-                            <div  class="card-head">
+                            <div  class="card-header">
                                 <ul class="tab-nav tn-justified" id="tabs">
                                     <li class="active"><a href="#tab_1" id="id_1" data-toggle="tab" aria-expanded="true" onclick=${()=>refrescar_movimientos_caja()}>Movimientos caja</a></li>
                                 </ul>
@@ -87,10 +87,10 @@ function Ver(Flag_Cerrado,movimientos,saldos,callback) {
                                                             Elegir una accion <span class="caret"></span>
                                                             </button>
                                                             <ul class="dropdown-menu">
-                                                                <li><a href="javascript:void(0)" onclick=${()=>AbrirModalConfirmacion('extornar',u)} ><i class="fa fa-times-circle"></i> Anular</a></li>
-                                                                <li><a href="javascript:void(0)" onclick=${()=>VerFormatoDocumento(u)} ><i class="fa fa-print"></i> Reimprimir</a></li> 
-                                                                <li><a href="javascript:void(0)" onclick=${()=>AbrirModalCambiarTurno(u)}><i class="fa fa-calendar"></i> Cambiar Turno</a></li>
-                                                                <li><a href="javascript:void(0)" onclick=${()=>AbrirModalConfirmacion('eliminar',u)}><i class="fa fa-close"></i> Eliminar</a></li>
+                                                                <li><a href="javascript:void(0)" onclick=${()=>AbrirModalConfirmacion('extornar',u)} ><i class="zmdi zmdi-times-circle"></i> Anular</a></li>
+                                                                <li><a href="javascript:void(0)" onclick=${()=>VerFormatoDocumento(u)} ><i class="zmdi zmdi-print"></i> Reimprimir</a></li> 
+                                                                <li><a href="javascript:void(0)" onclick=${()=>AbrirModalCambiarTurno(u)}><i class="zmdi zmdi-calendar"></i> Cambiar Turno</a></li>
+                                                                <li><a href="javascript:void(0)" onclick=${()=>AbrirModalConfirmacion('eliminar',u)}><i class="zmdi zmdi-close"></i> Eliminar</a></li>
                                                             </ul>
                                                         </div>`
                                                     :
@@ -100,7 +100,7 @@ function Ver(Flag_Cerrado,movimientos,saldos,callback) {
                                                         Elegir una accion <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu"> 
-                                                            <li><a href="javascript:void(0)" onclick=${()=>VerFormatoDocumento(u)} ><i class="fa fa-print"></i> Reimprimir</a></li>
+                                                            <li><a href="javascript:void(0)" onclick=${()=>VerFormatoDocumento(u)} ><i class="zmdi zmdi-print"></i> Reimprimir</a></li>
                                                         </ul>
                                                     </div>
                                                     `}
@@ -122,30 +122,32 @@ function Ver(Flag_Cerrado,movimientos,saldos,callback) {
         </div>`;
     var footer_element = yo`
         <div class="row">
-            <div class="col-sm-7"></div>
-            <div class="col-sm-5">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Moneda</th>
-                            <th>Saldo Inicial</th>
-                            <th>Ingresos</th>
-                            <th>Egresos</th>
-                            <th>Saldo Final</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${saldos.map(s=>yo`
+            <div class="col-sm-5"></div>
+            <div class="col-sm-7">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
                             <tr>
-                                <td>${s.Moneda}</td>
-                                <td>${s.SaldoInicial}</td>
-                                <td>${s.Ingresos}</td>
-                                <td>${s.Egresos}</td>
-                                <td>${s.SaldoFinal}</td>
+                                <th>Moneda</th>
+                                <th>Saldo Inicial</th>
+                                <th>Ingresos</th>
+                                <th>Egresos</th>
+                                <th>Saldo Final</th>
                             </tr>
-                        `)}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            ${saldos.map(s=>yo`
+                                <tr>
+                                    <td>${s.Moneda}</td>
+                                    <td>${s.SaldoInicial}</td>
+                                    <td>${s.Ingresos}</td>
+                                    <td>${s.Egresos}</td>
+                                    <td>${s.SaldoFinal}</td>
+                                </tr>
+                            `)}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>`;
     var container = document.getElementById('main-contenido')
@@ -294,10 +296,10 @@ function VerTabCaja(Flag_Cerrado,movimientos,saldos) {
                                         Elegir una accion <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a href="javascript:void(0)" onclick=${()=>AbrirModalConfirmacion('extornar',u)} ><i class="fa fa-times-circle"></i> Anular</a></li>
-                                            <li><a href="javascript:void(0)" onclick=${()=>VerFormatoDocumento(u)} ><i class="fa fa-print"></i> Reimprimir</a></li> 
-                                            <li><a href="javascript:void(0)" onclick=${()=>AbrirModalCambiarTurno(u)}><i class="fa fa-calendar"></i> Cambiar Turno</a></li>
-                                            <li><a href="javascript:void(0)" onclick=${()=>AbrirModalConfirmacion('eliminar',u)}><i class="fa fa-close"></i> Eliminar</a></li>
+                                            <li><a href="javascript:void(0)" onclick=${()=>AbrirModalConfirmacion('extornar',u)} ><i class="zmdi zmdi-times-circle"></i> Anular</a></li>
+                                            <li><a href="javascript:void(0)" onclick=${()=>VerFormatoDocumento(u)} ><i class="zmdi zmdi-print"></i> Reimprimir</a></li> 
+                                            <li><a href="javascript:void(0)" onclick=${()=>AbrirModalCambiarTurno(u)}><i class="zmdi zmdi-calendar"></i> Cambiar Turno</a></li>
+                                            <li><a href="javascript:void(0)" onclick=${()=>AbrirModalConfirmacion('eliminar',u)}><i class="zmdi zmdi-close"></i> Eliminar</a></li>
                                         </ul>
                                     </div>`
                                 :
@@ -305,7 +307,7 @@ function VerTabCaja(Flag_Cerrado,movimientos,saldos) {
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
                                     Elegir una accion <span class="caret"></span>
-                                    <li><a href="javascript:void(0)" onclick=${()=>VerFormatoDocumento(u)} ><i class="fa fa-print"></i> Reimprimir</a></li>
+                                    <li><a href="javascript:void(0)" onclick=${()=>VerFormatoDocumento(u)} ><i class="zmdi zmdi-print"></i> Reimprimir</a></li>
                                     </button>
                                 </div>
                                 `}
@@ -321,30 +323,32 @@ function VerTabCaja(Flag_Cerrado,movimientos,saldos) {
 
     var sectionFooter = yo`
                 <div class="row">
-                    <div class="col-sm-7"></div>
-                    <div class="col-sm-5">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Moneda</th>
-                                    <th>Saldo Inicial</th>
-                                    <th>Ingresos</th>
-                                    <th>Egresos</th>
-                                    <th>Saldo Final</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                ${saldos.map(s=>yo`
+                    <div class="col-sm-5"></div>
+                    <div class="col-sm-7">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
                                     <tr>
-                                        <td>${s.Moneda}</td>
-                                        <td>${s.SaldoInicial}</td>
-                                        <td>${s.Ingresos}</td>
-                                        <td>${s.Egresos}</td>
-                                        <td>${s.SaldoFinal}</td>
+                                        <th>Moneda</th>
+                                        <th>Saldo Inicial</th>
+                                        <th>Ingresos</th>
+                                        <th>Egresos</th>
+                                        <th>Saldo Final</th>
                                     </tr>
-                                `)}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    ${saldos.map(s=>yo`
+                                        <tr>
+                                            <td>${s.Moneda}</td>
+                                            <td>${s.SaldoInicial}</td>
+                                            <td>${s.Ingresos}</td>
+                                            <td>${s.Egresos}</td>
+                                            <td>${s.SaldoFinal}</td>
+                                        </tr>
+                                    `)}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>`;
      

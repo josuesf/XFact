@@ -16,17 +16,17 @@ module.exports = function NuevoModulo(_escritura, raices, modulo) {
         
         <section class="content">
             <div class="card">
-                <div class="card-head">
+                <div class="card-header">
                     <header>
 
                         <a onclick=${() => ListarModulos(_escritura)}
                         class="btn btn-xs btn-icon-toggle">
-                            <i class="fa fa-arrow-left"></i></a>
+                            <i class="zmdi zmdi-arrow-left"></i></a>
                         ${modulo ? 'Editar' : 'Nuevo'} Modulo
                     </header>
                 
                 </div> 
-                <div class="card-body">
+                <div class="card-body card-padding">
                     <div class="panel">
                         
                         <form role="form">

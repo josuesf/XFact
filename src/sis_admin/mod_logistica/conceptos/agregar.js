@@ -16,15 +16,15 @@ function NuevoConcepto(_escritura, tipos_conceptos, concepto) {
         
         <section class="content">
             <div class="card">
-                <div class="card-head">
+                <div class="card-header">
                     <header>
                     <a onclick=${() => ListarConceptos(_escritura)}
                     class="btn btn-xs btn-icon-toggle">
-                        <i class="fa fa-arrow-left"></i></a>
+                        <i class="zmdi zmdi-arrow-left"></i></a>
                         ${concepto ? 'Editar' : 'Nuevo'} Concepto
                     </header>
                 </div> 
-                <div class="card-body">
+                <div class="card-body card-padding">
                     <div class="panel">
                         
                         <!-- form start -->

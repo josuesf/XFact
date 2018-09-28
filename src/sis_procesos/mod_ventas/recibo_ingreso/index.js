@@ -36,18 +36,19 @@ function CargarFormulario(variables, fecha_actual,empresa) {
                         <div class="row">
                             <div class="col-md-8" id="div-cliente-recibo-ingreso_${idTabRI}">
                                 <div class="card">
-                                    <div class="card-head">
+                                    <div class="card-header bgm-blue">
                                         <header> A favor de </header>
-                                        <div class="tools">
-                                            <div class="btn-group">
-                                                <a class="btn btn-icon-toggle btn-info btn-refresh" onclick=${()=>NuevoCliente(variables.documentos)}><i class="fa fa-plus"></i></a>
-                                                <a class="btn btn-icon-toggle btn-warning" onclick=${()=>EditarCliente(idTabRI)}><i class="fa fa-pencil"></i></a>
-                                                <a class="btn btn-icon-toggle btn-success btn-refresh" onclick=${()=>BuscarCliente("Cliente_"+idTabRI,"Nro_Documento_"+idTabRI,null)}><i class="fa fa-search"></i></a>
-                                                <a class="btn btn-icon-toggle btn-primary"><i class="fa fa-globe"></i></a>
-                                            </div>
-                                        </div>
+                                        <ul class="actions">
+                                            <li>
+                                                <a href="javascript:void(0);" onclick=${()=>NuevoCliente(variables.documentos)}><i class="zmdi zmdi-plus"></i></a>
+                                                <a href="javascript:void(0);"  onclick=${()=>EditarCliente(idTabRI)}><i class="zmdi zmdi-edit"></i></a>
+                                                <a href="javascript:void(0);"  onclick=${()=>BuscarCliente("Cliente_"+idTabRI,"Nro_Documento_"+idTabRI,null)}><i class="zmdi zmdi-search"></i></a>
+                                                <a href="javascript:void(0);" ><i class="zmdi zmdi-globe"></i></a>
+                                            </li>
+                                        </ul>
+                                        
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body card-padding">
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
@@ -131,10 +132,10 @@ function CargarFormulario(variables, fecha_actual,empresa) {
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card">
-                                    <div class="card-head">
+                                    <div class="card-header bgm-blue">
                                         <header> Detalles</header>
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body card-padding">
                                         <div class="row">
                                             <div class="col-sm-9">
                                                 <div class="form-group">
@@ -250,18 +251,20 @@ function RefrescarFormulario(variables, fecha_actual,empresa,idTabRI) {
                         <div class="row">
                             <div class="col-md-8" id="div-cliente-recibo-ingreso_${idTabRI}">
                                 <div class="card">
-                                    <div class="card-head">
+                                    <div class="card-header bgm-blue">
                                         <header> A favor de </header>
-                                        <div class="tools">
-                                            <div class="btn-group">
-                                                <a class="btn btn-icon-toggle btn-info btn-refresh" onclick=${()=>NuevoCliente(variables.documentos)}><i class="fa fa-plus"></i></a>
-                                                <a class="btn btn-icon-toggle btn-warning" onclick=${()=>EditarCliente(idTabRI)}><i class="fa fa-pencil"></i></a>
-                                                <a class="btn btn-icon-toggle btn-success btn-refresh" onclick=${()=>BuscarCliente("Cliente_"+idTabRI,"Nro_Documento_"+idTabRI,null)}><i class="fa fa-search"></i></a>
-                                                <a class="btn btn-icon-toggle btn-primary"><i class="fa fa-globe"></i></a>
-                                            </div>
-                                        </div>
+
+                                        <ul class="actions">
+                                            <li>
+                                                <a href="javascript:void(0);" onclick=${()=>NuevoCliente(variables.documentos)}><i class="zmdi zmdi-plus"></i></a>
+                                                <a href="javascript:void(0);"  onclick=${()=>EditarCliente(idTabRI)}><i class="zmdi zmdi-edit"></i></a>
+                                                <a href="javascript:void(0);"  onclick=${()=>BuscarCliente("Cliente_"+idTabRI,"Nro_Documento_"+idTabRI,null)}><i class="zmdi zmdi-search"></i></a>
+                                                <a href="javascript:void(0);" ><i class="zmdi zmdi-globe"></i></a>
+                                            </li>
+                                        </ul>
+ 
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body card-padding">
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
@@ -345,10 +348,10 @@ function RefrescarFormulario(variables, fecha_actual,empresa,idTabRI) {
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card">
-                                    <div class="card-head">
+                                    <div class="card-header bgm-blue">
                                         <header> Detalles</header>
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body card-padding">
                                         <div class="row">
                                             <div class="col-sm-9">
                                                 <div class="form-group">

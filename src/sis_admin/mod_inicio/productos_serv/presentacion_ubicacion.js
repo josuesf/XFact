@@ -7,18 +7,19 @@ import { URL } from '../../../constantes_entorno/constantes'
 function Ver(variables, _escritura, producto) {
     var el = yo`
     <div class="card">
-        <div class="card-head">
+        <div class="card-header">
             <header> Lista de Stock por Almacen
             </header>
-            <div class="tools">
-                <div class="btn-group">
-                ${_escritura ? yo`
-                <a class="btn btn-info pull-right" data-toggle="modal" data-target="#modal-nuevo-general" onclick="${() => AgregarPresentacion(variables, _escritura, producto)}">
-                    <i class="fa fa-plus"></i> Nuevo</a>`: yo``}
-                </div>
-            </div>
+            <ul class="actions">
+                <li>
+                    ${_escritura ? yo`
+                    <a class="btn btn-info pull-right" data-toggle="modal" data-target="#modal-nuevo-general" onclick="${() => AgregarPresentacion(variables, _escritura, producto)}">
+                        <i class="zmdi zmdi-plus"></i> Nuevo</a>`: yo``}
+                </li>
+            </ul> 
+            
         </div> 
-        <div class="card-body">
+        <div class="card-body card-padding">
             <div class="table-responsive">
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
@@ -50,8 +51,8 @@ function Ver(variables, _escritura, producto) {
                             <td>${u.Nom_UnidadMedidaMin}</td>
                             <td>${u.Cantidad_Min}</td>
                             <td>
-                                ${_escritura ? yo`<button class="btn btn-xs btn-success" data-toggle="modal" data-target="#modal-nuevo-general" onclick="${() => AgregarPresentacion(variables, _escritura, producto, u)}"><i class="fa fa-edit"></i></button>` : yo``}
-                                ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-presentacion-ubicacion" onclick="${() => EliminarPresentacionUbicacion(variables, _escritura, producto, u)}"><i class="fa fa-trash"></i></button>` : yo``}
+                                ${_escritura ? yo`<button class="btn btn-xs btn-success" data-toggle="modal" data-target="#modal-nuevo-general" onclick="${() => AgregarPresentacion(variables, _escritura, producto, u)}"><i class="zmdi zmdi-edit"></i></button>` : yo``}
+                                ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-presentacion-ubicacion" onclick="${() => EliminarPresentacionUbicacion(variables, _escritura, producto, u)}"><i class="zmdi zmdi-delete"></i></button>` : yo``}
                                 
                             </td>
                         </tr>`)}

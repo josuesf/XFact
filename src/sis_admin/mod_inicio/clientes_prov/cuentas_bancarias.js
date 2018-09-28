@@ -48,7 +48,7 @@ function Ver(_escritura, cuentas, Id_ClienteProveedor) {
             </div>
             <div class="panel-heading">
                 <a class="btn btn-info pull-right" onclick="${() => AbrirCuenta(_escritura, Id_ClienteProveedor)}" data-toggle="modal" data-target="#modal-nuevo">
-                <i class="fa fa-plus"></i> Agregar Cuenta</a>
+                <i class="zmdi zmdi-plus"></i> Agregar Cuenta</a>
             </div>
             <div class="col-md-12">
                 <table class="table table-bordered">
@@ -73,8 +73,8 @@ function Ver(_escritura, cuentas, Id_ClienteProveedor) {
                             <td>${u.Cuenta_Interbancaria}</td>
                             <td>${u.Obs_CuentaBancaria}</td>
                             <td>
-                                ${_escritura ? yo`<button class="btn btn-xs btn-success" onclick="${() => AbrirCuenta(_escritura, Id_ClienteProveedor, u)}"><i class="fa fa-edit"></i></button>` : yo``}
-                                ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-cuentas-bancarias" onclick="${() => Eliminar(_escritura, u)}"><i class="fa fa-trash"></i></button>` : yo``}
+                                ${_escritura ? yo`<button class="btn btn-xs btn-success" onclick="${() => AbrirCuenta(_escritura, Id_ClienteProveedor, u)}"><i class="zmdi zmdi-edit"></i></button>` : yo``}
+                                ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-cuentas-bancarias" onclick="${() => Eliminar(_escritura, u)}"><i class="zmdi zmdi-delete"></i></button>` : yo``}
                             </td>
                         </tr>`)}
                     </tbody>

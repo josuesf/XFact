@@ -7,17 +7,18 @@ import { URL } from '../../../constantes_entorno/constantes'
 function Ver(variables, paginas, pagina_actual, _escritura){
     var el = yo`
     <div class="card">
-        <div class="card-head">
+        <div class="card-header">
             <header>Lista de Elementos Relacionados</header>
-            <div class="tools">
-                <div class="btn-group">
+            <ul class="actions">
+                <li>
                 ${_escritura ? yo`
                 <a class="btn btn-info pull-right" data-toggle="modal" data-target="#modal-nuevo-general" onclick="${() => AgregarElementosRelacionados(variables, _escritura, producto)}">
-                    <i class="fa fa-plus"></i> Nuevo</a>`: yo``}
-                </div>
-            </div>
+                    <i class="zmdi zmdi-plus"></i> Nuevo</a>`: yo``}
+                </li>
+            </ul> 
+            
         </div> 
-        <div class="card-body">
+        <div class="card-body card-padding">
             <div class="table-responsive">
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>

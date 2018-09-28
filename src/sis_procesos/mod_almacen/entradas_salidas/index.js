@@ -153,7 +153,7 @@ function VerEntradasSalidas(variables,CodTipoComprobante,fecha_actual) {
                                             <input type="text" id="Id_ComprobantePago_${idTabES}" data-id=0 class="form-control required" disabled>
                                             <div class="input-group-btn">
                                                 <button type="button" data-toggle="modal" id="BuscarId_ComprobantePago_${idTabES}" class="btn btn-success" onclick=${()=>BuscarComprobantePago(CodTipoComprobante)}>
-                                                    <i class="fa fa-search"></i>
+                                                    <i class="zmdi zmdi-search"></i>
                                                 </button>
                                             </div>
                                         </div>
@@ -187,7 +187,7 @@ function VerEntradasSalidas(variables,CodTipoComprobante,fecha_actual) {
                             <form id="formTablaMovAlmacen_${idTabES}">
                                 <div class="row">
                                     <div class="col-md-12"> 
-                                        <button type="button" class="btn btn-success btn-sm" onclick="${()=>AgregarFilaTabla(CodTipoComprobante,fecha_actual,idTabES)}"><i class="fa fa-plus"></i> Agregar Item</button>
+                                        <button type="button" class="btn btn-success btn-sm" onclick="${()=>AgregarFilaTabla(CodTipoComprobante,fecha_actual,idTabES)}"><i class="zmdi zmdi-plus"></i> Agregar Item</button>
                                     </div>
                                 </div>
                                 <div class="table-responsive" id="divTablaProductos_${idTabES}">
@@ -395,7 +395,7 @@ function RefrescarVerEntradasSalidas(variables,CodTipoComprobante,fecha_actual,i
                                             <input type="text" id="Id_ComprobantePago_${idTabES}" data-id=0 class="form-control required" disabled>
                                             <div class="input-group-btn">
                                                 <button type="button" data-toggle="modal" id="BuscarId_ComprobantePago_${idTabES}" class="btn btn-success" onclick=${()=>BuscarComprobantePago(CodTipoComprobante)}>
-                                                    <i class="fa fa-search"></i>
+                                                    <i class="zmdi zmdi-search"></i>
                                                 </button>
                                             </div>
                                         </div>
@@ -429,7 +429,7 @@ function RefrescarVerEntradasSalidas(variables,CodTipoComprobante,fecha_actual,i
                             <form id="formTablaMovAlmacen_${idTabES}">
                                 <div class="row">
                                     <div class="col-md-12"> 
-                                        <button type="button" class="btn btn-success btn-sm" onclick="${()=>AgregarFilaTabla(CodTipoComprobante,fecha_actual,idTabES)}"><i class="fa fa-plus"></i> Agregar Item</button>
+                                        <button type="button" class="btn btn-success btn-sm" onclick="${()=>AgregarFilaTabla(CodTipoComprobante,fecha_actual,idTabES)}"><i class="zmdi zmdi-plus"></i> Agregar Item</button>
                                     </div>
                                 </div>
                                 <div class="table-responsive" id="divTablaProductos_${idTabES}">
@@ -517,8 +517,8 @@ function AgregarFilaTabla(CodTipoComprobante,fecha_actual,idTab){
         <td class="Series hidden"><input class="form-control" type="text" value=${JSON.stringify([])} name="Series"></td>
         <td>
             <div style="display:flex;">
-                <button type="button" onclick="${()=>AsignarSeries(idFila,fecha_actual,CodTipoComprobante,idTab)}" class="btn btn-primary btn-sm"><i class="fa fa-tasks"></i></a>  
-                <button type="button" onclick="${()=>EliminarFila(idFila,idTab)}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                <button type="button" onclick="${()=>AsignarSeries(idFila,fecha_actual,CodTipoComprobante,idTab)}" class="btn btn-primary btn-sm"><i class="zmdi zmdi-tasks"></i></a>  
+                <button type="button" onclick="${()=>EliminarFila(idFila,idTab)}" class="btn btn-danger btn-sm"><i class="zmdi zmdi-delete"></i></button>
             </div>
         </td>
     </tr>`
@@ -556,8 +556,8 @@ function LlenarProductos(productos,CodTipoComprobante,fecha_actual,idTab){
                         <td class="Series hidden"><input class="form-control" type="text" value=${JSON.stringify([])} name="Series"></td>
                         <td>
                             <div style="display:flex;">
-                                <button type="button" onclick="${()=>AsignarSeries(u.Id_Producto,fecha_actual,CodTipoComprobante,idTab)}" class="btn btn-primary btn-sm"><i class="fa fa-tasks"></i></a>  
-                                <button type="button" onclick="${()=>EliminarFila(u.Id_Producto,idTab)}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                <button type="button" onclick="${()=>AsignarSeries(u.Id_Producto,fecha_actual,CodTipoComprobante,idTab)}" class="btn btn-primary btn-sm"><i class="zmdi zmdi-tasks"></i></a>  
+                                <button type="button" onclick="${()=>EliminarFila(u.Id_Producto,idTab)}" class="btn btn-danger btn-sm"><i class="zmdi zmdi-delete"></i></button>
                             </div>
                         </td>
                     </tr>`
@@ -605,7 +605,7 @@ function LlenarDetallesMovAlmacen(CodTipoComprobante,productos,fecha_actual,idTa
                                 </button>
                                 <ul class="dropdown-menu">
                                 <li><a href="javascript:void(0)" onclick="${()=>AsignarSeries(u.Id_Producto,fecha_actual,CodTipoComprobante,idTab)}">Asignar Serie</a></li>
-                                <li><a href="javascript:void(0)" onclick="${()=>EliminarFila(u.Id_Producto,idTab)}"><i class="fa fa-close"></i> Eliminar</a></li>
+                                <li><a href="javascript:void(0)" onclick="${()=>EliminarFila(u.Id_Producto,idTab)}"><i class="zmdi zmdi-close"></i> Eliminar</a></li>
                                 </ul>
                             </div> 
                         </td>
@@ -1124,6 +1124,7 @@ function EntradasSalidas(Cod_TipoComprobante) {
     fetch(URL + '/almacenes_api/get_variables_entradas_salidas', parametros)
         .then(req => req.json())
         .then(res => {
+            console.log("get entradas",res)
             if(res.respuesta=='ok'){
                 var variables = res.data 
                 const parametros = {
@@ -1138,23 +1139,20 @@ function EntradasSalidas(Cod_TipoComprobante) {
                 fetch(URL + '/cajas_api/get_empresa', parametros)
                     .then(req => req.json())
                     .then(res => { 
-                        //console.log(variables)
-                        if(res.respuesta=='ok'){
-                            var data_empresa = res.empresa
-                            variables['empresa'] = data_empresa 
-                            VerEntradasSalidas(variables,Cod_TipoComprobante,fecha_format)
-                        }else{
-                            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+res.detalle_error, "error") 
-                        }
+                        
+                        var data_empresa = res.empresa
+                        variables['empresa'] = data_empresa 
+                        VerEntradasSalidas(variables,Cod_TipoComprobante,fecha_format)
+                       
                         $('#main-contenido').waitMe('hide');
             
                     }).catch(function (e) {
                         console.log(e);
-                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los 2datos.  Tipo error : '+e, "error")
                         $('#main-contenido').waitMe('hide');
                     });
             }else{
-                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+res.detalle_error, "error") 
+                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los 3datos.  Tipo error : '+res.detalle_error, "error") 
                 $('#main-contenido').waitMe('hide');
             }
 

@@ -13,16 +13,16 @@ function Ver(_escritura, categoriasPadre, categoria){
     <div class="tab-pane" id="tab_crear_categoria_2">
         <section class="content">
             <div class="card">
-                <div class="card-head">
+                <div class="card-header">
                     <header>
                     <a onclick=${()=>ListarCategorias(_escritura)}
                     class="btn btn-xs btn-icon-toggle">
-                        <i class="fa fa-arrow-left"></i> </a>
+                        <i class="zmdi zmdi-arrow-left"></i> </a>
                         ${categoria?'Editar':'Nueva'} Categoria
                     </header>
                     
                 </div> 
-                <div class="card-body">
+                <div class="card-body card-padding">
                     <div class="panel">
                         
                         <!-- form start -->

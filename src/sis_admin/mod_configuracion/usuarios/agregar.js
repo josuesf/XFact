@@ -24,13 +24,13 @@ function Ver(_escritura, _estados, _perfiles, cajas, usuario) {
         
         <section class="content">
             <div class="card">
-                <div class="card-head">
-                    <header><a onclick=${() => ListarUsuarios(_escritura)} class="btn btn-xs btn-icon-toggle"><i class="fa fa-arrow-left"></i></a> ${usuario ? 'Editar' : 'Nuevo'} Usuario
+                <div class="card-header">
+                    <header><a onclick=${() => ListarUsuarios(_escritura)} class="btn btn-xs btn-icon-toggle"><i class="zmdi zmdi-arrow-left"></i></a> ${usuario ? 'Editar' : 'Nuevo'} Usuario
                    </header> 
                     
                 </div>
                 <!-- /.box-header -->
-                <div class="card-body">
+                <div class="card-body card-padding">
                     <div class="panel">
                        
                         <form role="form">

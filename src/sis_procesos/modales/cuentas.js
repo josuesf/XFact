@@ -61,7 +61,7 @@ function AgregarTabla(cuentas,CodLibro){
             <td>${c.Documento}</td> 
             <td>${c.Moneda}</td> 
             <td>${c.TotalFaltante}</td>  
-            <td><button class="btn btn-xs btn-primary" data-dismiss="modal" onclick="${()=>SeleccionarCuenta(c)}"><i class="fa fa-check"></i> Elegir</button></td>
+            <td><button class="btn btn-xs btn-primary" data-dismiss="modal" onclick="${()=>SeleccionarCuenta(c)}"><i class="zmdi zmdi-check"></i> Elegir</button></td>
         </tr>`)}
     </tbody>
 

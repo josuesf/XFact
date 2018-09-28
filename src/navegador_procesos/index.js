@@ -116,7 +116,7 @@ function Ver(Flag_Cerrado) {
                     <ul>
 
                         <li class="sub-menu">
-                            <a data-ma-action="submenu-toggle"> 
+                            <a href="javascript:void(0)"  data-ma-action="submenu-toggle"> 
                                 <span class="title">Mantenimientos</span>
                             </a> 
                             <ul>
@@ -130,7 +130,7 @@ function Ver(Flag_Cerrado) {
                         </li>
 
                         <li class="sub-menu">
-                            <a data-ma-action="submenu-toggle"> 
+                            <a href="javascript:void(0)"  data-ma-action="submenu-toggle"> 
                                 <span class="title">Contabilidad</span>
                             </a> 
                             <ul>
@@ -141,7 +141,7 @@ function Ver(Flag_Cerrado) {
                         </li>
 
                         <li class="sub-menu">
-                            <a data-ma-action="submenu-toggle"> 
+                            <a href="javascript:void(0)"  data-ma-action="submenu-toggle"> 
                                 <span class="title">Logistica</span>
                             </a> 
                             <ul>
@@ -163,7 +163,7 @@ function Ver(Flag_Cerrado) {
 
                         
                         <li class="sub-menu">
-                            <a data-ma-action="submenu-toggle"> 
+                            <a href="javascript:void(0)"  data-ma-action="submenu-toggle"> 
                                 <span class="title">Configuracion</span>
                             </a> 
                             <ul>

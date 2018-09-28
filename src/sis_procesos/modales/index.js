@@ -55,7 +55,7 @@ function BuscarProducto(_RequiereStock,text_busqueda) {
                             <div class="input-group">
                                 <input type="text" class="form-control input-sm" value="${text_busqueda}" id="txtBusquedaProducto" onkeypress=${()=>KeyPressBusquedaProducto(event)}>
                                 <div class="input-group-btn">
-                                    <button type="button" class="btn btn-success btn-sm" onclick="${()=>Buscar()}"><i class="fa fa-search"></i> Buscar</button>
+                                    <button type="button" class="btn btn-success btn-sm" onclick="${()=>Buscar()}"><i class="zmdi zmdi-search"></i> Buscar</button>
                                 </div>
                             </div>
                         </div>
@@ -120,7 +120,7 @@ function BuscarCliente(idInputCliente,idInputDoc,Cod_TipoCliente) {
                             <div class="input-group">
                                 <input type="text" class="form-control input-sm" id="txtBuscarClienteModal" onkeypress=${()=>KeyPressBusquedaCliente(event,idInputCliente,idInputDoc,Cod_TipoCliente)}>
                                 <div class="input-group-btn">
-                                    <button type="button" id="BuscarClienteModal" class="btn btn-success btn-sm" onclick=${()=>BusquedaClienteModal(idInputCliente,idInputDoc,Cod_TipoCliente)}><i class="fa fa-search"></i> Buscar</button>
+                                    <button type="button" id="BuscarClienteModal" class="btn btn-success btn-sm" onclick=${()=>BusquedaClienteModal(idInputCliente,idInputDoc,Cod_TipoCliente)}><i class="zmdi zmdi-search"></i> Buscar</button>
                                 </div>
                             </div>
                         </div>
@@ -236,7 +236,7 @@ function AgregarTabla(clientes,idInputCliente,idInputDoc){
         <tr>
             <td>${u.Nro_Documento}</td>
             <td>${u.Cliente}</td> 
-            <td><button class="btn btn-xs btn-primary" data-dismiss="modal" onclick="${()=>SeleccionarCliente(u,idInputCliente,idInputDoc)}"><i class="fa fa-check"></i> Elegir</button></td>
+            <td><button class="btn btn-xs btn-primary" data-dismiss="modal" onclick="${()=>SeleccionarCliente(u,idInputCliente,idInputDoc)}"><i class="zmdi zmdi-check"></i> Elegir</button></td>
         </tr>`)}
     </tbody>
 
@@ -267,7 +267,7 @@ function AgregarTablaProductos(productos){
             <td>${u.Nom_UnidadMoneda}</td>  
             <td>${u.Precio_Compra}</td>  
             <td>${u.Nom_UnidadMedida}</td>
-            <td><button class="btn btn-xs btn-primary" data-dismiss="modal" onclick="${()=>SeleccionarProducto(u)}"><i class="fa fa-check"></i> Elegir</button></td>
+            <td><button class="btn btn-xs btn-primary" data-dismiss="modal" onclick="${()=>SeleccionarProducto(u)}"><i class="zmdi zmdi-check"></i> Elegir</button></td>
         </tr>`)}
     </tbody>
 

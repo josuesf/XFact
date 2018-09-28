@@ -39,15 +39,16 @@ function VerCuentas(variables,fecha_actual,CodLibro) {
                 <div class="row">
                     <div class="col-md-8" id="div-cliente-cuentas_${idTabPC}">
                         <div class="card">
-                            <div class="card-head">
+                            <div class="card-header bgm-blue">
                                 <header> Cliente/Proveedor </header>
-                                <div class="tools">
-                                    <div class="btn-group">
-                                        <a class="btn btn-icon-toggle btn-warning" onclick=${()=>EditarCliente(idTabPC)}><i class="fa fa-pencil"></i></a>
-                                    </div>
-                                </div>
+                                <ul class="actions">
+                                    <li>
+                                        <a href="javascript:void(0);" onclick=${()=>EditarCliente(idTabPC)}><i class="zmdi zmdi-edit"></i></a>
+                                    </li>
+                                </ul>
+                             
                             </div>
-                            <div class="card-body">
+                            <div class="card-body card-padding">
                                 <div class="row">
                                     <div class="col-md-4" id="divCodTipoDoc_${idTabPC}">
                                         <div class="form-group">

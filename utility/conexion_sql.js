@@ -13,7 +13,7 @@ function dbMaster(){
     return config = {
         user: process.env.user_database || 'sa',
         password: process.env.password_database || 'paleC0nsult0res',
-        server: process.env.server_database || 'localhost',
+        server: process.env.server_database || '.\PALEHOST',
         database: process.env.name_database || 'PALERPmaster'   
     }   
 }

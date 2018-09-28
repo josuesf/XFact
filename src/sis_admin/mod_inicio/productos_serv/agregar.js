@@ -39,15 +39,15 @@ function Ver(_escritura, variables, producto){
        
         <section class="content">
             <div class="card">
-                <div class="card-head">
+                <div class="card-header">
                     <header>
                     <a onclick=${()=>ListarProductosServ(_escritura)} class="btn btn-xs btn-icon-toggle">
-                        <i class="fa fa-arrow-left"></i></a>
+                        <i class="zmdi zmdi-arrow-left"></i></a>
                         ${producto?'Editar':'Nuevo'} Producto
                     </header>
     
                 </div> 
-                <div class="card-body">
+                <div class="card-body card-padding">
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
                             <li class="active">

@@ -22,17 +22,17 @@ function NuevoCliente(_escritura, mas_variables, cliente) {
        
         <section class="content">
             <div class="card">
-                <div class="card-head">
+                <div class="card-header">
                     <header>
                         <a onclick=${() => ListarClientes(_escritura)}
                         class="btn btn-xs btn-icon-toggle">
-                            <i class="fa fa-arrow-left"></i></a>
+                            <i class="zmdi zmdi-arrow-left"></i></a>
                         ${cliente ? 'Editar' : 'Nuevo'} Cliente/Proveedor
                     </header>
                     
                 </div>
                 
-                <div class="card-body"> 
+                <div class="card-body card-padding"> 
                     <div class="panel">
                         <div class="panel-body">
                             <div class="row">
@@ -47,7 +47,7 @@ function NuevoCliente(_escritura, mas_variables, cliente) {
                                             <ul class="nav nav-tabs">
                                                 <li class="active">
                                                     <a href="#tab_1_config" data-toggle="tab" aria-expanded="true">
-                                                        <i class="fa fa-file"></i> Datos Generales</a>
+                                                        <i class="zmdi zmdi-file"></i> Datos Generales</a>
                                                 </li>
                                                 <li class="">
                                                     <a href="#tab_2_config" data-toggle="tab" onclick="${() => CuentasBancarias(_escritura, cliente.Id_ClienteProveedor)}" aria-expanded="true">
@@ -86,7 +86,7 @@ function NuevoCliente(_escritura, mas_variables, cliente) {
                                             <ul class="nav nav-tabs">
                                                 <li class="active">
                                                     <a href="#tab_1_config" data-toggle="tab" aria-expanded="true">
-                                                        <i class="fa fa-file"></i> Datos Generales</a>
+                                                        <i class="zmdi zmdi-file"></i> Datos Generales</a>
                                                 </li>
                                             </ul>`}
                                         <div class="tab-content">
@@ -193,15 +193,15 @@ function NuevoCliente(_escritura, mas_variables, cliente) {
                                                                     <ul class="nav nav-tabs">
                                                                         <li class="">
                                                                             <a href="#tab_de_1" data-toggle="tab" aria-expanded="true">
-                                                                                <i class="fa fa-building"></i> Datos Especificos</a>
+                                                                                <i class="zmdi zmdi-building"></i> Datos Especificos</a>
                                                                         </li>
                                                                         <li class="active">
                                                                             <a href="#tab_de_2" data-toggle="tab" aria-expanded="true">
-                                                                                <i class="fa fa-location-arrow"></i> Ubicacion y Forma Pago</a>
+                                                                                <i class="zmdi zmdi-location-arrow"></i> Ubicacion y Forma Pago</a>
                                                                         </li>
                                                                         <li class="">
                                                                             <a href="#tab_de_3" data-toggle="tab" aria-expanded="true">
-                                                                                <i class="fa fa-ellipsis-h"></i> Datos Adicionales</a>
+                                                                                <i class="zmdi zmdi-ellipsis-h"></i> Datos Adicionales</a>
                                                                         </li>
                                                                     </ul>
                                                                     <div class="tab-content">

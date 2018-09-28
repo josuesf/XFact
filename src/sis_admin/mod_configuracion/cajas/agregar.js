@@ -99,10 +99,10 @@ function Ver(_escritura, sucursales, usuarios, cuentas_contables, caja, document
        
         <section class="content">
             <div class="card">
-                <div class="card-head">
-                    <header><a onclick=${() => ListarCajas(_escritura)} class="btn btn-xs btn-icon-toggle"><i class="fa fa-arrow-left"></i> </a>${caja ? 'Editar' : 'Nueva'} Caja</header> 
+                <div class="card-header">
+                    <header><a onclick=${() => ListarCajas(_escritura)} class="btn btn-xs btn-icon-toggle"><i class="zmdi zmdi-arrow-left"></i> </a>${caja ? 'Editar' : 'Nueva'} Caja</header> 
                 </div> 
-                <div class="card-body">
+                <div class="card-body card-padding">
                     <div class="panel">
                         
                         <!-- form start -->
@@ -183,22 +183,25 @@ function Ver(_escritura, sucursales, usuarios, cuentas_contables, caja, document
                                                     <ul class="nav nav-tabs">
                                                         <li class="active">
                                                             <a href="#tab_1_caja" data-toggle="tab" aria-expanded="true">
-                                                                <i class="fa fa-file"></i> Documentos Relacionados</a>
+                                                                <i class="zmdi zmdi-file"></i> Documentos Relacionados</a>
                                                         </li>
                                                         <li class="">
                                                             <a href="#tab_crear_caja_2_caja" data-toggle="tab" aria-expanded="false">
-                                                                <i class="fa fa-star"></i> Productos Favoritos</a>
+                                                                <i class="zmdi zmdi-star"></i> Productos Favoritos</a>
                                                         </li>
                                                     </ul>
                                                     <div class="tab-content">
                                                         <div class="tab-pane active" id="tab_1_caja">
-                                                            <div class="card-head">
-                                                                <div class="tools">
-                                                                    <div class="btn-group">
+                                                            <div class="card-header">
+
+                                                                <ul class="actions">
+                                                                    <li>
                                                                         <a class="btn btn-info pull-right" data-toggle="modal" data-target="#modal-nuevo-editar-documento" onclick="${()=>AgregarDocumento(_escritura, sucursales, usuarios, cuentas_contables,caja)}">
-                                                                        <i class="fa fa-plus"></i> Agregar</a>
-                                                                    </div>
-                                                                </div>
+                                                                        <i class="zmdi zmdi-plus"></i> Agregar</a>
+                                                                    </li>
+                                                                </ul>
+
+                                                               
                                                             </div>
                                                             <div class="table-responsive">
                                                                 <table class="table table-bordered table-striped">
@@ -227,8 +230,8 @@ function Ver(_escritura, sucursales, usuarios, cuentas_contables, caja, document
                                                                             <td>${u.Flag_FacRapida}</td>
                                                                             <td>${u.Nro_SerieTicketera}</td>
                                                                             <td>
-                                                                                ${_escritura ? yo`<button class="btn btn-xs btn-success" data-toggle="modal" data-target="#modal-nuevo-editar-documento" onclick="${()=>AgregarDocumento(_escritura, sucursales, usuarios, cuentas_contables,caja, u)}"><i class="fa fa-edit"></i></button>` : yo``}
-                                                                                ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-documento" onclick="${()=>EliminarDocumento(_escritura, sucursales, usuarios, cuentas_contables,caja, u)}"><i class="fa fa-trash"></i></button>` : yo``}
+                                                                                ${_escritura ? yo`<button class="btn btn-xs btn-success" data-toggle="modal" data-target="#modal-nuevo-editar-documento" onclick="${()=>AgregarDocumento(_escritura, sucursales, usuarios, cuentas_contables,caja, u)}"><i class="zmdi zmdi-edit"></i></button>` : yo``}
+                                                                                ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-documento" onclick="${()=>EliminarDocumento(_escritura, sucursales, usuarios, cuentas_contables,caja, u)}"><i class="zmdi zmdi-delete"></i></button>` : yo``}
                                                                                 
                                                                             </td>
                                                                         </tr>`)}
@@ -238,13 +241,15 @@ function Ver(_escritura, sucursales, usuarios, cuentas_contables, caja, document
                                                         </div>
                                                         <!-- /.tab-pane -->
                                                         <div class="tab-pane" id="tab_crear_caja_2_caja">
-                                                            <div class="card-head">
-                                                                <div class="tools">
-                                                                    <div class="btn-group">
+                                                            <div class="card-header">
+
+                                                                <ul class="actions">
+                                                                    <li>
                                                                         <a class="btn btn-info pull-right" data-toggle="modal" data-target="#modal-nuevo-favorito" onclick="${()=>AgregarFavorito(_escritura, sucursales, usuarios, cuentas_contables,caja)}">
-                                                                        <i class="fa fa-plus"></i> Agregar</a>
-                                                                    </div>
-                                                                </div>
+                                                                        <i class="zmdi zmdi-plus"></i> Agregar</a>
+                                                                    </li>
+                                                                </ul>
+ 
                                                             </div>
                                                             <div class="table-responsive" id="contenedorTablaFavoritos">
                                                                 <table class="table table-bordered table-striped">
@@ -267,7 +272,7 @@ function Ver(_escritura, sucursales, usuarios, cuentas_contables, caja, document
                                                                             <td>${u.Valor}</td>
                                                                             <td>${u.Stock_Act}</td>
                                                                             <td>
-                                                                                ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-favorito" onclick="${()=>EliminarFavorito(_escritura, caja, u)}"><i class="fa fa-trash"></i></button>` : yo``}
+                                                                                ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-favorito" onclick="${()=>EliminarFavorito(_escritura, caja, u)}"><i class="zmdi zmdi-delete"></i></button>` : yo``}
                                                                                 
                                                                             </td>
                                                                         </tr>`)}
@@ -650,7 +655,7 @@ function AgregarTabla(usuarios){
         <tr>
             <td>${u.Cod_Usuarios}</td>
             <td>${u.Nick}</td>
-            <td><button class="btn btn-xs btn-primary" data-dismiss="modal" onclick="${()=>SeleccionarUsuario(u)}"><i class="fa fa-check"></i> Elegir</button></td>
+            <td><button class="btn btn-xs btn-primary" data-dismiss="modal" onclick="${()=>SeleccionarUsuario(u)}"><i class="zmdi zmdi-check"></i> Elegir</button></td>
         </tr>`)}
     </tbody>
 
@@ -824,7 +829,7 @@ function AgregarTablaProductos(_escritura, caja, productos){
                     </thead>
                     <tbody>
                         ${productos.map(u => yo`<tr>
-                                                    <td><button class="btn btn-xs btn-primary" data-dismiss="modal" onclick="${()=>GuardarFavorito(_escritura, caja, u)}"><i class="fa fa-check"></i> Agregar</button></td>
+                                                    <td><button class="btn btn-xs btn-primary" data-dismiss="modal" onclick="${()=>GuardarFavorito(_escritura, caja, u)}"><i class="zmdi zmdi-check"></i> Agregar</button></td>
                                                     <td>${u.Cod_Producto}</td>
                                                     <td>${u.Des_Almacen}</td>
                                                     <td>${u.Nom_Producto}</td>
@@ -888,7 +893,7 @@ function GuardarFavorito(_escritura, caja, producto){
                                         <td>${u.Valor}</td>
                                         <td>${u.Stock_Act}</td>
                                         <td>
-                                            ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-favorito" onclick="${()=>EliminarFavorito(_escritura, caja, u)}"><i class="fa fa-trash"></i></button>` : yo``}
+                                            ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-favorito" onclick="${()=>EliminarFavorito(_escritura, caja, u)}"><i class="zmdi zmdi-delete"></i></button>` : yo``}
                                             
                                         </td>
                                     </tr>`)}
@@ -950,7 +955,7 @@ function EliminarFavorito(_escritura, caja, producto){
                                         <td>${u.Valor}</td>
                                         <td>${u.Stock_Act}</td>
                                         <td>
-                                            ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-favorito" onclick="${()=>EliminarFavorito(_escritura, caja, u)}"><i class="fa fa-trash"></i></button>` : yo``}
+                                            ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-favorito" onclick="${()=>EliminarFavorito(_escritura, caja, u)}"><i class="zmdi zmdi-delete"></i></button>` : yo``}
                                             
                                         </td>
                                     </tr>`)}

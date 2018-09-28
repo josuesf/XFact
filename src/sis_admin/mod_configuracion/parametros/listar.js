@@ -37,12 +37,12 @@ function Ver(parametros, paginas,pagina_actual, _escritura) {
         </section>
         <section class="content">
             <div class="card">
-                <div class="card-head">
+                <div class="card-header">
                     <header>Lista de Parametros</header>
                     
                 </div>
                 
-                <div class="card-body">
+                <div class="card-body card-padding">
                     <div class="table-responsive">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
@@ -61,10 +61,10 @@ function Ver(parametros, paginas,pagina_actual, _escritura) {
                                 <td>${u.Tabla}</td>
                                 <td>${u.Des_Tabla}</td> 
                                 <td>  
-                                    <i class=${u.Flag_Acceso?"fa fa-check text-success":"md md-block text-danger"}></i>
+                                    <i class=${u.Flag_Acceso?"zmdi zmdi-check text-success":"md md-block text-danger"}></i>
                                  </td>
                                 <td>
-                                    ${_escritura ? yo`<button class="btn btn-xs btn-success" onclick="${()=>NuevoParametro(_escritura, u)}"><i class="fa fa-edit"></i></button>` : yo``} 
+                                    ${_escritura ? yo`<button class="btn btn-xs btn-success" onclick="${()=>NuevoParametro(_escritura, u)}"><i class="zmdi zmdi-edit"></i></button>` : yo``} 
                                 </td>
                             </tr>`)}
                         </tbody>

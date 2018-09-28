@@ -11,13 +11,12 @@
     <meta name="description" content="PALERP CONSULTORES">
     <!-- END META -->
 
-    <!-- BEGIN STYLESHEETS -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet'
-        type='text/css' />
+   
     <link href="/assets/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
     <link href="/assets/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="/assets/css/app_1.min.css" />
     <link type="text/css" rel="stylesheet" href="/assets/css/app_2.min.css" /> 
+    <script src="/assets/vendors/bower_components/jquery/dist/jquery.min.js"></script> 
 
 <body>
  
@@ -66,80 +65,7 @@
 
           
         </div>
-
-        <!-- Register -->
-        <div class="lc-block" id="l-register">
-            <div class="lcb-form">
-                <form accept-charset="utf-8" action="/empresa_api/register" method="post" id="formRegister">
-                    <div class="input-group m-b-20">
-                        <span class="input-group-addon"><i class="zmdi zmdi-store"></i></span>
-                        <div class="fg-line">
-                            <input type="text" class="form-control" id="ruc" name="ruc" placeholder="RUC" required>
-                        </div>
-                    </div>
-
-                    <div class="input-group m-b-20">
-                        <span class="input-group-addon"></span>
-                        <div class="fg-line">
-                            <input type="text" class="form-control" id="razon" name="razon" placeholder="Razon Social" required>
-                        </div>
-                    </div>
-
-                    <div class="input-group m-b-20">
-                        <span class="input-group-addon"><i class="zmdi zmdi-pin-drop"></i></span>
-                        <div class="fg-line">
-                            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" required>
-                        </div>
-                    </div>
-                    <div class="input-group m-b-20">
-                        <span class="input-group-addon"><i class="zmdi zmdi-phone"></i></span>
-                        <div class="fg-line">
-                            <input type="text" class="form-control" id="celular" name="celular" placeholder="Celular" required>
-                        </div>
-                    </div>
-
-                    <div class="input-group m-b-20">
-                        <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
-                        <div class="fg-line">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
-                        </div>
-                    </div>
-                    <a class="btn btn-login btn-success btn-float" id="register"><i class="zmdi zmdi-arrow-forward" ></i></a>
-                </form>
  
-            </div>
-
-            <div class="lcb-navigation">
-                <a href="#" data-ma-action="login-switch" data-ma-block="#l-login"><i class="zmdi zmdi-long-arrow-right"></i> <span>Iniciar Sesion</span></a>
-                <a href="#" data-ma-action="login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>Recuperar contraseña</span></a>
-            </div>
-        </div>
-
-        <!-- Forgot Password -->
-        <div class="lc-block" id="l-forget-password">
-            <div class="lcb-form">
-                <p class="text-left">Para recuperar tu contraseña es necesario ingresar los siguientes campos.</p>
-                <div class="input-group m-b-20">
-                    <span class="input-group-addon"><i class="zmdi zmdi-store"></i></span>
-                    <div class="fg-line">
-                            <input type="text" class="form-control dirty" id="ruc" name="ruc" placeholder="RUC" required>
-                    </div>
-                </div>
-
-                <div class="input-group m-b-20">
-                    <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
-                    <div class="fg-line">
-                        <input type="email" class="form-control dirty" id="email" name="email" placeholder="Email" required>
-                    </div>
-                </div> 
-                <a class="btn btn-login btn-success btn-float" id="recovery"><i class="zmdi zmdi-arrow-forward" ></i></a>
-            </div>
-
-            <div class="lcb-navigation">
-                <a href="#" data-ma-action="login-switch" data-ma-block="#l-login"><i class="zmdi zmdi-long-arrow-right"></i> <span>Iniciar Sesion</span></a>
-                <a href="#" data-ma-action="login-switch" data-ma-block="#l-register"><i class="zmdi zmdi-plus"></i> <span>Registrarse</span></a>
-            </div>
-        </div>
     </div>
     <!-- END LOGIN SECTION -->
 
@@ -154,10 +80,7 @@
             $("#login").click(function () {
                 $("#formLogin").submit();
             });
-
-            $("#register").click(function () {
-                $("#formRegister").submit();
-            });
+ 
         });
     </script>
 

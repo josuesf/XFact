@@ -49,7 +49,7 @@ function Ver(_escritura, contactos, Id_ClienteProveedor, documentos) {
             </div>
             <div class="panel-heading">
                 <a class="btn btn-info pull-right" onclick="${() => AbrirContacto(_escritura, Id_ClienteProveedor, documentos)}" data-toggle="modal" data-target="#modal-nuevo">
-                <i class="fa fa-plus"></i> Agregar Contacto</a>
+                <i class="zmdi zmdi-plus"></i> Agregar Contacto</a>
             </div>
             <div class="col-md-12">
                 <table class="table table-bordered">
@@ -78,8 +78,8 @@ function Ver(_escritura, contactos, Id_ClienteProveedor, documentos) {
                             <td>${u.Email_Personal}</td>
                             <td>${u.Celular}</td>
                             <td>
-                                ${_escritura ? yo`<button class="btn btn-xs btn-success" onclick="${() => AbrirContacto(_escritura, Id_ClienteProveedor, documentos, u.Id_ClienteContacto)}"><i class="fa fa-edit"></i></button>` : yo``}
-                                ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-contactos" onclick="${() => Eliminar(_escritura, u, documentos)}"><i class="fa fa-trash"></i></button>` : yo``}
+                                ${_escritura ? yo`<button class="btn btn-xs btn-success" onclick="${() => AbrirContacto(_escritura, Id_ClienteProveedor, documentos, u.Id_ClienteContacto)}"><i class="zmdi zmdi-edit"></i></button>` : yo``}
+                                ${_escritura ? yo`<button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-danger-contactos" onclick="${() => Eliminar(_escritura, u, documentos)}"><i class="zmdi zmdi-delete"></i></button>` : yo``}
                             </td>
                         </tr>`)}
                     </tbody>

@@ -49,7 +49,7 @@ function Ver(_escritura, variables, producto){
                 </div>
             </div>
         </div>
-        <div class="card-body" id="divDatosGenerales">
+        <div class="card-body card-padding" id="divDatosGenerales">
             <!-- /.box-header -->
             <!-- form start -->
             <div role="form">
@@ -424,7 +424,7 @@ function AgregarTabla(cuentas, id){
         <tr>
             <td>${u.Cod_Usuarios}</td>
             <td>${u.Nick}</td>
-            <td><button class="btn btn-xs btn-primary" data-dismiss="modal" onclick="${()=>SeleccionarUsuario(u, id)}"><i class="fa fa-check"></i> Elegir</button></td>
+            <td><button class="btn btn-xs btn-primary" data-dismiss="modal" onclick="${()=>SeleccionarUsuario(u, id)}"><i class="zmdi zmdi-check"></i> Elegir</button></td>
         </tr>`)}
     </tbody>
 

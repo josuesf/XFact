@@ -50,7 +50,7 @@ function Ver(_escritura,contactos,Id_ClienteProveedor){
             </div>
             <div class="panel-heading">
                 <a class="btn btn-info pull-right" data-toggle="modal" data-target="#modal-nuevo">
-                <i class="fa fa-plus"></i> Agregar Licitacion</a>
+                <i class="zmdi zmdi-plus"></i> Agregar Licitacion</a>
             </div>
             <div class="col-md-12">
                 <table class="table table-bordered">
