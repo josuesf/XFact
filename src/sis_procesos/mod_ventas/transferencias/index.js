@@ -125,8 +125,10 @@ function Ver(_escritura, variables,fecha_actual,caja_actual) {
                                             <div class="col-md-3 text-center" id="formBancoITF_${idTabT}" style="display:none">
                                                 <div class="checkbox checkbox-inline checkbox-styled">
                                                     <label>
-                                                        <input type="checkbox" id="optITF_${idTabT}" name="optITF_${idTabT}" onclick=${()=>CalcularITF(idTabT)}><span> Con ITF? 0.005%</span>
-                                                    </label>
+                                                        <input type="checkbox" id="optITF_${idTabT}" name="optITF_${idTabT}" onclick=${()=>CalcularITF(idTabT)}>
+                                                        <i class="input-helper"></i>
+                                                        <span> Con ITF? 0.005%</span>
+                                                        </label>
                                                 </div>
                                             </div>
 
@@ -275,8 +277,10 @@ function RefrescarVer(_escritura, variables,fecha_actual,caja_actual,idTabT) {
                                             <div class="col-md-3 text-center" id="formBancoITF_${idTabT}" style="display:none">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input type="checkbox" id="optITF_${idTabT}" name="optITF_${idTabT}" onclick=${()=>CalcularITF(idTabT)}> Con ITF? 0.005%
-                                                    </label>
+                                                        <input type="checkbox" id="optITF_${idTabT}" name="optITF_${idTabT}" onclick=${()=>CalcularITF(idTabT)}>
+                                                        <i class="input-helper"></i>
+                                                        Con ITF? 0.005%
+                                                        </label>
                                                 </div>
                                             </div>
 

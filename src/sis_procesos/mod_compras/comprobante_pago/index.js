@@ -61,11 +61,7 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
                 <div class="row">
                     <div class="col-md-8" id="div-cliente-comprobante-pago">
                         <div class="card">
-<<<<<<< HEAD
-                            <div class="card-header">
-=======
                             <div class="card-header bgm-blue">
->>>>>>> 411aea4280f64b267bbe1ef446bd3642128c1d13
                                 <header> Cliente/Proveedor </header>
                                 <ul class="actions">
                                     <li>
@@ -223,8 +219,10 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
 
                                                 <div class="checkbox checkbox-inline checkbox-styled">
                                                     <label>
-                                                        <input type="checkbox" id="optEsGasto" name="optEsGasto" onchange="${()=>CambioGastos()}"><span> Es Gastos</span> 
-                                                    </label>
+                                                        <input type="checkbox" id="optEsGasto" name="optEsGasto" onchange="${()=>CambioGastos()}"> 
+                                                        <i class="input-helper"></i>
+                                                        <span> Es Gastos</span>
+                                                        </label>
                                                 </div>
                                                  
                                             </div>
@@ -284,8 +282,10 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
 
                                                     <div class="checkbox checkbox-inline checkbox-styled">
                                                         <label>
-                                                            <input type="checkbox" id="optDescargar" name="optDescargar" checked="checked" onchange=${()=>CambioDespachado()}><span> ${CodLibro=='08'?'Descargar Producto':'Descargar de Almacen(es)'}</span>
-                                                        </label>
+                                                            <input type="checkbox" id="optDescargar" name="optDescargar" checked="checked" onchange=${()=>CambioDespachado()}>
+                                                            <i class="input-helper"></i>
+                                                            <span> ${CodLibro=='08'?'Descargar Producto':'Descargar de Almacen(es)'}</span>
+                                                            </label>
                                                     </div>
  
                                                 </div>
@@ -293,8 +293,10 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
 
                                                     <div class="checkbox checkbox-inline checkbox-styled">
                                                         <label>
-                                                            <input type="checkbox" id="optExportacion" name="optExportacion" onchange=${()=>CambioExportacion(CodLibro,variables)}><span> Exportacion ? </span> 
-                                                        </label>
+                                                            <input type="checkbox" id="optExportacion" name="optExportacion" onchange=${()=>CambioExportacion(CodLibro,variables)}> 
+                                                            <i class="input-helper"></i>
+                                                            <span> Exportacion ? </span>
+                                                            </label>
                                                     </div>
  
                                                 </div>
@@ -392,8 +394,10 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
                                             <div class="col-md-12">
                                                 <div class="checkbox checkbox-inline checkbox-styled">
                                                     <label>
-                                                        <input type="checkbox" id="ckbIncluyeIGV" checked="checked" onchange="${()=>CalcularTotal(CodLibro,variables)}"><span>Precio Unitario Incluye IGV?</span> 
-                                                    </label>
+                                                        <input type="checkbox" id="ckbIncluyeIGV" checked="checked" onchange="${()=>CalcularTotal(CodLibro,variables)}"> 
+                                                        <i class="input-helper"></i>
+                                                        <span>Precio Unitario Incluye IGV?</span>
+                                                        </label>
                                                 </div>
                                             </div>
  
@@ -451,23 +455,29 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
                                         <div class="form-group" id="divAplicaImpuesto">
                                             <div class="checkbox checkbox-inline checkbox-styled">
                                                 <label>
-                                                    <input type="checkbox" id="ckbAplicaImpuesto" ${variables.empresa.Flag_ExoneradoImpuesto?'checked':'checked'} onchange=${()=>CambioAplicaImpuesto(variables)}><span>I.G.V 18% </span>
-                                                </label>
+                                                    <input type="checkbox" id="ckbAplicaImpuesto" ${variables.empresa.Flag_ExoneradoImpuesto?'checked':'checked'} onchange=${()=>CambioAplicaImpuesto(variables)}>
+                                                    <i class="input-helper"></i>
+                                                    <span>I.G.V 18% </span>
+                                                    </label>
                                             </div>
                                             <input type="text" class="form-control input-sm" value="0.00" id="Impuesto" onkeypress=${()=>BloquearControles(event)}>
                                         </div>
                                         <div class="form-group">
                                             <div class="checkbox checkbox-inline checkbox-styled">
                                                 <label>
-                                                    <input type="checkbox" id="cbAplicaServicios"  checked="checked"><span>SERVICIOS</span>
-                                                </label>
+                                                    <input type="checkbox" id="cbAplicaServicios"  checked="checked">
+                                                    <i class="input-helper"></i>
+                                                    <span>SERVICIOS</span>
+                                                    </label>
                                             </div>
                                             <input type="number" class="form-control input-sm" value="0.00" id="OtrosCargos" onkeypress=${()=>CalcularTotal(CodLibro,variables)} onchange=${()=>CalcularTotal(CodLibro,variables)}>
                                         </div>
                                         <div class="form-group" style="display:none">
                                             <div class="checkbox checkbox-inline checkbox-styled">
                                                 <label>
-                                                    <input type="checkbox"  checked="checked"><span>I.S.C 3%</span>
+                                                    <input type="checkbox"  checked="checked">
+                                                    <i class="input-helper"></i>
+                                                    <span>I.S.C 3%</span>
                                                 </label>
                                             </div>
                                             <input type="number" class="form-control input-sm" value="0.00" id="Servicios">
@@ -787,7 +797,9 @@ function VerModalFormasPago(variables,amodo,Tipo_Cambio,Monto,Cod_Moneda){
                         <div class="col-sm-3">
                             <div class="btn-group-toggle" data-toggle="buttons">
                                 <label class="btn btn-success btn-sm">
-                                <input type="checkbox" checked autocomplete="off" id="btnCreditoFormaPagoHeader"  onchange=${() => AsignarCredito()}> Credito
+                                <input type="checkbox" checked autocomplete="off" id="btnCreditoFormaPagoHeader"  onchange=${() => AsignarCredito()}>
+                                <i class="input-helper"></i>
+                                Credito
                                 </label>
                             </div>
                         </div>

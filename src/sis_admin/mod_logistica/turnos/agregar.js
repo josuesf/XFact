@@ -115,7 +115,9 @@ function Ver(_escritura, turno){
                                     <div class="col-sm-6">
                                         <div class="checkbox checkbox-inline checkbox-styled">
                                             <label>
-                                            <input type="checkbox" id="Flag_Cerrado" ${turno?turno.Flag_Cerrado?'checked':'':''}><span> Cerrado?</span>
+                                            <input type="checkbox" id="Flag_Cerrado" ${turno?turno.Flag_Cerrado?'checked':'':''}>
+                                            <i class="input-helper"></i>
+                                            <span> Cerrado?</span>
                                             </label>
                                         </div>  
                                         <p class="help-block">Cuando el turno esta cerrado no se puede realizar ningun movimiento</p>

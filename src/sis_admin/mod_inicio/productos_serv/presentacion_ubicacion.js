@@ -164,7 +164,9 @@ function VerAgregarPresentacionUbicacion(variables, _escritura, producto,present
                                                 <label for="Flag_Convertir"></label>
                                                 <div class="checkbox-inline checkbox-styled checkbox-primary">
                                                     <label>
-                                                    <input type="checkbox" id="Flag_Convertir" ><span> Es posible convertir?</span>
+                                                    <input type="checkbox" id="Flag_Convertir" >
+                                                    <i class="input-helper"></i>
+                                                    <span> Es posible convertir?</span>
                                                     </label>
                                                 </div>       
                                             </div> 

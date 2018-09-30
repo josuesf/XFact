@@ -68,8 +68,10 @@ function Ver(_escritura, tipo_almacenes, almacen, cajas_almacen) {
                                             
                                             <div class="checkbox checkbox-inline checkbox-styled">
                                                 <label>
-                                                    <input type="checkbox" id="Flag_Principal" checked="${almacen ? almacen.Flag_Principal : 0}"><span> Es Principal?</span>
-                                                </label>
+                                                    <input type="checkbox" id="Flag_Principal" checked="${almacen ? almacen.Flag_Principal : 0}">
+                                                    <i class="input-helper"></i>
+                                                    <span> Es Principal?</span>
+                                                    </label>
                                             </div>
                                         </div>
                                     </div>
@@ -290,8 +292,10 @@ function FormularioAgregaCaja(_escritura, tipo_almacenes, almacen, cajas_activas
                                         <label for="CA_Flag_Principal"></label>
                                         <div class="checkbox checkbox-inline checkbox-styled">
                                             <label>
-                                                <input type="checkbox" id="CA_Flag_Principal" checked="${caja_almacen ? caja_almacen.Flag_Principal : 0}"><span> Es Principal?</span>
-                                            </label>
+                                                <input type="checkbox" id="CA_Flag_Principal" checked="${caja_almacen ? caja_almacen.Flag_Principal : 0}">
+                                                <i class="input-helper"></i>
+                                                <span> Es Principal?</span>
+                                                </label>
                                         </div>
                                     </div>
                                 </div>

@@ -145,8 +145,10 @@ function CargarFormulario(_escritura, entidades, tipos_cuenta, Id_ClienteProveed
                     <label></label>
                     <div class="checkbox checkbox-inline checkbox-styled">
                         <label>
-                            <input type="checkbox" id="CB_Flag_Principal" checked=${e ? e.Flag_Principal : '0'}> <span> Es Principal?</span>
-                        </label>
+                            <input type="checkbox" id="CB_Flag_Principal" checked=${e ? e.Flag_Principal : '0'}> 
+                            <i class="input-helper"></i>
+                            <span> Es Principal?</span>
+                            </label>
                     </div>
                 </div>
             </div>

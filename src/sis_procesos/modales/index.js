@@ -44,8 +44,10 @@ function BuscarProducto(_RequiereStock,text_busqueda) {
                                 <label></label>
                                 <div class="checkbox checkbox-inline checkbox-styled" id="divSoloProductoStock">
                                     <label>
-                                        <input type="checkbox" checked="checked" id="chbSoloProductoStock"><span> Solo productos con stock?</span>
-                                    </label>
+                                        <input type="checkbox" checked="checked" id="chbSoloProductoStock">
+                                        <i class="input-helper"></i>
+                                        <span> Solo productos con stock?</span>
+                                        </label>
                                 </div>
                             </div>
                         </div>

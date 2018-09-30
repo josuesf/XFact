@@ -85,7 +85,9 @@ module.exports = function NuevaSucursal(_escritura, sucursal) {
                                             <label for="Flag_Activo"></label>
                                             <div class="checkbox-inline checkbox-styled checkbox-primary">
                                                 <label>
-                                                    <input type="checkbox" id="Flag_Activo" class="required" checked="${sucursal ? sucursal.Flag_Activo : 0}"><span> Es Activo?</span>
+                                                    <input type="checkbox" id="Flag_Activo" class="required" checked="${sucursal ? sucursal.Flag_Activo : 0}"> 
+                                                    <i class="input-helper"></i>
+                                                    <span> Es Activo?</span>
                                                 </label>
                                             </div>
                                         </div>

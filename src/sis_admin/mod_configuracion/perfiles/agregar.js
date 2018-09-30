@@ -36,7 +36,11 @@ module.exports = function NuevoPerfil(_escritura,modulos, perfil) {
                                             <div class="row">
                                             <div class="checkbox-inline checkbox-styled checkbox-primary">
                                                 <label>
-                                                    <input type="checkbox" id="${e.Cod_Modulo}" checked="1"><span> ${e.Cod_Modulo+' '+e.Des_Modulo}</span> </label>
+                                                    <input type="checkbox" id="${e.Cod_Modulo}" checked="1">
+                                                    <i class="input-helper"></i>
+                                                    <span> ${e.Cod_Modulo+' '+e.Des_Modulo}</span> 
+                                                    
+                                                </label>
                                             </div>
                                             </div>
                                             `)}

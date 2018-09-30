@@ -39,11 +39,7 @@ function VerCuentas(variables,fecha_actual,CodLibro) {
                 <div class="row">
                     <div class="col-md-8" id="div-cliente-cuentas_${idTabPC}">
                         <div class="card">
-<<<<<<< HEAD
-                            <div class="card-header">
-=======
                             <div class="card-header bgm-blue">
->>>>>>> 411aea4280f64b267bbe1ef446bd3642128c1d13
                                 <header> Cliente/Proveedor </header>
                                 <ul class="actions">
                                     <li>
@@ -208,8 +204,10 @@ function VerCuentas(variables,fecha_actual,CodLibro) {
                                                     <div class="col-md-8 col-sm-8">
                                                         <div class="checkbox checkbox-inline checkbox-styled">
                                                             <label> 
-                                                                <input type="checkbox" id="optTodoFechas_${idTabPC}" checked onchange=${()=>CambioTodoFechas(idTabPC)}> <span> Todo</span> 
-                                                            </label>
+                                                                <input type="checkbox" id="optTodoFechas_${idTabPC}" checked onchange=${()=>CambioTodoFechas(idTabPC)}>  
+                                                                <i class="input-helper"></i>
+                                                                <span> Todo</span>
+                                                                </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4">          
@@ -240,8 +238,10 @@ function VerCuentas(variables,fecha_actual,CodLibro) {
                                                     <div class="col-md-8 col-sm-8">
                                                         <div class="checkbox checkbox-inline checkbox-styled">
                                                             <label> 
-                                                                <input type="checkbox" id="optTodoVencimiento_${idTabPC}" checked onchange=${()=>CambioTodoVencimiento(idTabPC)}><span> Todo</span> 
-                                                            </label>
+                                                                <input type="checkbox" id="optTodoVencimiento_${idTabPC}" checked onchange=${()=>CambioTodoVencimiento(idTabPC)}> 
+                                                                <i class="input-helper"></i>
+                                                                <span> Todo</span>
+                                                                </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4">
@@ -274,15 +274,19 @@ function VerCuentas(variables,fecha_actual,CodLibro) {
                                                     <div class="col-md-4 col-sm-4">
                                                         <div class="checkbox checkbox-inline checkbox-styled">
                                                             <label> 
-                                                                <input type="checkbox" id="optTodoLicitacion_${idTabPC}" checked onchange=${()=>CambioTodoLicitacion(idTabPC)}><span> Todo</span> 
-                                                            </label>
+                                                                <input type="checkbox" id="optTodoLicitacion_${idTabPC}" checked onchange=${()=>CambioTodoLicitacion(idTabPC)}>
+                                                                <i class="input-helper"></i>
+                                                                <span> Todo</span> 
+                                                                </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8 col-sm-8">
                                                         <div class="checkbox checkbox-inline checkbox-styled">
                                                             <label> 
-                                                                <input type="checkbox"><span> Solo Documentos Formales</span>
-                                                            </label>
+                                                                <input type="checkbox">
+                                                                <i class="input-helper"></i>
+                                                                <span> Todo</span> 
+                                                                </label>
                                                         </div>
                                                     </div>
                                                 </div>

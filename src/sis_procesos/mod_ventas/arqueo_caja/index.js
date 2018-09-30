@@ -67,7 +67,9 @@ function Ver(fecha_hora,caja_actual,turno_actual,arqueo,resumenpen,resumenusd) {
                             <label></label>
                             <div class="checkbox checkbox-inline checkbox-styled">
                                 <label>
-                                    <input type="checkbox" id="optEnvio" name="optEnvio"> <span>Envio de Efectivo</span>
+                                    <input type="checkbox" id="optEnvio" name="optEnvio"> 
+                                    <i class="input-helper"></i>
+                                    <span>Envio de Efectivo</span>
                                 </label>
                             </div>
                         </div>

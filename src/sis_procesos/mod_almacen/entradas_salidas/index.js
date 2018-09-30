@@ -144,8 +144,10 @@ function VerEntradasSalidas(variables,CodTipoComprobante,fecha_actual) {
                                     <div class="col-md-4" id="divDocRef_${idTabES}">
                                         <div class="checkbox checkbox-inline checkbox-styled">
                                             <label> 
-                                                <input type="checkbox" id="optDocRef_${idTabES}" onchange=${()=>CambioDocRef(idTabES)}><span> Doc Ref?</span> 
-                                            </label>
+                                                <input type="checkbox" id="optDocRef_${idTabES}" onchange=${()=>CambioDocRef(idTabES)}> 
+                                                <i class="input-helper"></i>
+                                                <span> Doc Ref?</span>
+                                                </label>
                                         </div>
                                     </div>
                                     <div class="col-md-8" style="display:none" id="divId_ComprobantePago_${idTabES}">
@@ -386,8 +388,10 @@ function RefrescarVerEntradasSalidas(variables,CodTipoComprobante,fecha_actual,i
                                     <div class="col-md-4" id="divDocRef_${idTabES}">
                                         <div class="checkbox checkbox-inline checkbox-styled">
                                             <label> 
-                                                <input type="checkbox" id="optDocRef_${idTabES}" onchange=${()=>CambioDocRef(idTabES)}><span> Doc Ref?</span> 
-                                            </label>
+                                                <input type="checkbox" id="optDocRef_${idTabES}" onchange=${()=>CambioDocRef(idTabES)}>
+                                                <i class="input-helper"></i>
+                                                <span> Doc Ref?</span> 
+                                                </label>
                                         </div>
                                     </div>
                                     <div class="col-md-8" style="display:none" id="divId_ComprobantePago_${idTabES}">

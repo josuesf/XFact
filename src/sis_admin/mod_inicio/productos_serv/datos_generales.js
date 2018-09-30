@@ -71,16 +71,20 @@ function Ver(_escritura, variables, producto){
                             <label></label>
                             <div class="checkbox-inline checkbox-styled checkbox-primary">
                                 <label>
-                                    <input type="checkbox" id="Flag_Activo" ${producto ? producto.Flag_Activo ? 'checked':'':''}><span> Activo?</span>
-                                </label>
+                                    <input type="checkbox" id="Flag_Activo" ${producto ? producto.Flag_Activo ? 'checked':'':''}>
+                                    <i class="input-helper"></i>
+                                    <span> Activo?</span>
+                                    </label>
                             </div>
                         </div>
                         <div class="col-sm-${producto?'6':'3'}">
                             <label></label>
                             <div class="checkbox-inline checkbox-styled checkbox-primary">
                                 <label>
-                                    <input type="checkbox" id="Flag_Stock" ${producto ? producto.Flag_Stock ? 'checked':'':''}><span> Control Stock?</span>
-                                </label>
+                                    <input type="checkbox" id="Flag_Stock" ${producto ? producto.Flag_Stock ? 'checked':'':''}>
+                                    <i class="input-helper"></i>
+                                    <span> Control Stock?</span>
+                                    </label>
                             </div>
                         </div>
                     </div>

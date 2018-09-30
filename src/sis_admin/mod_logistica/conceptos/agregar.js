@@ -69,8 +69,10 @@ function NuevoConcepto(_escritura, tipos_conceptos, concepto) {
                                             <label for="Flag_Activo"></label>
                                             <div class="checkbox checkbox-inline checkbox-styled">
                                                 <label>
-                                                    <input type="checkbox" id="Flag_Activo" checked="${concepto ? concepto.Flag_Activo : 0}"><span> Es Activo?</span>
-                                                </label>
+                                                    <input type="checkbox" id="Flag_Activo" checked="${concepto ? concepto.Flag_Activo : 0}">
+                                                    <i class="input-helper"></i>
+                                                    <span> Es Activo?</span>
+                                                    </label>
                                             </div>
                                         </div>
                                     </div>

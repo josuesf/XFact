@@ -123,7 +123,9 @@ function Ver(_escritura, _estados, _perfiles, cajas, usuario) {
                                             <div class="row">
                                                 <div class="checkbox-inline checkbox-styled checkbox-primary">
                                                     <label>
-                                                        <input type="checkbox" id="${c.Cod_Caja}" checked="${c.Relacion}" ><span> ${c.Des_Caja}</span>
+                                                        <input type="checkbox" id="${c.Cod_Caja}" checked="${c.Relacion}" >
+                                                        <i class="input-helper"></i>
+                                                        <span> ${c.Des_Caja}</span>
                                                     </label>
                                                 </div>
                                             </div>

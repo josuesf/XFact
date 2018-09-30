@@ -32,11 +32,7 @@ function Ver(_escritura, Serie, variables,fecha_actual,empresa) {
                     <div class="row">
                         <div class="col-md-8">
                             <div class="card">
-<<<<<<< HEAD
-                                <div class="card-header">
-=======
                                 <div class="card-header bgm-blue">
->>>>>>> 411aea4280f64b267bbe1ef446bd3642128c1d13
                                     <header>A favor de : </header>
                                     <ul class="actions">
                                         <li>
@@ -275,11 +271,7 @@ function RefrescarVer(_escritura, Serie, variables,fecha_actual,empresa,idTabCVM
                     <div class="row">
                         <div class="col-md-8">
                             <div class="card">
-<<<<<<< HEAD
-                                <div class="card-header">
-=======
                                 <div class="card-header bgm-blue">
->>>>>>> 411aea4280f64b267bbe1ef446bd3642128c1d13
                                     <header>A favor de : </header>
                                     <ul class="actions">
                                         <li>

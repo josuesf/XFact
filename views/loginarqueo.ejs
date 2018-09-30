@@ -16,47 +16,43 @@
     <link href="/assets/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="/assets/css/app_1.min.css" />
     <link type="text/css" rel="stylesheet" href="/assets/css/app_2.min.css" /> 
-    
+    <link type="text/css" rel="stylesheet" href="/assets/css/waitMe.min.css" />
     <script src="/assets/vendors/bower_components/jquery/dist/jquery.min.js"></script> 
 
 </head>
 
-<body class="menubar-hoverable header-fixed" style="background: linear-gradient(to bottom right, #747979 0%, #5c6963 100%)">
- 
-    <div class="background"></div>
-    <div class="backdrop"></div>
-    <div class="login-form-container">
+<body>
         <div class="modal modal-warning fade" id="modal-confirmacion" style="display: none;">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                        <h4 class="modal-title" >Mensaje de confirmacion </h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <h5>¿Esta seguro que desea aperturar caja?</h5>
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <h4 class="modal-title" >Mensaje de confirmacion </h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <h5>¿Esta seguro que desea aperturar caja?</h5>
+                                    </div>
                                 </div>
                             </div>
+                                
                         </div>
-                            
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-raised btn-danger pull-left" data-dismiss="modal">NO</button>
-                        <button type="submit" class="btn btn-raised btn-info " id="btnConfirmacionApertura" >SI</button>
-                    </div>
-                </div> 
-                <!-- /.modal-content -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-raised btn-danger pull-left" data-dismiss="modal">NO</button>
+                            <button type="submit" class="btn btn-raised btn-info " id="btnConfirmacionApertura" >SI</button>
+                        </div>
+                    </div> 
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
             </div>
-            <!-- /.modal-dialog -->
-        </div>
 
-        <div class="login-form-content">
-            <div class="row">
+        <div class="login-content">
+                <div class="lc-block toggled"> 
                 <% if(typeof error !='undefined') { %>
                     <div class="alert alert-callout alert-danger" id="divError" data-value="0">
                         <p id="textError"><%=err%></p>
@@ -65,16 +61,13 @@
                     <div class="alert alert-callout alert-danger" id="divError" data-value="1" style="display: none;">
                         <p id="textError"></p>
                     </div>
-                <% } %>
-            </div>
-
-            <div class="login-form-header">
-                <span class="text-lg text-bold text-default"> APERTURA DE CAJA </span>
-            </div>
-            <br />
-            
+                <% } %> 
+ 
+            <div class="lcb-form">
+                <p class="text-left">APERTURA DE CAJA</p>
             <form class="form form-validate" accept-charset="utf-8" action="loginarqueo"  id="formApertura" method="post">
                            
+                
                     <div class="form-group" id="select-periodo">
                         <select id="Caja" name="Caja" class="form-control">
                             <% if(typeof caja != 'undefined') { %>
@@ -157,19 +150,21 @@
                     </div>
                     <!--end .row -->
                 </form>
-            
+            </div>
         </div>
-    </div>
+        </div> 
 
     <!-- BEGIN JAVASCRIPT -->
     <script src="/assets/vendors/bower_components/jquery/dist/jquery.min.js"></script> 
     <script src='/assets/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
-    <script src="/assets/js/core/cache/63d0445130d69b2868a8d28c93309746.js"></script> 
+    <script src="/assets/vendors/bower_components/Waves/dist/waves.min.js"></script>
+    <script src="/assets/js/app.min.js"></script> 
+    <script src="/assets/js/custom.js"></script> 
     <script>
-        $("#btnConfirmacionApertura").click(function(){
-            $("#formApertura").submit()    
-        });
-    </script>
+            $("#btnConfirmacionApertura").click(function(){
+                $("#formApertura").submit()    
+            });
+        </script>
 
     <!-- END JAVASCRIPT -->
 
