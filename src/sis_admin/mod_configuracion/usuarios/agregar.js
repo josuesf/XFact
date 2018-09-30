@@ -25,7 +25,11 @@ function Ver(_escritura, _estados, _perfiles, cajas, usuario) {
         <section class="content">
             <div class="card">
                 <div class="card-header">
+<<<<<<< HEAD
+                    <header><a onclick=${() => ListarUsuarios(_escritura)} class="btn btn-xs btn-icon-toggle"><i class="fa fa-arrow-left"></i></a> ${usuario ? 'Editar' : 'Nuevo'} Usuario
+=======
                     <header><a onclick=${() => ListarUsuarios(_escritura)} class="btn btn-xs btn-icon-toggle"><i class="zmdi zmdi-arrow-left"></i></a> ${usuario ? 'Editar' : 'Nuevo'} Usuario
+>>>>>>> 411aea4280f64b267bbe1ef446bd3642128c1d13
                    </header> 
                     
                 </div>

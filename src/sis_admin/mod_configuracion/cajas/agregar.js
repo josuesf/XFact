@@ -100,7 +100,11 @@ function Ver(_escritura, sucursales, usuarios, cuentas_contables, caja, document
         <section class="content">
             <div class="card">
                 <div class="card-header">
+<<<<<<< HEAD
+                    <header><a onclick=${() => ListarCajas(_escritura)} class="btn btn-xs btn-icon-toggle"><i class="fa fa-arrow-left"></i> </a>${caja ? 'Editar' : 'Nueva'} Caja</header> 
+=======
                     <header><a onclick=${() => ListarCajas(_escritura)} class="btn btn-xs btn-icon-toggle"><i class="zmdi zmdi-arrow-left"></i> </a>${caja ? 'Editar' : 'Nueva'} Caja</header> 
+>>>>>>> 411aea4280f64b267bbe1ef446bd3642128c1d13
                 </div> 
                 <div class="card-body card-padding">
                     <div class="panel">
@@ -193,9 +197,14 @@ function Ver(_escritura, sucursales, usuarios, cuentas_contables, caja, document
                                                     <div class="tab-content">
                                                         <div class="tab-pane active" id="tab_1_caja">
                                                             <div class="card-header">
+<<<<<<< HEAD
+                                                                <div class="tools">
+                                                                    <div class="btn-group">
+=======
 
                                                                 <ul class="actions">
                                                                     <li>
+>>>>>>> 411aea4280f64b267bbe1ef446bd3642128c1d13
                                                                         <a class="btn btn-info pull-right" data-toggle="modal" data-target="#modal-nuevo-editar-documento" onclick="${()=>AgregarDocumento(_escritura, sucursales, usuarios, cuentas_contables,caja)}">
                                                                         <i class="zmdi zmdi-plus"></i> Agregar</a>
                                                                     </li>
@@ -242,9 +251,14 @@ function Ver(_escritura, sucursales, usuarios, cuentas_contables, caja, document
                                                         <!-- /.tab-pane -->
                                                         <div class="tab-pane" id="tab_crear_caja_2_caja">
                                                             <div class="card-header">
+<<<<<<< HEAD
+                                                                <div class="tools">
+                                                                    <div class="btn-group">
+=======
 
                                                                 <ul class="actions">
                                                                     <li>
+>>>>>>> 411aea4280f64b267bbe1ef446bd3642128c1d13
                                                                         <a class="btn btn-info pull-right" data-toggle="modal" data-target="#modal-nuevo-favorito" onclick="${()=>AgregarFavorito(_escritura, sucursales, usuarios, cuentas_contables,caja)}">
                                                                         <i class="zmdi zmdi-plus"></i> Agregar</a>
                                                                     </li>

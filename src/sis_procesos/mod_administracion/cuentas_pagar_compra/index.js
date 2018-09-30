@@ -39,7 +39,11 @@ function VerCuentas(variables,fecha_actual,CodLibro) {
                 <div class="row">
                     <div class="col-md-8" id="div-cliente-cuentas_${idTabPC}">
                         <div class="card">
+<<<<<<< HEAD
+                            <div class="card-header">
+=======
                             <div class="card-header bgm-blue">
+>>>>>>> 411aea4280f64b267bbe1ef446bd3642128c1d13
                                 <header> Cliente/Proveedor </header>
                                 <ul class="actions">
                                     <li>

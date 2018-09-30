@@ -51,7 +51,11 @@ function VerNuevaVenta(variables,CodLibro) {
             <div class="row">
                 <div class="col-md-3">
                     <div class="card" id="div-cliente">
+<<<<<<< HEAD
+                        <div class="card-header card-header-sm style-primary text-center">
+=======
                         <div class="card-header bgm-blue card-header bgm-blue-sm style-primary text-center">
+>>>>>>> 411aea4280f64b267bbe1ef446bd3642128c1d13
                             <header>Datos del cliente</header>
                             <ul class="actions">
                                 <li>
@@ -164,7 +168,11 @@ function VerNuevaVenta(variables,CodLibro) {
                 </div>
                 <div class="col-md-9">
                     <div class="card">
+<<<<<<< HEAD
+                        <div class="card-header card-header-sm style-primary text-center">
+=======
                         <div class="card-header bgm-blue card-header bgm-blue-sm style-primary text-center">
+>>>>>>> 411aea4280f64b267bbe1ef446bd3642128c1d13
                             <h4>Detalle de la venta</h4>
                         </div>
                         <div class="card-body card-padding">
