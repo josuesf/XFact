@@ -612,6 +612,7 @@ var reservas_api = require('./routes/api-reservas')
 var services_api = require('./routes/api-services')
 var formas_pago_api = require('./routes/api-formas-pago')
 var comprobantes_pago_api = require('./routes/api-comprobantes-pago')
+var surtidores_api = require('./routes/api-surtidores')
 var compra_venta_moneda_extranjera_api = require('./routes/api-compra-venta-moneda-extranjera')
 
 app.use('/usuarios_api',usuarios_api);
@@ -639,6 +640,7 @@ app.use('/reservas_api', reservas_api)
 app.use('/ws', services_api)
 app.use('/formas_pago_api', formas_pago_api)
 app.use('/comprobantes_pago_api', comprobantes_pago_api)
+app.use('/surtidores_api', sucursales_api)
 
 
 //Listen Server

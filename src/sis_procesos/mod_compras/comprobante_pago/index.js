@@ -20,11 +20,6 @@ var pCodTipoComprobanteUltimo = ''
 var flag_cliente = false 
 global.obs_xml = ''
 
-
-var cantidad_tabs = 0
-global.variablesCP = {}
-
-
 function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion,Cliente,Detalles) {
     flag_cliente = false
     CodTipoOperacion = CodTipoOperacion
@@ -63,6 +58,7 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
                         <div class="card">
                             <div class="card-header bgm-blue">
                                 <header> Cliente/Proveedor </header>
+
                                 <ul class="actions">
                                     <li>
                                         <a href="javascript:void(0);" onclick=${()=>NuevoCliente(variables.documentos)}><i class="zmdi zmdi-plus"></i></a>
@@ -71,7 +67,7 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
                                         <a href="javascript:void(0);" ><i class="zmdi zmdi-globe"></i></a>
                                     </li>
                                 </ul>
-                                
+                              
                             </div>
                             <div class="card-body card-padding">
                                 <div class="row">
@@ -179,7 +175,7 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
                                                     </label> 
                                                 </div>
                                                 <div class="col-sm-1" id="divMultiplesPagos">
-                                                    <button type="button" class="btn btn-success btn-raised btn-xs" onclick="${()=>AbrirModalFormasPago(variables,fecha_actual)}" id="btnMultiplesPagos"><i class="zmdi zmdi-money"></i></button>
+                                                    <button type="button" class="btn btn-success btn-raised btn-xs" onclick="${()=>AbrirModalFormasPago(variables,fecha_actual)}" id="btnMultiplesPagos"><i class="fa fa-money"></i></button>
                                                 </div>
                                                 <div class="col-sm-4" id="divOperacion">
                                                     <label id="lbCuentaCajaBanco">#Operacion</label>
@@ -219,10 +215,8 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
 
                                                 <div class="checkbox checkbox-inline checkbox-styled">
                                                     <label>
-                                                        <input type="checkbox" id="optEsGasto" name="optEsGasto" onchange="${()=>CambioGastos()}"> 
-                                                        <i class="input-helper"></i>
-                                                        <span> Es Gastos</span>
-                                                        </label>
+                                                        <input type="checkbox" id="optEsGasto" name="optEsGasto" onchange="${()=>CambioGastos()}"><span> Es Gastos</span> 
+                                                    </label>
                                                 </div>
                                                  
                                             </div>
@@ -265,13 +259,13 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
                                                     <div class="input-group input-group-sm">
                                                         <div class="input-group-btn">
                                                             <button type="button" class="btn btn-raised btn-success" id="AgregarGuia"  >
-                                                                <i class="zmdi zmdi-plus"></i>
+                                                                <i class="fa fa-plus"></i>
                                                             </button>
                                                         </div>
                                                         <input type="text" id="Guia" class="form-control required input-sm">
                                                         <div class="input-group-btn">
                                                             <button type="button" class="btn btn-raised btn-info" id="BuscarGuia"  >
-                                                                <i class="zmdi zmdi-search"></i>
+                                                                <i class="fa fa-search"></i>
                                                             </button>
                                                         </div>
                                                     </div>
@@ -282,10 +276,8 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
 
                                                     <div class="checkbox checkbox-inline checkbox-styled">
                                                         <label>
-                                                            <input type="checkbox" id="optDescargar" name="optDescargar" checked="checked" onchange=${()=>CambioDespachado()}>
-                                                            <i class="input-helper"></i>
-                                                            <span> ${CodLibro=='08'?'Descargar Producto':'Descargar de Almacen(es)'}</span>
-                                                            </label>
+                                                            <input type="checkbox" id="optDescargar" name="optDescargar" checked="checked" onchange=${()=>CambioDespachado()}><span> ${CodLibro=='08'?'Descargar Producto':'Descargar de Almacen(es)'}</span>
+                                                        </label>
                                                     </div>
  
                                                 </div>
@@ -293,10 +285,8 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
 
                                                     <div class="checkbox checkbox-inline checkbox-styled">
                                                         <label>
-                                                            <input type="checkbox" id="optExportacion" name="optExportacion" onchange=${()=>CambioExportacion(CodLibro,variables)}> 
-                                                            <i class="input-helper"></i>
-                                                            <span> Exportacion ? </span>
-                                                            </label>
+                                                            <input type="checkbox" id="optExportacion" name="optExportacion" onchange=${()=>CambioExportacion(CodLibro,variables)}><span> Exportacion ? </span> 
+                                                        </label>
                                                     </div>
  
                                                 </div>
@@ -315,7 +305,7 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-12"> 
-                                        <button type="button" class="btn btn-raised btn-success btn-sm" onclick="${()=>AgregarFilaTabla(CodLibro,variables)}"><i class="zmdi zmdi-plus"></i> Agregar Item</button>
+                                        <button type="button" class="btn btn-raised btn-success btn-sm" onclick="${()=>AgregarFilaTabla(CodLibro,variables)}"><i class="fa fa-plus"></i> Agregar Item</button>
                                     </div>
                                 </div>
 
@@ -327,7 +317,7 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
                                                     <div class="input-group">
                                                         <label>Codigo/Producto/Servicio</label>
                                                         <span class="input-group-btn">
-                                                            <button type="button" class="btn btn-raised btn-default btn-xs" onclick=${()=>BuscarProductoCP(CodLibro,'click')}><i class="zmdi zmdi-search"></i></button>
+                                                            <button type="button" class="btn btn-raised btn-default btn-xs" onclick=${()=>BuscarProductoCP(CodLibro,'click')}><i class="fa fa-search"></i></button>
                                                         </span>
                                                     </div>
                                                 </th>
@@ -394,10 +384,8 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
                                             <div class="col-md-12">
                                                 <div class="checkbox checkbox-inline checkbox-styled">
                                                     <label>
-                                                        <input type="checkbox" id="ckbIncluyeIGV" checked="checked" onchange="${()=>CalcularTotal(CodLibro,variables)}"> 
-                                                        <i class="input-helper"></i>
-                                                        <span>Precio Unitario Incluye IGV?</span>
-                                                        </label>
+                                                        <input type="checkbox" id="ckbIncluyeIGV" checked="checked" onchange="${()=>CalcularTotal(CodLibro,variables)}"><span>Precio Unitario Incluye IGV?</span> 
+                                                    </label>
                                                 </div>
                                             </div>
  
@@ -455,29 +443,23 @@ function VerRegistroComprobante(variables,fecha_actual,CodLibro,CodTipoOperacion
                                         <div class="form-group" id="divAplicaImpuesto">
                                             <div class="checkbox checkbox-inline checkbox-styled">
                                                 <label>
-                                                    <input type="checkbox" id="ckbAplicaImpuesto" ${variables.empresa.Flag_ExoneradoImpuesto?'checked':'checked'} onchange=${()=>CambioAplicaImpuesto(variables)}>
-                                                    <i class="input-helper"></i>
-                                                    <span>I.G.V 18% </span>
-                                                    </label>
+                                                    <input type="checkbox" id="ckbAplicaImpuesto" ${variables.empresa.Flag_ExoneradoImpuesto?'checked':'checked'} onchange=${()=>CambioAplicaImpuesto(variables)}><span>I.G.V 18% </span>
+                                                </label>
                                             </div>
                                             <input type="text" class="form-control input-sm" value="0.00" id="Impuesto" onkeypress=${()=>BloquearControles(event)}>
                                         </div>
                                         <div class="form-group">
                                             <div class="checkbox checkbox-inline checkbox-styled">
                                                 <label>
-                                                    <input type="checkbox" id="cbAplicaServicios"  checked="checked">
-                                                    <i class="input-helper"></i>
-                                                    <span>SERVICIOS</span>
-                                                    </label>
+                                                    <input type="checkbox" id="cbAplicaServicios"  checked="checked"><span>SERVICIOS</span>
+                                                </label>
                                             </div>
                                             <input type="number" class="form-control input-sm" value="0.00" id="OtrosCargos" onkeypress=${()=>CalcularTotal(CodLibro,variables)} onchange=${()=>CalcularTotal(CodLibro,variables)}>
                                         </div>
                                         <div class="form-group" style="display:none">
                                             <div class="checkbox checkbox-inline checkbox-styled">
                                                 <label>
-                                                    <input type="checkbox"  checked="checked">
-                                                    <i class="input-helper"></i>
-                                                    <span>I.S.C 3%</span>
+                                                    <input type="checkbox"  checked="checked"><span>I.S.C 3%</span>
                                                 </label>
                                             </div>
                                             <input type="number" class="form-control input-sm" value="0.00" id="Servicios">
@@ -797,9 +779,7 @@ function VerModalFormasPago(variables,amodo,Tipo_Cambio,Monto,Cod_Moneda){
                         <div class="col-sm-3">
                             <div class="btn-group-toggle" data-toggle="buttons">
                                 <label class="btn btn-success btn-sm">
-                                <input type="checkbox" checked autocomplete="off" id="btnCreditoFormaPagoHeader"  onchange=${() => AsignarCredito()}>
-                                <i class="input-helper"></i>
-                                Credito
+                                <input type="checkbox" checked autocomplete="off" id="btnCreditoFormaPagoHeader"  onchange=${() => AsignarCredito()}> Credito
                                 </label>
                             </div>
                         </div>
@@ -1044,8 +1024,8 @@ function AgregarFilaTabla_(CodLibro,variables,Detalles){
                                 <td class="Series hidden"><input class="form-control" type="text" value=${JSON.stringify(u.Series)} name="Series"></td>
                                 <td>
                                 <div style="display:flex;">
-                                    <button type="button" onclick="${()=>AsignarSeries(index+ u.Id_Producto,CodLibro)}" class="btn btn-raised btn-primary btn-sm"><i class="zmdi zmdi-tasks"></i></a>  
-                                    <button type="button" onclick="${()=>EliminarFila(index+ u.Id_Producto,CodLibro,variables)}" class="btn btn-raised btn-danger btn-sm"><i class="zmdi zmdi-delete"></i></button>
+                                    <button type="button" onclick="${()=>AsignarSeries(index+ u.Id_Producto,CodLibro)}" class="btn btn-raised btn-primary btn-sm"><i class="fa fa-tasks"></i></a>  
+                                    <button type="button" onclick="${()=>EliminarFila(index+ u.Id_Producto,CodLibro,variables)}" class="btn btn-raised btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                                 </div>
                                 </td>
                             </tr>`
@@ -1088,8 +1068,8 @@ function AgregarFilaTabla_(CodLibro,variables,Detalles){
             <td class="Series hidden"><input class="form-control" type="text" value=${JSON.stringify(Detalles[i].Series)} name="Series"></td>
             <td>
             <div style="display:flex;">
-                <button type="button" onclick="${()=>AsignarSeries(idFila,CodLibro)}" class="btn btn-primary btn-sm"><i class="zmdi zmdi-tasks"></i></a>  
-                <button type="button" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}" class="btn btn-danger btn-sm"><i class="zmdi zmdi-delete"></i></button>
+                <button type="button" onclick="${()=>AsignarSeries(idFila,CodLibro)}" class="btn btn-primary btn-sm"><i class="fa fa-tasks"></i></a>  
+                <button type="button" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
             </div>
             </td>
         </tr>`
@@ -1156,8 +1136,8 @@ function AgregarFilaTabla(CodLibro,variables){
             <td class="Series hidden"><input class="form-control" type="text" value=${JSON.stringify([])} name="Series"></td>
             <td>
             <div style="display:flex;">
-                <button type="button" onclick="${()=>AsignarSeries(idFila,CodLibro)}" class="btn btn-raised btn-primary btn-sm"><i class="zmdi zmdi-tasks"></i></a>  
-                <button type="button" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}" class="btn btn-raised btn-danger btn-sm"><i class="zmdi zmdi-delete"></i></button>
+                <button type="button" onclick="${()=>AsignarSeries(idFila,CodLibro)}" class="btn btn-raised btn-primary btn-sm"><i class="fa fa-tasks"></i></a>  
+                <button type="button" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}" class="btn btn-raised btn-danger btn-sm"><i class="fa fa-trash"></i></button>
             </div>
             </td>
         </tr>`
@@ -1207,8 +1187,8 @@ function AgregarFilaTabla(CodLibro,variables){
                     <td class="Series hidden"><input class="form-control" type="text" value=${JSON.stringify([])} name="Series"></td>
                     <td>
                     <div style="display:flex;">
-                        <button type="button" onclick="${()=>AsignarSeries(idFila,CodLibro)}" class="btn btn-raised btn-primary btn-sm"><i class="zmdi zmdi-tasks"></i></a>  
-                        <button type="button" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}" class="btn btn-raised btn-danger btn-sm"><i class="zmdi zmdi-delete"></i></button>
+                        <button type="button" onclick="${()=>AsignarSeries(idFila,CodLibro)}" class="btn btn-raised btn-primary btn-sm"><i class="fa fa-tasks"></i></a>  
+                        <button type="button" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}" class="btn btn-raised btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                     </div>
                     </td>
                 </tr>`
@@ -1281,8 +1261,8 @@ function AplicarPercepcion(CodLibro,variables){
                     <td class="Series hidden"><input class="form-control" type="text" value=${JSON.stringify([])} name="Series"></td>
                     <td>
                         <div style="display:flex;">
-                            <button type="button" class="btn btn-raised btn-primary btn-sm"  onclick="${()=>AsignarSeries(idFila,CodLibro)}"><i class="zmdi zmdi-tasks"></i></button>  
-                            <button type="button" class="btn btn-raised btn-danger btn-sm" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}"><i class="zmdi zmdi-delete"></i></button>
+                            <button type="button" class="btn btn-raised btn-primary btn-sm"  onclick="${()=>AsignarSeries(idFila,CodLibro)}"><i class="fa fa-tasks"></i></button>  
+                            <button type="button" class="btn btn-raised btn-danger btn-sm" onclick="${()=>EliminarFila(idFila,CodLibro,variables)}"><i class="fa fa-trash"></i></button>
                         </div>
                     </td>
                    
@@ -1292,7 +1272,7 @@ function AplicarPercepcion(CodLibro,variables){
         CalcularTotal(CodLibro,variables)
         $("#modal-otros-procesos").modal('hide')
     }else{
-        swal("Error!",'Error al ingresar el procentaje de Percepcion, intentelo de nuevo.', "error") 
+        toastr.error('Error al ingresar el procentaje de Percepcion, intentelo de nuevo.','Error',{timeOut: 5000})
     }
 }
 
@@ -1315,7 +1295,7 @@ function AgregarFilaFormaPago(pDescFormaPago,pCodFormaPago,pCodMoneda,pMonto,pTi
         <td name="Total" class="Total" data-value="${(parseFloat(pMonto)*parseFloat(pTipoCambio)).toFixed(2)}">${((parseFloat((parseFloat(pMonto)*parseFloat(pTipoCambio)).toFixed(2)))*(parseFloat(pTipoCambio)/parseFloat(Tipo_Cambio))).toFixed(2)}</td>
         <td name="Fecha" class="Fecha"><input type="date" class="form-control input-sm" value="${fecha_actual}"></td>
         <td name="Referencia" class="Referencia"><input class="form-control input-sm" value="${pReferencia==null?"":pReferencia}"></td>
-        <td><button type="button" class="btn btn-raised btn-danger btn-sm" onclick=${()=>EliminarFilaPagosMultiples(index,Cod_Moneda,Tipo_Cambio)}><i class="zmdi zmdi-delete"></i></button></td>
+        <td><button type="button" class="btn btn-raised btn-danger btn-sm" onclick=${()=>EliminarFilaPagosMultiples(index,Cod_Moneda,Tipo_Cambio)}><i class="fa fa-trash"></i></button></td>
     </tr>`
     $("#tablaBodyPagosMultiples").append(fila)
     $("#MontoFormaPago").val("0.00")
@@ -1381,7 +1361,7 @@ function LlenarFormasPago(Cod_Moneda,Tipo_Cambio){
                                     <td name="Total" class="Total" data-value="${(parseFloat(u.Monto)*parseFloat(u.TipoCambio)).toFixed(2)}">${((parseFloat((parseFloat(u.Monto)*parseFloat(u.TipoCambio)).toFixed(2)))*(parseFloat(u.TipoCambio)/parseFloat(Tipo_Cambio))).toFixed(2)}</td>
                                     <td name="Fecha" class="Fecha"><input type="date" class="form-control input-sm" value="${u.Fecha==null?fecha_actual:u.Fecha}"></td>
                                     <td name="Referencia" class="Referencia"><input  class="form-control input-sm" value="${u.CuentaCajaBanco==null?"":u.CuentaCajaBanco}"></td>
-                                    <td><button type="button" class="btn btn-raised btn-danger btn-sm" onclick=${()=>EliminarFilaPagosMultiples(index,Cod_Moneda,Tipo_Cambio)}><i class="zmdi zmdi-delete"></i></button></td>
+                                    <td><button type="button" class="btn btn-raised btn-danger btn-sm" onclick=${()=>EliminarFilaPagosMultiples(index,Cod_Moneda,Tipo_Cambio)}><i class="fa fa-trash"></i></button></td>
                                 </tr>`
                         )}
                     </tbody>
@@ -1561,13 +1541,13 @@ function AbrirModalFormasPago(variables,fecha_actual){
         .then(res => {
             //console.log(res.data)
             variables['tipos_cambios']=res.data.tipos_cambios
-            if (res.respuesta == 'ok') { 
+            if (res.respuesta == 'ok') {
                 VerModalFormasPago(variables,0,Tipo_Cambio,parseFloat(Gran_Total)/parseFloat(Tipo_Cambio),Cod_Moneda)
             } 
             $('#modal-proceso').waitMe('hide');
         }).catch(function (e) {
             console.log(e);
-            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
             $('#modal-proceso').waitMe('hide');
         });
 }
@@ -1797,7 +1777,7 @@ function AgregarMontoFormaPago(Cod_Moneda,Tipo_Cambio){
                 AgregarFilaFormaPago(_DesFormaPago, _CodFormaPago, _CodMoneda, parseFloat($("#MontoFormaPago").val()).toFixed(2),  parseFloat(_TipoCambio).toFixed(3), $("#ReferenciaFormaPago").val(),Tipo_Cambio,Cod_Moneda);
             }
             else{
-                swal("Error!",'Para pagos con tarjeta debe especificar un numero de tarjeta', "error") 
+                toastr.error('Para pagos con tarjeta debe especificar un numero de tarjeta','Error',{timeOut: 5000})
                 $("#RecuperarTipoCambio").focus();
             }
 
@@ -1806,7 +1786,7 @@ function AgregarMontoFormaPago(Cod_Moneda,Tipo_Cambio){
         }
 
     }else{
-        swal("Error!",'El monto introduciudo debe ser mayor a 0', "error")   
+        toastr.error('El monto introduciudo debe ser mayor a 0','Error',{timeOut: 5000})  
         $("#MontoFormaPago").val("0.00")
         $("#MontoFormaPago").focus()
     }
@@ -1840,7 +1820,7 @@ function CompletarSaldo(){
             $("#MontoFormaPago").val((parseFloat(aSaldo)/parseFloat($("#Tipo_Cambio_FormaPago").val())).toFixed(2))
         }
     }catch(e){
-        swal("Error!",'Error, valor no valido: -'+ $("#MontoFormaPago").val()+ ' es menor que 0', "error") 
+        toastr.error('Error, valor no valido: -'+ $("#MontoFormaPago").val()+ ' es menor que 0','Error',{timeOut: 5000})
     }
 
 }
@@ -1988,7 +1968,7 @@ function AceptarFormaPago(amodo){
             $("#divMultiplesPagos").removeClass()
             $("#divMultiplesPagos").addClass("col-sm-12")
             $("#btnMultiplesPagos").addClass("btn-block")
-            $("#btnMultiplesPagos").html('<i class="zmdi zmdi-money"></i>'+" PAGOS MULTIPLES")
+            $("#btnMultiplesPagos").html('<i class="fa fa-money"></i>'+" PAGOS MULTIPLES")
             /*
               rbCredito.Checked = true;
                 rbEfectivo.Visible = false;
@@ -2152,7 +2132,7 @@ function EsValido(CodLibro,callback){
                                             if(flag){
                                                 callback(true)
                                             }else{
-                                                swal("Error!",'Debe de Ingresar una Serie para Cada Producto', "error") 
+                                                toastr.error('Debe de Ingresar una Serie para Cada Producto','Error',{timeOut: 5000}) 
                                                 callback(false)
                                             }
                                         })
@@ -2167,27 +2147,27 @@ function EsValido(CodLibro,callback){
                             //    callback(false)
                             //}
                         }else{
-                            swal("Error!",'Debe de seleccionar un Pago Adelantado que sea superior o igual al Monto Total de Comprobante', "error")  
+                            toastr.error('Debe de seleccionar un Pago Adelantado que sea superior o igual al Monto Total de Comprobante','Error',{timeOut: 5000}) 
                             callback(false)
                         }
                     }else{
-                        swal("Error!",'Debe ingresar como minimo un Detalle en el Comprobante', "error")  
+                        toastr.error('Debe ingresar como minimo un Detalle en el Comprobante','Error',{timeOut: 5000}) 
                         callback(false)
                     }
-                }else{ 
-                    swal("Error!",'Debe Selecionar un Comprobante', "error") 
+                }else{
+                    toastr.error('Debe Selecionar un Comprobante','Error',{timeOut: 5000}) 
                     callback(false)
                 }
-            }else{ 
-                swal("Error!",'Debe ingresar un Numero para este Comprobante', "error")
+            }else{
+                toastr.error('Debe ingresar un Numero para este Comprobante','Error',{timeOut: 5000}) 
                 callback(false)
             }
         }else{
-            swal("Error!",'Debe ingresar o seleccionar una serie para este Comprobante', "error") 
+            toastr.error('Debe ingresar o seleccionar una serie para este Comprobante','Error',{timeOut: 5000}) 
             callback(false)
         }
     }else{
-        swal("Error!",'Debe seleccionar un cliente si por defecto dejarlo en CLIENTES VARIOS', "error")  
+        toastr.error('Debe seleccionar un cliente si por defecto dejarlo en CLIENTES VARIOS','Error',{timeOut: 5000}) 
         callback(false)
     }
      
@@ -2293,7 +2273,7 @@ function DeterminarTipoIGV(flagImpuesto,flagExportacion,Por_Impuesto,Tipo,SubTot
             }
         }).catch(function (e) {
             console.log(e);
-            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
         });
 }*/
 
@@ -2332,7 +2312,7 @@ function GuardarFormaPago(id_ComprobantePago,Item,Des_FormaPago,Cod_TipoFormaPag
             }
         }).catch(function (e) {
             console.log(e);
-            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
         });
 }
 
@@ -2372,7 +2352,7 @@ function GuardarFormaPagoRecursivo(indiceFormaPago,idComprobante,callback){
                 }
             }).catch(function (e) {
                 console.log(e);
-                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
             });
    }else{
        callback(true)
@@ -2434,7 +2414,7 @@ function GuardarOperacionBancaria(callback){
             }
         }).catch(function (e) {
             console.log(e);
-            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
         });
     
 }
@@ -2475,7 +2455,7 @@ function GuardarSeries(indiceSerie,idComprobante,idDetalle,arraySeries,callback)
                 }
             }).catch(function (e) {
                 console.log(e);
-                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
             });
 
     }else{
@@ -2513,7 +2493,7 @@ function GuardarSeries(indiceSerie,idComprobante,idDetalle,arraySeries,callback)
             }
         }).catch(function (e) {
             console.log(e);
-           swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
         });
 }*/
 
@@ -2639,7 +2619,7 @@ function EmisionCompletaDetalles(indiceDetalle,CodLibro,variables,idComprobante,
                         }
                     }).catch(function (e) {
                         console.log(e);
-                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
                     });
             })
         //} 
@@ -2759,7 +2739,7 @@ function PrepararImpresion(arrayData){
                     jsreport.renderAsync(request).then(function(res) {
                         jsreport.render(document.getElementById('divPDF'), request);  
                     }).catch(function (e) {  
-                        swal("Error!",'Hubo un error al generar el documento. Intentelo mas tarde', "error") 
+                        toastr.error('Hubo un error al generar el documento. Intentelo mas tarde','Error',{timeOut: 5000})
                         $('#modal-alerta').modal('hide') 
                     });
                 }
@@ -2913,8 +2893,8 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                 COD_DOCCLIENTE:Cod_TipoDoc,
                 RUC_CLIENTE:Doc_Cliente,
                 DIRECCION_CLIENTE:Direccion_Cliente,
-                FECHA_EMISION:(new Date(FechaEmision)).toLocaleDateString(),
-                FECHA_VENCIMIENTO:(new Date(FechaVencimiento)).toLocaleDateString(),
+                FECHA_EMISION: FechaEmision ,
+                FECHA_VENCIMIENTO: FechaVencimiento,
                 FORMA_PAGO:'',
                 GLOSA:Glosa,
                 OBSERVACIONES:Obs_Comprobante,
@@ -2969,7 +2949,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                         Cuenta_CajaBanco = ''
                                         GuardarFormaPago(id_ComprobantePago,Item,Des_FormaPago,Cod_TipoFormaPago,Cuenta_CajaBanco,Id_Movimiento,TipoCambio,Cod_Moneda,Monto,null,null,Fecha,function(flagFP){
                                             if(flagFP){
-                                                swal("Confirmacion",'Se registro correctamente el comprobante', "success") 
+                                                toastr.success('Se registro correctamente el comprobante','Confirmacion',{timeOut: 5000})
                                                 $("#modal-proceso").modal("hide")
                                                 $('#modal-alerta').waitMe('hide');
                                                 LimpiarVenta() 
@@ -2984,7 +2964,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
 
                                                 
                                             }else{
-                                                swal("Error!",'Ocurrio un error al momento de guardar la forma de pago.', "error") 
+                                                toastr.error('Ocurrio un error al momento de guardar la forma de pago.','Error',{timeOut: 5000})
                                                 $("#modal-proceso").modal("hide")
                                                 $('#modal-alerta').waitMe('hide')
                                                 $("#modal-alerta").modal("hide")
@@ -2999,7 +2979,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
 
                                                     GuardarFormaPago(id_ComprobantePago,Item,Des_FormaPago,Cod_TipoFormaPago,Cuenta_CajaBanco,Id_Movimiento,TipoCambio,Cod_Moneda,Monto,null,null,Fecha,function(flagFP){
                                                         if(flagFP){
-                                                            swal("Confirmacion",'Se registro correctamente el comprobante', "success") 
+                                                            toastr.success('Se registro correctamente el comprobante','Confirmacion',{timeOut: 5000})
                                                             $("#modal-proceso").modal("hide")
                                                             $('#modal-alerta').waitMe('hide') 
                                                             LimpiarVenta()
@@ -3013,7 +2993,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                                             }
                                                                 
                                                         }else{
-                                                            swal("Error!",'Ocurrio un error al momento de guardar la forma de pago.', "error") 
+                                                            toastr.error('Ocurrio un error al momento de guardar la forma de pago.','Error',{timeOut: 5000})
                                                             $("#modal-proceso").modal("hide")
                                                             $('#modal-alerta').waitMe('hide')
                                                             $("#modal-alerta").modal("hide")
@@ -3021,7 +3001,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                                     })
 
                                                 }else{
-                                                    swal("Error!",'Ocurrio un error al momento de la guardar operacion bancaria.', "error") 
+                                                    toastr.error('Ocurrio un error al momento de la guardar operacion bancaria.','Error',{timeOut: 5000})
                                                     $("#modal-proceso").modal("hide")
                                                     $('#modal-alerta').waitMe('hide')
                                                     $("#modal-alerta").modal("hide")
@@ -3031,7 +3011,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                             Cuenta_CajaBanco = $("#Cuenta_CajaBancos option:selected").text()
                                             GuardarFormaPago(id_ComprobantePago,Item,Des_FormaPago,Cod_TipoFormaPago,Cuenta_CajaBanco,Id_Movimiento,TipoCambio,Cod_Moneda,Monto,null,null,Fecha,function(flagFP){
                                                 if(flagFP){
-                                                    swal("Confirmacion",'Se registro correctamente el comprobante', "success")  
+                                                    toastr.success('Se registro correctamente el comprobante','Confirmacion',{timeOut: 5000})
                                                     $("#modal-proceso").modal("hide")
                                                     $('#modal-alerta').waitMe('hide')
                                                     LimpiarVenta() 
@@ -3045,7 +3025,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                                     } 
                                                         
                                                 }else{
-                                                    swal("Error!",'Ocurrio un error al momento de guardar la forma de pago.', "error") 
+                                                    toastr.error('Ocurrio un error al momento de guardar la forma de pago.','Error',{timeOut: 5000})
                                                     $("#modal-proceso").modal("hide")
                                                     $('#modal-alerta').waitMe('hide')
                                                     $("#modal-alerta").modal("hide")
@@ -3113,7 +3093,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                             .then(req => req.json())
                                             .then(res => {
                                                 if(res.respuesta=='ok'){
-                                                    swal("Confirmacion",'Se registro correctamente el comprobante', "error") 
+                                                    toastr.success('Se registro correctamente el comprobante','Confirmacion',{timeOut: 5000})
                                                     $("#modal-proceso").modal("hide")
                                                     $('#modal-alerta').waitMe('hide') 
                                                     LimpiarVenta()
@@ -3127,7 +3107,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                                     } 
                                                     
                                                 }else{
-                                                    swal("Error!",'Ocurrio un error al momento de guardar la forma de pago.', "error") 
+                                                    toastr.error('Ocurrio un error al momento de guardar la forma de pago.','Error',{timeOut: 5000})
                                                     $("#modal-proceso").modal("hide")
                                                     $('#modal-alerta').waitMe('hide')
                                                     $("#modal-alerta").modal("hide")
@@ -3137,11 +3117,11 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                                 $("#modal-proceso").modal("hide")
                                                 $('#modal-alerta').waitMe('hide')
                                                 $("#modal-alerta").modal("hide")
-                                                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                                                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
                                             });
                                         
                                         }else{
-                                            swal("Error!",'Ocurrio un error al momento de guardar la forma de pago.', "error") 
+                                            toastr.error('Ocurrio un error al momento de guardar la forma de pago.','Error',{timeOut: 5000})
                                             $("#modal-proceso").modal("hide")
                                             $('#modal-alerta').waitMe('hide')
                                             $("#modal-alerta").modal("hide")
@@ -3206,7 +3186,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                         if(res.respuesta=='ok'){
                                             GuardarFormaPagoRecursivo(0,idComprobante,function(flag){
                                                 if(flag){
-                                                    swal("Confirmacion",'Se registro correctamente el comprobante', "success") 
+                                                    toastr.success('Se registro correctamente el comprobante','Confirmacion',{timeOut: 5000})
                                                     $("#modal-proceso").modal("hide")
                                                     $('#modal-alerta').waitMe('hide') 
                                                     LimpiarVenta()
@@ -3220,7 +3200,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                                     }
                                                     
                                                 }else{
-                                                    swal("Error!",'Ocurrio un error al momento de guardar la forma de pago.', "error") 
+                                                    toastr.error('Ocurrio un error al momento de guardar la forma de pago.','Error',{timeOut: 5000})
                                                     $("#modal-proceso").modal("hide")
                                                     $('#modal-alerta').waitMe('hide')
                                                     $("#modal-alerta").modal("hide")
@@ -3228,7 +3208,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                             })
                                         
                                         }else{
-                                            swal("Error!",'Ocurrio un error al momento de guardar la comprobante de pago.', "error") 
+                                            toastr.error('Ocurrio un error al momento de guardar la comprobante de pago.','Error',{timeOut: 5000})
                                             $("#modal-proceso").modal("hide")
                                             $('#modal-alerta').waitMe('hide')
                                             $("#modal-alerta").modal("hide")
@@ -3238,20 +3218,20 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                                         $("#modal-proceso").modal("hide")
                                         $('#modal-alerta').waitMe('hide')
                                         $("#modal-alerta").modal("hide")
-                                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error") 
+                                        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
                                     });
 
                                 }
                             }
                     }else{
-                        swal("Error!",'Ocurrio un error al momento de guardar los detalles del comprobante.', "error") 
+                            toastr.error('Ocurrio un error al momento de guardar los detalles del comprobante.','Error',{timeOut: 5000})
                             $("#modal-proceso").modal("hide")
                             $('#modal-alerta').waitMe('hide')
                             $("#modal-alerta").modal("hide")
                     }
                 })
                 }else{
-                    swal("Error!",'Ocurrio un error al momento de guardar el comprobante.', "error")  
+                    toastr.error('Ocurrio un error al momento de guardar el comprobante.','Error',{timeOut: 5000})
                     $("#modal-proceso").modal("hide")
                     $('#modal-alerta').waitMe('hide')
                     $("#modal-alerta").modal("hide")
@@ -3262,7 +3242,7 @@ function RecuperarParametrosEmisionCompleta(CodLibro,variables,data){
                 $("#modal-proceso").modal("hide")
                 $('#modal-alerta').waitMe('hide')
                 $("#modal-alerta").modal("hide")
-                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
             });
 
 
@@ -3293,7 +3273,7 @@ function CargarTipoPrecio(){
             } 
         }).catch(function (e) {
             console.log(e);
-            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
         });
 }
 
@@ -3319,7 +3299,7 @@ function CargarUnidadMedida(Id_Producto,Cod_Almacen){
                 }
             }).catch(function (e) {
                 console.log(e);
-                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
             });
     }else{
         
@@ -3344,7 +3324,7 @@ function CargarUnidadMedida(Id_Producto,Cod_Almacen){
                     }
                 }).catch(function (e) {
                     console.log(e);
-                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
                 });
         }
     }
@@ -3381,7 +3361,7 @@ function CargarUnidadMedida(Id_Producto,Cod_Almacen){
             } 
         }).catch(function (e) {
             console.log(e);
-            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
         });
 }*/
 
@@ -3408,12 +3388,12 @@ function CargarSeries(CodLibro){
                         TraerSiguienteNumero(CodLibro)
                     }else{
                         $("#Serie").val("")
-                        swal("Error!",'No se cuenta con ninguna Serie Autorizada para este tipo de Comprobante.\n\n Solicite al Administrador Autorice una serie para Continuar.', "error") 
+                        toastr.error('No se cuenta con ninguna Serie Autorizada para este tipo de Comprobante.\n\n Solicite al Administrador Autorice una serie para Continuar.','Error',{timeOut: 5000})
                     }
                 } 
             }).catch(function (e) {
                 console.log(e);
-                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
             });
 
         CambioComprobantes() 
@@ -3441,7 +3421,7 @@ function CargarAlmacenes(Id_Producto,Cod_Almacen){
             }
         }).catch(function (e) {
             console.log(e);
-            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
         });  
 }
 
@@ -3551,7 +3531,7 @@ function CambioCodCuentaBancaria(CodLibro){
             } 
         }).catch(function (e) {
             console.log(e);
-            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
         });
 }
 
@@ -3605,7 +3585,7 @@ function CambioNumero(){
         }
     }else{
         $("#Numero").val("")
-        swal("Error!",'Ingrese un numero correcto y vuelva a intentarlo', "error") 
+        toastr.error('Ingrese un numero correcto y vuelva a intentarlo','Error',{timeOut: 5000})
     }
 }
  
@@ -3649,7 +3629,7 @@ function CambioExportacion(CodLibro,variables){
                     }
                 }).catch(function (e) {
                     console.log(e);
-                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
                 });
  
         });
@@ -3685,7 +3665,7 @@ function CambioExportacion(CodLibro,variables){
                     }
                 }).catch(function (e) {
                     console.log(e);
-                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
                 });
            
      
@@ -3725,7 +3705,7 @@ function RecorrerTablaDetalles_Series(indiceDetalle,callback){
                
             }).catch(function (e) {
                 console.log(e);
-                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
             });
     }else{
         callback(true)
@@ -3837,7 +3817,7 @@ function CambioCreditoContado(){
                         }
                     }).catch(function (e) {
                         console.log(e);
-                        swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                        toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
                     });
 
             }
@@ -3880,7 +3860,7 @@ function CambioUnidadMedida() {
                 }
             }).catch(function (e) {
                 console.log(e);
-                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
             });
     }
 }
@@ -3934,7 +3914,7 @@ function CambioFormasPago(CodLibro){
                         $("#lbCuentaCajaBanco").text("# de Cheque: ")
                         TraerCuentaBancariaPorSucursal(CodLibro)
                     }else{
-                        swal("Error!",'No Existe la Operacion de CHEQUE para ventas.\nSe debe de Depositar el Cheque eh ingresarlo como Deposito en Cuenta.', "error") 
+                        toastr.error('No Existe la Operacion de CHEQUE para ventas.\nSe debe de Depositar el Cheque eh ingresarlo como Deposito en Cuenta.','Error',{timeOut: 5000})
                         $("#Cod_FormaPago").val(null)
                     }
                     break 
@@ -4047,7 +4027,7 @@ function TraerTipoCambio(CodLibro){
                     } 
                 }).catch(function (e) {
                     console.log(e);
-                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
                 });
 
         }catch(e){
@@ -4085,7 +4065,7 @@ function TraerSiguienteNumero(CodLibro){
                 } 
             }).catch(function (e) {
                 console.log(e);
-                swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
             });
     }
 }
@@ -4116,7 +4096,7 @@ function TraerSaldoPagoAdelantado(){
             } 
         }).catch(function (e) {
             console.log(e);
-            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
         });
 }
 
@@ -4140,7 +4120,7 @@ function TraerCuentaBancariaPorSucursal(CodLibro){
             } 
         }).catch(function (e) {
             console.log(e);
-            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
         });
 }
 
@@ -4164,7 +4144,7 @@ function TraerCuentasBancariasXIdClienteProveedor(CodLibro){
             } 
         }).catch(function (e) {
             console.log(e);
-            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
         });
 }
 
@@ -4190,7 +4170,7 @@ function TraerCredito(CodLibro,callback){
                     if(aLimiteCredito-aCreditoUtilizado-parseFloat($("#Gran_Total"))>0){
                         callback(true)
                     }else{
-                        swal("Error!",'No hay Credito Suficiente!!!.\nSu Linea es: '+aLimiteCredito+'.\nCredito Utilizado: '+aCreditoUtilizado+'.', "error") 
+                        toastr.error('No hay Credito Suficiente!!!.\nSu Linea es: '+aLimiteCredito+'.\nCredito Utilizado: '+aCreditoUtilizado+'.','Error',{timeOut: 5000})
                         callback(false)
                     }
 
@@ -4202,7 +4182,7 @@ function TraerCredito(CodLibro,callback){
             } 
         }).catch(function (e) {
             console.log(e);
-            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
         });
 }
 
@@ -4355,7 +4335,7 @@ function BuscarClienteDoc(CodLibro) {
             $("#Cod_TipoDoc").attr("disabled",false);
 
 
-            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
             $('#div-cliente-comprobante-pago').waitMe('hide');
         });
     }
@@ -4380,7 +4360,7 @@ function AbrirModalObsComprobantePago(){
             AbrirModalObs(variables.diagramas,global.obs_xml,"modal_observaciones","modal_obs_body")
         }).catch(function (e) {
             console.log(e);
-            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
         });
 }
 
@@ -4431,13 +4411,13 @@ function ComprobantePago(Cod_Libro,Cliente,Detalles) {
                      
                 }).catch(function (e) {
                     console.log(e);
-                    swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+                    toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
                     $('#main-contenido').waitMe('hide');
                 });
 
         }).catch(function (e) {
             console.log(e);
-            swal("Error!",'Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e, "error")
+            toastr.error('Ocurrio un error en la conexion o al momento de cargar los datos.  Tipo error : '+e,'Error',{timeOut: 5000})
             $('#main-contenido').waitMe('hide');
         }); 
 }
